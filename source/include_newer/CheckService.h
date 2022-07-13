@@ -1,0 +1,7 @@
+#ifndef __CHECKSERVICES_H
+#define CHECKSERVICE_GUARANTEE         'G'
+#define CHECKSERVICE_VERIFY            'V'
+#define CHECKSERVICE_PREAUTH           'P'
+#define CHECKSERVICE_HOLDCHECK         'H'
+#define CHECKSERVICE_GUARANTEEVERIFY   'B'
+#endif

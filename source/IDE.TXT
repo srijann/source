@@ -1,0 +1,81 @@
+  C:\sps\source\BankPhoneDB\ServerApp.ide
+
+  C:\sps\source\classlib\ClassLib.ide
+                         classtest.ide
+
+  C:\sps\source\DbConvert\Dbconvert.ide
+                          dbfix.ide
+                          newdbfile.ide
+
+  C:\sps\source\ipcsample\IPCSample.ide
+
+  C:\sps\source\IPCShell\ServerApp.ide
+
+  C:\sps\source\IPCTell\IPCSample.ide
+
+  C:\sps\source\KDSPrograms\programs.ide
+
+  C:\sps\source\kdstest\KDSTest.ide
+
+  C:\sps\source\lib\ipclib.ide
+                    splib.ide
+
+  C:\sps\source\LogSearch\LogSearch.ide
+
+  C:\sps\source\ManagerDb\ServerApp.ide
+
+  C:\sps\source\Messages\messages.ide
+
+  C:\sps\source\MsgBox\msgbox.ide
+
+  C:\sps\source\netmon\NetMon.ide
+
+  C:\sps\source\NetRoute\NetRoute.ide
+
+  C:\sps\source\PosAuth\ServerApp.ide
+
+  C:\sps\source\PosfileDB\ServerApp.ide
+
+  C:\sps\source\PosTest\Kwtest.ide
+
+  C:\sps\source\PreauthDb\ServerApp.ide
+
+  C:\sps\source\ReferQue\ServerApp.ide
+
+  C:\sps\source\SPSFile\SPSFileMan.ide
+
+  C:\sps\source\SPSLog\ServerApp.ide
+
+  C:\sps\source\SPSManager\SpsManager.ide
+
+  C:\sps\source\test\Test.ide
+
+  C:\sps\source\Utilities\DbConvert\Dbconvert.ide
+                                    dbfix.ide
+                                    newdbfile.ide
+
+  C:\sps\source\Utilities\ipcsample\IPCSample.ide
+
+  C:\sps\source\Utilities\IPCTell\IPCSample.ide
+
+  C:\sps\source\Utilities\kdstest\KDSTest.ide
+
+  C:\sps\source\Utilities\Messages\messages.ide
+
+  C:\sps\source\Utilities\MsgBox\msgbox.ide
+
+  C:\sps\source\Utilities\PosTest\Kwtest.ide
+
+  C:\sps\source\Utilities\RegSetup\RegSetup.ide
+
+  C:\sps\source\Utilities\SendCmd\sendcmd.ide
+
+  C:\sps\source\Utilities\ServerShell\ServerApp.ide
+
+  C:\sps\source\Utilities\Startup\AddStartup.ide
+
+  C:\sps\source\VoiceAuth\AddStartup.ide
+                          CheckAuth.ide
+                          RegSetup.ide
+                          sendcmd.ide
+                          ServerApp.ide

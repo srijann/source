@@ -1,0 +1,2 @@
+#define IDD_PRODCLASS	16
+#define IDC_TREEVIEW1	101

@@ -1,0 +1,7 @@
+Borland C++ 5.2 Copyright (c) 1987, 1997 Borland International
+Mar 19 1997 17:29:40
+files.c:
+Warning files.c 233: 'ii' is assigned a value that is never used in function m_recreadAuthID
+Warning files.c 308: 'ii' is assigned a value that is never used in function m_UpdateTimeOfPostauth
+Warning files.c 380: 'ii' is assigned a value that is never used in function m_delete
+Turbo Link  Version 7.1.32.2. Copyright (c) 1987, 1996 Borland International

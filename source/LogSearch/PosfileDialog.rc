@@ -1,0 +1,78 @@
+//----------------------------------------------------------------------------
+//  Project PosFileMan
+//  Secure Payment Systems
+//  Copyright © 1997. All Rights Reserved.
+//
+//  SUBSYSTEM:  PosFileMan Application
+//  FILE:     posfilemanapp.rc
+//  AUTHOR:     Jack Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "PosfileDialog.rh"
+
+// Client Dialog
+//
+IDD_POSFILE DIALOG 0, 60, 422, 223
+STYLE DS_ABSALIGN | WS_POPUP
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "", IDC_PFBANKNUMBER, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 41, 14, 42, 13, 0
+ CONTROL "", IDC_PFBANKACCOUNT, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 87, 14, 75, 13, 0
+ CONTROL "", IDC_PFLICENSESTATE, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 196, 14, 20, 14, 0
+ CONTROL "", IDC_PFLICENSE, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 218, 14, 107, 14, 0
+ CONTROL "", IDC_PFCONSUMERNAME, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 57, 52, 154, 13, 0
+ CONTROL "", IDC_PFBUSINESSNAME, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 57, 73, 154, 13, 0
+ CONTROL "", IDC_PFDOB, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 261, 52, 29, 13, 0
+ CONTROL "", IDC_PFPHONE, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 261, 73, 46, 13, 0
+ CONTROL "", IDC_PFOVERRIDESALLOWED, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 33, 120, 13, 13, 0
+ CONTROL "", IDC_PFOVERRIDEDAYS, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 95, 120, 13, 13, 0
+ CONTROL "", IDC_PFMAXOVERRIDEAMOUNT, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 91, 139, 25, 13, 0
+ CONTROL "", IDC_PFMAXOVERRIDEACCUM, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 97, 157, 25, 13, 0
+ CONTROL "", IDC_PFACCOUNT1, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 77, 176, 27, 13, 0
+ CONTROL "", IDC_PFACCOUNT2, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 106, 176, 27, 13, 0
+ CONTROL "", IDC_PFACCOUNT3, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 135, 176, 27, 13, 0
+ CONTROL "", IDC_PFSIC1, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 87, 194, 22, 13, 0
+ CONTROL "", IDC_PFSIC2, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 111, 194, 22, 13, 0
+ CONTROL "", IDC_PFSIC3, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 135, 194, 22, 13, 0
+ CONTROL "Bank Account", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 9, 12, 30, 18, 0
+ CONTROL "Drivers License", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 166, 12, 29, 18, 0
+ CONTROL "Date Of Birth", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 228, 49, 31, 20, 0
+ CONTROL "Consumer Name", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 23, 49, 34, 17, 0
+ CONTROL "Business Name", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 23, 70, 33, 19, 0
+ CONTROL "Frame3", 107, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 5, 6, 325, 28, 0
+ CONTROL "", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 5, 41, 326, 54, 0
+ CONTROL "Allow", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 13, 120, 20, 13, 0
+ CONTROL "Overrides in", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 51, 120, 39, 13, 0
+ CONTROL "days.", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 116, 120, 20, 13, 0
+ CONTROL "Max Override Amount =", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 13, 139, 76, 13, 0
+ CONTROL "Accumulative Overrides =", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 13, 159, 82, 14, 0
+ CONTROL "Restrict to Accounts", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 9, 176, 64, 13, 0
+ CONTROL "Restrict to SIC Codes", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 15, 195, 71, 12, 0
+ CONTROL "Date Added", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 221, 123, 41, 13, 0
+ CONTROL "Last Approval", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 216, 139, 48, 12, 0
+ CONTROL "Approved Transactions", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 189, 157, 78, 13, 0
+ CONTROL "Approved Dollars", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 209, 173, 58, 14, 0
+ CONTROL "", IDC_PFDATEADDED, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 271, 123, 36, 13, 0
+ CONTROL "", IDC_PFDATELASTAPPROVAL, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 271, 139, 36, 13, 0
+ CONTROL "", IDC_PFAPPROVEDTRANSACTIONS, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 271, 157, 21, 13, 0
+ CONTROL "", IDC_PFAPPROVEDDOLLARS, "static", SS_LEFT | WS_BORDER | WS_CHILD | WS_VISIBLE, 271, 173, 38, 13, 0
+ CONTROL "", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 5, 104, 165, 108, 0
+ CONTROL " Optional Parameters", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 21, 100, 69, 13, 0
+ CONTROL " Optional Data", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 17, 38, 50, 9, 0
+ CONTROL " ID", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 29, 2, 13, 9, 0
+ CONTROL "", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 179, 104, 152, 108, 0
+ CONTROL " History", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 197, 101, 28, 13, 0
+ CONTROL "Phone   ", 101, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 232, 75, 25, 13, 0
+}
+
+
+

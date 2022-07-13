@@ -1,0 +1,330 @@
+//----------------------------------------------------------------------------
+//  Project Classlib
+//
+//  Copyright © 1996. All Rights Reserved.
+//
+//  FILE:         StringDB.cpp
+//  AUTHOR:
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Source file for implementation of StringDB (TFile).
+//
+//  Manages a String Database in a disk file. It's used by Voice
+//  Authorizations to handle the Messages for the Message Window.
+//----------------------------------------------------------------------------
+
+#include "win4me.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <io.h>
+#include <string.h>
+#include "splib.h"
+#include "StringDb.h"
+
+#define INDEX_SLACK 10
+
+void logg(int iLine, char *buf1, char *buf2, int i, long l);
+
+void logg(int iLine, char *buf1, char *buf2, int i, long l)
+{
+   FILE  *fout;
+   fout = fopen("err.log", "a");
+   fprintf(fout,"@%d %s - %s. .%ld. .%d.\n", iLine, buf1, buf2, i, l);
+   fclose(fout);
+}
+
+//------------------
+// Class Constructor
+//------------------
+StringDB::StringDB(const char* Fname)
+{
+ strcpy(StringDBFname,Fname);
+ ModifiedFlag=false;
+ FileBuf=0;
+ Index=0;
+ EmptyString[0] = '\0';
+ Load();
+}
+
+//-----------------
+// Class Destructor
+//-----------------
+StringDB::~StringDB()
+{
+ FreeIndex();
+
+ // Delete the Dynamically Allocated File Buffer
+ if ( FileBuf )
+  free(FileBuf);
+
+}
+
+//--------------------------
+// Get a Pointer to a String
+//--------------------------
+char *StringDB::GetString(int Num)
+{
+ char* StrPtr;
+
+ if ( Num >= StringCount ||
+      strlen((StrPtr=Index[Num].StrPtr)) == 0 )
+  {
+   sprintf(UndefinedString,"?? #%d",Num);
+   return UndefinedString;
+  }
+
+ return StrPtr;
+}
+
+//------------------------
+// Add or Replace a String
+//------------------------
+void StringDB::PutString(char* Str,int Num)
+{
+ uint StrLen=strlen(Str);
+ int i;
+
+ ModifiedFlag=true;
+
+ // Replacing an existing String?
+ if ( Num < StringCount )
+  {
+   // If it fits over the old string, overlay it
+   if ( StrLen <= strlen( Index[Num].StrPtr ) )
+    {
+     strcpy(Index[Num].StrPtr,Str);
+     return;
+    }
+   // If the old string was new'd, delete it
+   if ( Index[Num].New )
+     delete[]( Index[Num].StrPtr );
+   Index[Num].StrPtr = new char[StrLen+1];
+   Index[Num].New = true;
+   strcpy(Index[Num].StrPtr,Str);
+   return;
+  }
+
+ // Do We have to Expand the Index?
+ if ( Num >= IndexCount )
+  {
+   IndexDef* NewIndex=(IndexDef*)realloc(Index,
+                  (Num + INDEX_SLACK) * sizeof(*NewIndex));
+   if ( NewIndex==NULL )
+    {
+     MessageBox(0,"StringDB ALLOCATION ERROR",
+              "OUT OF MEMORY", MB_ICONERROR|MB_OK);
+     return;
+    }
+   IndexCount=Num + INDEX_SLACK;
+   Index = NewIndex;
+  }
+
+ // All strings from StringCount to Num should point to Null
+ // Strings.
+ for (i=StringCount; i<Num; ++i)
+  {
+   Index[i].StrPtr=EmptyString;
+   Index[i].New=false;
+  }
+
+ Index[Num].StrPtr=new char[StrLen+1];
+ strcpy(Index[Num].StrPtr,Str);
+ Index[Num].New=true;
+ StringCount=Num+1;
+}
+
+//-------------------------------------
+// Save the Current File Buffer to Disk
+//-------------------------------------
+int StringDB::Save(bool CreateBackup)
+{
+ char TempName[sizeof(StringDBFname)];
+
+ // OPEN file as .new
+ ChangeFileExtension(TempName,".new");
+ remove(TempName); 
+
+ if ( ! WriteStrings(TempName) )
+   return 0;
+
+ // Rename current to Backup
+ if ( CreateBackup )
+  {
+   ChangeFileExtension(TempName,".bak");
+   remove(TempName);
+   if ( rename(StringDBFname,TempName) == -1 )
+    {
+     MessageBoxf(0,"StringDB RENAME ERROR",
+                 MB_ICONERROR|MB_OK,
+                 "Unable to Rename %s to %s\n%s",
+                 StringDBFname,TempName,strerror(errno));
+     return 0;
+    }
+  }
+ else
+  remove(StringDBFname);
+
+ ChangeFileExtension(TempName,".new");
+ if ( rename(TempName,StringDBFname) == -1 )
+  {
+   MessageBoxf(0,"StringDB RENAME ERROR",
+                 MB_ICONERROR|MB_OK,
+                 "Unable to Rename %s to %s\n%s",
+                 TempName,StringDBFname,strerror(errno));
+   return 0;
+  }
+
+ ModifiedFlag=false;
+ return 1;
+}
+
+//---------------------------------------------
+// Write out all the strings and close the file
+//---------------------------------------------
+int StringDB::WriteStrings(char* Name)
+{
+ int i;
+ uint Len;
+ FILE *f;
+
+ if  ( (f=fopen(Name,"wb")) ==NULL )
+  {
+   MessageBoxf(0,"StringDB OPEN ERROR",MB_ICONERROR|MB_OK,
+               "Unable to open File %s\n%s",
+               Name,strerror(errno));
+     return 0;
+  }
+
+ // Write out all the Strings
+ for (i=0; i<StringCount; ++i)
+  {
+   Len=strlen(Index[i].StrPtr);
+   if ( fwrite(Index[i].StrPtr,1,Len+1,f) != Len+1 )
+    {
+     MessageBoxf(0,"StringDB WRITE ERROR",MB_ICONERROR|MB_OK,
+                 "Error Writing to File %s\n%s",
+                 Name,strerror(errno));
+     fclose(f);
+     return 0;
+    }
+  }
+
+ fclose(f);
+ return 1;
+}
+
+//--------------------------
+// Load The File into Memory
+//--------------------------
+int StringDB::Load()
+{
+ int Bytes;
+ uint Len;
+ int I;
+ FILE *f;
+
+ ModifiedFlag=false;
+
+ if ( FileBuf )
+  {
+   free(FileBuf);
+   FileBuf=0;
+  }
+ FreeIndex();
+
+ StringCount=0;
+
+ while( (f=fopen(StringDBFname,"rb")) == NULL )
+    if ( MessageBoxf(0,"StringDB OPEN ERROR",MB_RETRYCANCEL|MB_ICONERROR,
+                     "Unable to open File %s\n%s",
+                     StringDBFname,strerror(errno)) != IDRETRY )
+      {
+         //logg(__LINE__, "Yes, StringDB:Load()", " ate it.", 0, 0);
+      return 0;
+      }
+ // Empty File?
+ if ( (FileBufLen=filelength(fileno(f))) != 0 )
+  {
+   if ( (FileBuf=(char*)malloc(FileBufLen)) == 0 )
+    {
+     MessageBox(0,"StringDB ALLOCATION ERROR",
+                "OUT OF MEMORY", MB_ICONERROR|MB_OK);
+     fclose(f);
+     return 0;
+    }
+
+   if ( fread(FileBuf,1,FileBufLen,f) != (uint) FileBufLen )
+    {
+     MessageBoxf(0,"StringDB READ ERROR",MB_ICONERROR|MB_OK,
+                 "Unable to read File %s\n%s",StringDBFname,strerror(errno));
+     free ( FileBuf );
+     FileBuf=0;
+     fclose(f);
+     return 0;
+    }
+  // Make sure the last character is a Null-Terminator
+  FileBuf[FileBufLen-1] = 0;
+
+  // Count the Number of Strings
+  for (Bytes=0; Bytes<FileBufLen; Bytes += Len, ++StringCount)
+    Len=strlen(&FileBuf[Bytes])+1;
+  }
+
+ fclose(f);
+
+ // Allocate an Index Buffer (allow slack for 10 new strings)
+ IndexCount=StringCount+INDEX_SLACK;
+ if ( (Index=(struct IndexDef*)
+    calloc(1, IndexCount * sizeof(*Index))) == 0 )
+  {
+   MessageBox(0,"StringDB ALLOCATION ERROR",
+              "OUT OF MEMORY", MB_ICONERROR|MB_OK);
+   free(FileBuf);
+   FileBuf=0;
+   StringCount=0;
+   return 0;
+  }
+
+ // Build the Index
+ for (I=Bytes=0; Bytes<FileBufLen; Bytes += Len, ++I)
+  {
+   Index[I].StrPtr=&FileBuf[Bytes];
+   Len=strlen(Index[I].StrPtr)+1;
+  }
+
+ return 1;
+}
+
+//----------------------------------------------
+// Private function to change filename extension
+//----------------------------------------------
+void StringDB::ChangeFileExtension(char* Name,char* Ext)
+{
+ char *ExtPtr;
+ 
+ strcpy(Name,StringDBFname);
+ ExtPtr=strchr(Name,'.');
+ if ( ExtPtr==NULL )
+  strcat(Name,Ext);
+ else
+  strcpy(ExtPtr,Ext);
+}
+
+//-----------------------------------------------------
+// Free the INDEX and all Dynamically allocated Strings
+//-----------------------------------------------------
+void StringDB::FreeIndex()
+{
+ int i;
+  // Go through the INDEX and delete any new'd strings
+ if ( Index )
+  {
+   for (i=0; i<StringCount; ++i)
+    if ( Index[i].New )
+      delete[] (Index[i].StrPtr);
+   free(Index);
+  }
+
+ Index=0;
+}

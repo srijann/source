@@ -1,0 +1,68 @@
+#ifndef __RCODES_H
+
+// Rcodes 0-10 are reserved for Kenwood
+
+#define RCODE_INVALIDMERCHANT 0
+#define RCODE_SYSTEMERROR 0
+
+
+#define RCODE_KENWOOD1 1
+#define RCODE_KENWOOD2 2
+#define RCODE_KENWOOD3 3
+#define RCODE_KENWOOD4 4
+#define RCODE_KENWOOD5 5
+#define ISKENWOODRCODE(rc) (rc>=1 && rc<=20)
+
+// Rcodes from 21 to 39 are DECLINES for RULE violations
+
+#define RCODE_R1DECLINE 21
+#define RCODE_R2DECLINE 22
+#define RCODE_R3DECLINE 23
+#define RCODE_R4DECLINE 24
+#define RCODE_R5DECLINE 25
+#define RCODE_R6DECLINE 26
+#define RCODE_R7DECLINE 27
+#define RCODE_R8DECLINE 28
+
+#define RCODE_MULTIPLEPREAUTHS 30
+#define RCODE_PREAUTHEXCEEDED  31
+
+// Rcodes from 40 to 49 are negative DECLINES
+#define RCODE_BADCHECKS 40
+
+// Rcodes 50 to 79 are for Data Errors
+#define RCODE_INVALIDLICENSE      50
+#define RCODE_INVALIDSTATE        51
+#define RCODE_INVALIDMICR         52
+#define RCODE_INVALIDDOB          53
+#define RCODE_INVALIDPHONE        54
+#define RCODE_INVALIDSSN          55
+#define RCODE_INVALIDCHECKNUMBER  56
+#define RCODE_INVALIDAMOUNT       57
+#define RCODE_INVALIDZIPCODE      58
+#define RCODE_INVALIDDATA         59
+
+#define RCODE_CALLCANCELLED       70
+
+#define RCODE_MISSINGLICENSE      90
+#define RCODE_MISSINGSTATE        91
+#define RCODE_MISSINGMICR         92
+#define RCODE_MISSINGDOB          93
+#define RCODE_MISSINGPHONE        94
+#define RCODE_MISSINGSSN          95
+#define RCODE_MISSINGCHECKNUMBER  96
+#define RCODE_MISSINGAMOUNT       97
+#define RCODE_MISSINGZIPCODE      98
+#define RCODE_MISSINGDATA         99
+
+// Rcodes > 80 are Approvals
+#define ISAPPROVALRCODE(rc) (rc>=80 && rc<=89)
+#define RCODE_GUARANTEEAPPROVAL   80
+#define RCODE_R1APPROVAL          81
+#define RCODE_PREAUTHAPPROVAL     82
+#define RCODE_R3APPROVAL          83
+#define RCODE_HOLDCHECKAPPROVAL   84
+#define RCODE_VERIFYAPPROVAL      85
+#define RCODE_FORCEDAPPROVAL      86
+#define RCODE_POSFILEAPPROVAL     87
+#endif

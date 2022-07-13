@@ -1,0 +1,40 @@
+#ifndef __CHKAUTH_H
+#define __CHKAUTH_H
+
+#define TIMERBAR_WIDTH  540
+#define TIMERBAR_HEIGHT  12
+#define TIMERBAR_LEFT 6
+#define TIMERBAR_TOP  6
+#define TIMERBAR_STEP 4
+//#define TIMERBAR_SECONDS 240   // MAB033000
+#define TIMERBAR_SECONDS 480
+
+#define CHECKTYPE_LEN 8
+#define CHECKNUMBER_LEN 6
+#define NAME_LEN 25
+#define ABA_LEN 9
+#define ACCOUNT_LEN 16
+#define DOB_LEN 6
+#define LICENSE_LEN 26
+#define STATE_LEN 2
+#define AMOUNT_LEN 8
+#define MERCHNUM_LEN 5
+#define CITY_LEN 20
+#define APARTMENT_LEN 10
+#define ZIPCODE_LEN 10
+#define ADRSTATE_LEN 2
+#define ADDRESS_LEN 75
+#define PRODUCTCLASS_LEN 15
+#define BUSINESSNAME_LEN 25
+#define PRIVATELABEL_LEN 3
+#define PHONE_LEN 10
+#define SSN_LEN 9
+#define REFERALNUM_LEN 2
+#define TRANSPORT_LEN 8
+
+#define NOTIFY_DIALOGCOMPLETE 1
+#define NOTIFY_EXITFIELD 2
+#define NOTIFY_APPROVED 1
+#define NOTIFY_DECLINED 2
+#define MYTRACE(text) MessageBox(text,"",MB_OK)
+#endif

@@ -1,0 +1,15 @@
+[OPTIONS]
+CONTENTS=main_index
+TITLE=CheckAuth
+COMPRESS=true
+WARNING=2
+
+[FILES]
+mainhelp.rtf      ; main topics
+keys.rtf          ; keyboard topics
+
+[BITMAPS]
+helpicon.bmp
+
+[MAP]
+#include <checkauthapp.rh>

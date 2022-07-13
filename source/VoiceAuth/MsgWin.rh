@@ -1,0 +1,35 @@
+//----------------------------------------------------------------------------
+//  Project Dialtest
+//  Secure Payments
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:    Dialtest Application
+//  FILE:         MsgWin.rh
+//  AUTHOR:       Jack H Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in dltstapp.rc.
+//
+//----------------------------------------------------------------------------
+//#if !defined(MsgWin_rh)   // Sentry use file only if it's not already included.
+//#define MsgWin_rh
+
+//
+// Application specific definitions:
+//
+#define IDD_MSGWIN	2002
+#define CM_EDITMESSAGES	300
+#define CM_RELOADMESSAGES	301
+#define CM_SAVEMESSAGES 302
+#define CM_SAVEMESSAGESAS 303
+
+#define IDD_MSGEDIT	2001
+#define IDC_MSG	102
+#define IDC_EDIT3	103
+#define IDCS_MSGNUM	103
+#define IDC_MSCTLS_UPDOWN1	101
+#define IDCS_MSG	301
+#define IDD_MSGWIN2	2003
+
+//#endif

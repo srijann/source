@@ -1,0 +1,36 @@
+/****************************************************************************
+
+
+MsgWin.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#include "msgwin.rh"
+
+IDD_MSGEDIT DIALOG 6, 0, 254, 105
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Messages "
+FONT 8, "System"
+{
+ CONTROL "", IDC_MSG, "edit", ES_LEFT | ES_MULTILINE | ES_WANTRETURN | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 8, 32, 235, 46, WS_EX_LEFTSCROLLBAR
+ CONTROL "DONE", IDOK, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 112, 8, 50, 14
+ CONTROL "UpDown1", IDC_MSCTLS_UPDOWN1, "msctls_updown32", 32 | WS_CHILD | WS_VISIBLE, 80, 4, 8, 22
+ CONTROL "Right Click in Window for EDIT Menu", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 88, 120, 8
+ CONTROL "Cancel", IDCANCEL, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 180, 8, 50, 14
+ CONTROL "MESSAGE#", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 8, 40, 12
+ CONTROL "", IDCS_MSGNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 52, 8, 20, 13
+}
+
+IDD_MSGWIN DIALOG 3, 10, 232, 46
+EXSTYLE WS_EX_NOPARENTNOTIFY | WS_EX_CLIENTEDGE
+STYLE WS_CHILD | WS_VISIBLE | WS_BORDER
+FONT 8, "System"
+{
+ CONTROL "", IDCS_MSG, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 0, 0, 235, 44
+}
+
+
+

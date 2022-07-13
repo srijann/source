@@ -1,0 +1,344 @@
+#include <stdio.h>
+#include <io.h>
+#include <stdlib.h>
+#include <string.h>
+#include <mem.h>
+
+#define FILE_OPEN_ERROR      1001
+#define FILE_WRITE_ERROR     1002
+#define LENGTH_ERROR         1003
+#define RECORD_NOT_FOUND     1004
+
+/* database PreauthDB record/key structure declarations */
+typedef struct _PREAUTHRECORD {
+   unsigned long TimeofPreauth;
+   unsigned long TimeofPostauth;
+   unsigned char PreauthRetention;
+   unsigned long PostAuthAmount;
+   char PreauthMerchantID[6];
+   char PreauthConsumerID[30];
+}PREAUTHRECORD;
+
+int m_fillnew(PREAUTHRECORD Rec);
+int m_recreadAuthID(char *AuthID, PREAUTHRECORD Rec);
+// Really, only Postauth Time gets updated
+int m_UpdateTimeOfPostauth(PREAUTHRECORD Rec, long lTime);
+int m_delete(PREAUTHRECORD Rec);
+
+void logg1(int iLine, char *buf1, char *buf2, int i, long l);
+void logg2(int iLine, char *buf1, PREAUTHRECORD Rec,int i, long l);
+
+void logg1(int iLine, char *buf1, char *buf2, int i, long l)
+{
+   FILE  *fout;
+   fout = fopen("err.log", "a");
+   fprintf(fout,"@%d %s - %s. .%ld. .%d.\n", iLine, buf1, buf2, i, l);
+   fclose(fout);
+}
+
+void logg2(int iLine, char *buf1, PREAUTHRECORD Rec,int i, long l)
+{
+   FILE  *fout;
+   fout = fopen("err.log", "a");
+   fprintf(fout,"@%d %s\n  -%s.\n  -%s\n  -%ld\n  -%ld\n  -%c\n  -%ld\n %ld. .%d.\n",
+           iLine,
+           buf1,
+           Rec.PreauthMerchantID,
+           Rec.PreauthConsumerID,
+           Rec.TimeofPreauth,
+           Rec.TimeofPostauth,
+           Rec.PreauthRetention,
+           Rec.PostAuthAmount,
+           i, l);
+   fclose(fout);
+}
+
+static PREAUTHRECORD Record;
+
+//$$*************************************************************************
+void main()
+{
+   char  szbuf[32];
+   int   iReturn;
+   int   ii;
+
+   while(1)
+   {
+      printf("\n\n   1. PreAuth\n    2. PostAuth\n   3. TimeOfPostauth\n   4. Delete");
+      scanf("%s", szbuf);
+
+      ii = atoi(szbuf);
+      if(ii == 1)
+      {
+         printf("\n");
+         printf("  Enter Preauth Time :");
+         scanf("%ld",&Record.TimeofPreauth);
+         printf("  Enter Postauth Time :");
+         scanf("%ld",&Record.TimeofPostauth);
+         printf("  Enter PreauthRetention :");
+         scanf("%s",szbuf);
+         Record.PreauthRetention = szbuf[0];
+         printf("  Enter Postauth Amount :");
+         scanf("%ld",&Record.PostAuthAmount);
+         printf("  Enter PreauthMerchantID :");
+         scanf("%s",Record.PreauthMerchantID);
+         printf("  Enter PreauthConsumerID :");
+         scanf("%s",Record.PreauthConsumerID);
+
+         logg2(__LINE__, "\nRead Data",Record,0,0);
+
+         iReturn = m_fillnew(Record);
+      }
+
+      else
+      if(ii == 2)
+      {
+         printf("  Enter AuthID to find:");
+         scanf("%s",szbuf);
+         iReturn = m_recreadAuthID(szbuf,Record);
+         if(!(iReturn)) // Data Found
+         {
+            printf("\n   Record  Found\n");
+         }
+         logg2(__LINE__, "\nData Read",Record,0,0);
+         if(iReturn == RECORD_NOT_FOUND)
+            printf("\n   Record Not Found\n");
+      }
+
+      else
+         exit(0);
+   }
+}
+
+//$*************************************************************************
+// not presently a binary write, because could not check data with editor
+int m_fillnew(PREAUTHRECORD Rec)
+{
+   int ii;
+   FILE  *fout;
+   if((fout = fopen("pre.dat", "a")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File open fail 1","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   ii = fprintf(fout,"%ld %ld %c %ld %s %s\n",
+                Rec.TimeofPreauth,
+                Rec.TimeofPostauth,
+                Rec.PreauthRetention,
+                Rec.PostAuthAmount,
+                Rec.PreauthMerchantID,
+                Rec.PreauthConsumerID);
+
+   fclose(fout);
+   if(ii < 5)  //arbitrary
+      return FILE_WRITE_ERROR;
+
+   return 0;
+}
+
+//$*********************************************************************
+int m_recreadAuthID(char *AuthID, PREAUTHRECORD Rec)
+{
+   int ii;
+   FILE  *fin;
+   if((fin = fopen("pre.dat", "r")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   while(1)
+   {
+      ii = fscanf(fin,"%ld %ld %c %ld %s %s",
+                  &Rec.TimeofPreauth,
+                  &Rec.TimeofPostauth,
+                  &Rec.PreauthRetention,
+                  &Rec.PostAuthAmount,
+                  &Rec.PreauthMerchantID,
+                  &Rec.PreauthConsumerID);
+
+      if(feof(fin))
+         break;
+
+      if(strcmp(Rec.PreauthConsumerID, AuthID) == 0)
+      {
+         fclose(fin);
+         return 0;
+      }
+   }
+
+   fclose(fin);
+   return RECORD_NOT_FOUND;
+}
+//$*********************************************************************
+int m_UpdateTimeOfPostauth(PREAUTHRECORD RecStart, long lTimeOfPostauth)
+{
+   int   ii;
+   FILE  *fin;
+   FILE  *fout;
+
+   PREAUTHRECORD RecIn;
+
+   if((fin = fopen("pre.dat", "r")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File in open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   remove("pre.tmp");
+   if((fout = fopen("pre.tmp", "w")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File out open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   while(1)
+   {
+      ii = fscanf(fin,"%ld %ld %c %ld %s %s",
+                  &RecIn.TimeofPreauth,
+                  &RecIn.TimeofPostauth,
+                  &RecIn.PreauthRetention,
+                  &RecIn.PostAuthAmount,
+                  &RecIn.PreauthMerchantID,
+                  &RecIn.PreauthConsumerID);
+
+      if(feof(fin))
+         break;
+
+      // Is this the record to update. Must compare
+      if(strcmp(RecIn.PreauthConsumerID,RecStart.PreauthConsumerID)==0)
+      {
+         if(
+            (RecIn.TimeofPreauth  == RecStart.TimeofPreauth) &&
+            (RecIn.PostAuthAmount == RecIn.PostAuthAmount) &&
+            (strcmp(RecIn.PreauthMerchantID,RecIn.PreauthMerchantID) == 0)
+           )
+            RecIn.TimeofPostauth = lTimeOfPostauth;
+      }
+
+      ii = fprintf(fout,"%ld %ld %c %ld %s %s\n",
+                   RecStart.TimeofPreauth,
+                   RecStart.TimeofPostauth,
+                   RecStart.PreauthRetention,
+                   RecStart.PostAuthAmount,
+                   RecStart.PreauthMerchantID,
+                   RecStart.PreauthConsumerID);
+   }
+
+   fclose(fout);
+   fclose(fin);
+   return 0;
+}
+
+//$*********************************************************************
+int m_delete(PREAUTHRECORD RecStart)
+{
+   int   ii;
+   FILE  *fin;
+   FILE  *fout;
+
+   PREAUTHRECORD RecIn;
+
+   if((fin = fopen("pre.dat", "r")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File in open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   remove("pre.tmp");
+   if((fout = fopen("pre.tmp", "w")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File out open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   while(1)
+   {
+      ii = fscanf(fin,"%ld %ld %c %ld %s %s",
+                  &RecIn.TimeofPreauth,
+                  &RecIn.TimeofPostauth,
+                  &RecIn.PreauthRetention,
+                  &RecIn.PostAuthAmount,
+                  &RecIn.PreauthMerchantID,
+                  &RecIn.PreauthConsumerID);
+
+      if(feof(fin))
+         break;
+
+      // Is this the record to update. Must compare
+      if(strcmp(RecIn.PreauthConsumerID,RecStart.PreauthConsumerID)==0)
+         if(
+            (RecIn.TimeofPreauth  == RecStart.TimeofPreauth) &&
+            (RecIn.PostAuthAmount == RecIn.PostAuthAmount) &&
+            //(RecIn.TimeofPostauth == RecIn.lTimeOfPostauth) &&
+            (strcmp(RecIn.PreauthMerchantID,RecIn.PreauthMerchantID) == 0)
+           )
+         continue;
+
+      // else write the record out to file again
+      ii = fprintf(fout,"%ld %ld %c %ld %s %s\n",
+                   RecStart.TimeofPreauth,
+                   RecStart.TimeofPostauth,
+                   RecStart.PreauthRetention,
+                   RecStart.PostAuthAmount,
+                   RecStart.PreauthMerchantID,
+                   RecStart.PreauthConsumerID);
+   }
+
+   fclose(fout);
+   fclose(fin);
+   return 0;
+}
+
+
+#if 0
+//$*********************************************************************
+int m_recread(char *AuthID, PREAUTHRECORD Rec)
+{
+   int ii;
+   FILE  *fin;
+   if((fin = fopen("pre.dat", "r")) == NULL)  // couldn't open file
+   {
+      logg1(__LINE__, "File open fail","",0,0);
+      return FILE_OPEN_ERROR;
+   }
+
+   while(1)
+   {
+      ii = fscanf(fin,"%ld %ld %c %ld %s %s",
+                  &Rec.TimeofPreauth,
+                  &Rec.TimeofPostauth,
+                  &Rec.PreauthRetention,
+                  &Rec.PostAuthAmount,
+                  &Rec.PreauthMerchantID,
+                  &Rec.PreauthConsumerID);
+
+      if(feof(fin))
+         break;
+
+//      if(strcmp(Rec.PreauthConsumerID, AuthID) == 0)
+      if(strcmp(RecIn.PreauthConsumerID,RecStart.PreauthConsumerID)==0)
+         if(
+            (RecIn.TimeofPreauth  == RecStart.TimeofPreauth) &&
+            (RecIn.PostAuthAmount == RecIn.PostAuthAmount) &&
+            (strcmp(RecIn.PreauthMerchantID,RecIn.PreauthMerchantID) == 0)
+           (
+         fclose(fin);
+         return 0;
+      }
+   }
+
+   fclose(fin);
+   return RECORD_NOT_FOUND;
+}
+
+#endif
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+//----------------------------------------------------------------------------
+//  Project PosFileMan
+//  Secure Payment Systems
+//  Copyright © 1997. All Rights Reserved.
+//
+//  SUBSYSTEM:    PosFileMan Application
+//  FILE:         posfilemanapp.h
+//  AUTHOR:       Jack Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in posfilemanapp.rc.
+//
+//----------------------------------------------------------------------------
+//#if !defined(posfilemanapp_rh)   // Sentry use file only if it's not already included.
+//#define posfilemanapp_rh
+
+
+//
+// Application specific definitions:
+//
+#define IDD_MAIN	2002
+#define IDD_BANKPHONE	2001
+#define CM_EDITCLEARALL	25010
+#define IDB_EDITCLEAR	25008
+#define IDB_FILEDELETE	25007
+#define IDB_FILEADD	25006
+#define IDB_FILECHANGE	25005
+#define IDB_GETRECORD	25004
+#define CM_COPYLOGSEARCH	25003
+#define CM_COPYVOICEAUTH	25002
+#define IDB_LOGSEARCH	25001
+#define IDB_VOICEAUTH	25000
+#define IDI_SDIAPPLICATION      1001            // Application icon
+
+#define IDM_SDI                 100             // Menu resource ID and Accelerator IDs
+#define CM_VIEWPOSITIVE	51687
+#define CM_VIEWBANKPHONE	51686
+#define CM_FILEADD	51685
+#define CM_FILEDELETE	51684
+#define CM_FILECHANGE	51683
+#define CM_GETRECORD	51682
+
+//
+// CM_FILEnnnn commands (include/owl/editfile.rh except for CM_FILEPRINTPREVIEW)
+//
+
+
+//
+// Window commands (include/owl/window.rh)
+//
+#define CM_EXIT                 24310
+
+
+//
+// CM_EDITnnnn commands (include/owl/window.rh)
+//
+#define CM_EDITADD              24327
+
+
+//
+// Search menu commands (include/owl/editsear.rh)
+//
+
+
+//
+// Help menu commands.
+//
+#define CM_HELPABOUT            2009
+
+
+//
+// About Dialogs
+//
+#define IDD_ABOUT               22000
+#define IDC_VERSION             22001
+#define IDC_COPYRIGHT           22002
+#define IDC_DEBUG               22003
+
+
+//
+// Client Dialog
+//
+#define IDC_BANKNUMBER	102
+#define IDC_BANKNAME	104
+#define IDC_PHONENUMBER	106
+#define IDC_COMMENT	108
+#define IDC_BANKACCOUNT	104
+#define IDC_LICENSESTATE	105
+#define IDC_LICENSE	106
+#define IDC_CONSUMERNAME	111
+#define IDC_BUSINESSNAME	113
+#define IDC_OVRDSALLOWED	116
+#define IDC_OVERRIDESALLOWED	116
+#define IDC_OVERRIDEDAYS	117
+#define IDC_MAXOVERRIDEAMOUNT	121
+#define IDC_MAXOVERRIDEACCUM	123
+#define IDC_ACCOUNT1	125
+#define IDC_ACCOUNT2	126
+#define IDC_ACCOUNT3	127
+#define IDC_SIC1	129
+#define IDC_SIC2	130
+#define IDC_SIC3	131
+#define IDC_DATEADDED	137
+#define IDC_DATELASTAPPROVAL	138
+#define IDC_APPROVEDTRANSACTIONS	139
+#define IDC_APPROVEDDOLLARS	140
+#define IDD_POSFILE	2000
+#define IDC_PHONE	103
+#define IDC_DOB	109
+
+
+//
+// OWL defined strings
+//
+
+//
+// Statusbar
+//
+#define IDS_MODES               32530
+#define IDS_MODESOFF            32531
+
+//
+// EditFile
+//
+#define IDS_UNTITLED            32550
+#define IDS_UNABLEREAD          32551
+#define IDS_UNABLEWRITE         32552
+#define IDS_FILECHANGED         32553
+#define IDS_FILEFILTER          32554
+
+//
+// EditSearch
+//
+#define IDS_CANNOTFIND          32540
+
+
+//
+// General & application exception messages (include/owl/except.rh)
+//
+#define IDS_UNKNOWNEXCEPTION    32767
+#define IDS_OWLEXCEPTION        32766
+#define IDS_OKTORESUME          32765
+#define IDS_UNHANDLEDXMSG       32764
+#define IDS_UNKNOWNERROR        32763
+#define IDS_NOAPP               32762
+#define IDS_OUTOFMEMORY         32761
+#define IDS_INVALIDMODULE       32760
+#define IDS_INVALIDMAINWINDOW   32759
+#define IDS_VBXLIBRARYFAIL      32758
+
+//
+// Owl 1 compatibility messages
+//
+#define IDS_INVALIDWINDOW       32709
+#define IDS_INVALIDCHILDWINDOW  32708
+#define IDS_INVALIDCLIENTWINDOW 32707
+
+//
+// TXWindow messages
+//
+#define IDS_CLASSREGISTERFAIL   32749
+#define IDS_CHILDREGISTERFAIL   32748
+#define IDS_WINDOWCREATEFAIL    32747
+#define IDS_WINDOWEXECUTEFAIL   32746
+#define IDS_CHILDCREATEFAIL     32745
+
+#define IDS_MENUFAILURE         32744
+#define IDS_VALIDATORSYNTAX     32743
+#define IDS_PRINTERERROR        32742
+
+#define IDS_LAYOUTINCOMPLETE    32741
+#define IDS_LAYOUTBADRELWIN     32740
+
+//
+// TXGdi messages
+//
+#define IDS_GDIFAILURE          32739
+#define IDS_GDIALLOCFAIL        32738
+#define IDS_GDICREATEFAIL       32737
+#define IDS_GDIRESLOADFAIL      32736
+#define IDS_GDIFILEREADFAIL     32735
+#define IDS_GDIDELETEFAIL       32734
+#define IDS_GDIDESTROYFAIL      32733
+#define IDS_INVALIDDIBHANDLE    32732
+
+
+//
+// TInputDialog DIALOG resource (include/owl/inputdia.rh)
+//
+#define IDD_INPUTDIALOG         32514
+#define ID_PROMPT               4091
+#define ID_INPUT                4090
+
+
+//
+// TSlider bitmaps (horizontal and vertical) (include/owl/slider.rh)
+//
+#define IDB_HSLIDERTHUMB        32000
+#define IDB_VSLIDERTHUMB        32001
+
+
+//
+// Validation messages (include/owl/validate.rh)
+//
+#define IDS_VALPXPCONFORM       32520
+#define IDS_VALINVALIDCHAR      32521
+#define IDS_VALNOTINRANGE       32522
+#define IDS_VALNOTINLIST        32523
+
+
+//#endif  // posfilemanapp_rh

@@ -1,0 +1,269 @@
+Comparing files PosOut.cpp and SPSOUT.CPP
+***** PosOut.cpp
+//---------
+// PosOut.C
+//---------
+***** SPSOUT.CPP
+//---------
+// SPSOut.C
+//---------
+*****
+
+***** PosOut.cpp
+#include "pipes.h"
+
+***** SPSOUT.CPP
+#include "pipes.h"
+#include "recfiltr.h"
+
+*****
+
+***** PosOut.cpp
+// Global C++ objects
+SPSLogger Logger("PosOut");
+INETManager Inet;
+***** SPSOUT.CPP
+// Global C++ objects
+SPSLogger Logger("SPSOut");
+INETManager Inet;
+*****
+
+***** PosOut.cpp
+IPCMessage Msg;
+
+***** SPSOUT.CPP
+IPCMessage Msg;
+AuditFilter FilterAudit;
+CheckFilter FilterChecks;
+
+*****
+
+***** PosOut.cpp
+   {
+    Logger.Log("USAGE IS PosOut Cluster DestHostName DestProcessName");
+    Logger.Abort();
+***** SPSOUT.CPP
+   {
+    Logger.Log("USAGE IS SPSOut Cluster DestHostName DestProcessName");
+    Logger.Abort();
+*****
+
+***** PosOut.cpp
+ // Skip past trailing blanks to find end of data
+ for (stop=FldLen-1; FldLen>=0 && FldAdr[stop]==' '; ++stop);
+
+***** SPSOUT.CPP
+ // Skip past trailing blanks to find end of data
+ for (stop=FldLen-1; FldLen>=0 && FldAdr[stop]==' '; --stop);
+
+*****
+
+***** PosOut.cpp
+
+#define MAXAUDITRECS 20
+#define MAXCHECKRECS 20
+AUDIT Audit[MAXAUDITRECS];
+ACTIVITY Activity[MAXAUDITRECS];
+CHECK Check[MAXCHECKRECS];
+MERCHANT Merch;
+***** SPSOUT.CPP
+
+//-------------------------
+// Format KW to SPS message
+//-------------------------
+#define PUT(f,n,t) Put(f,sizeof(f),n,t)
+MERCHANT Merch;
+*****
+
+***** PosOut.cpp
+TINQ Inq;
+
+static int _atoi(char *String,int Len)
+{
+ char Buf[20];
+ memcpy(Buf,String,Len);
+ Buf[Len]=0;
+ return atoi(Buf);
+}
+***** SPSOUT.CPP
+TINQ Inq;
+static int KWtoSPS(void)
+{
+ int NumInqRecs=0;
+ int NumMerchRecs=0;
+ int i;
+ char *Ptr;
+
+ FilterAudit.Reset();
+ FilterChecks.Reset();
+
+ Msg.PutFld(FN_TRANTYPE,T_POSAUTH);
+ if ( (Ptr=strtok(IOBuf,"\n")) == NULL )
+   return false;
+
+ while (Ptr!=NULL)
+  {
+   switch(*Ptr)
+    {
+     case 'A': if ( strlen(Ptr) != sizeof(AUDIT) )
+                 return false;
+               FilterAudit.Insert((AUDIT*)Ptr);
+                break;
+
+     case 'M':  ++NumMerchRecs;
+                if ( strlen(Ptr) != sizeof(MERCHANT) )
+                  return false;
+                memcpy(&Merch,Ptr,sizeof(MERCHANT));
+                break;
+
+     case 'I':  ++NumInqRecs;
+                if ( strlen(Ptr) != sizeof(TINQ) )
+                  return false;
+                memcpy(&Inq,Ptr,sizeof(TINQ));
+                break;
+
+     case 'C':  if ( strlen(Ptr) != sizeof(CHECK) )
+                  return false;
+                FilterChecks.Insert((CHECK*)Ptr);
+                break;
+
+     default:  return false;
+    }
+   Ptr=strtok(NULL,"\n");
+  }
+
+ if ( NumInqRecs==0 || NumMerchRecs==0 )
+   return false;
+
+ PUT(Inq.Amount,FN_AMOUNT,"AMT");
+ PUT(Inq.StateCode,FN_LICENSESTATE,"ST");
+ PUT(Inq.License,FN_LICENSE,"LIC");
+ PUT(Inq.DateOfBirth,FN_DOB,"DOB");
+ PUT(Inq.CheckNumber,FN_CHECKNUMBER,"CHKNUM");
+ PUT(Inq.PhoneNumber,FN_PHONE,"PH");
+ PUT(Inq.BankNumber,FN_BANKNUMBER,"BKNO");
+ PUT(Inq.BankAccount,FN_BANKACCOUNT,"BKAC");
+ //Put(Inq.BankNumber,sizeof(Inq.BankNumber)+sizeof(Inq.BankAccount),
+ //      FN_MICR,"MICR");
+ PUT(Inq.SSN,FN_SSN,"SSN");
+ PUT(Inq.Misc1,FN_KWFLD1,"M1");
+ PUT(Inq.Misc2,FN_KWFLD2,"M2");
+ PUT(Inq.Misc3,FN_KWFLD3,"M3");
+ PUT(Inq.Misc4,FN_KWFLD4,"M4");
+ PUT(Inq.Misc5,FN_KWFLD5,"M5");
+ PUT(Merch.MerchId,FN_MERCHID,"TID");
+ PUT(Inq.CheckSwipe,FN_CHECKSWIPE,"CSW");
+ PUT(Inq.LicenseSwipe,FN_LICENSESWIPE,"LSW");
+ Msg.PutFld(FN_KWMERCHANTRECORD,&Merch,sizeof(Merch));
+ FilterAudit.PutMsg(Msg);
+ FilterChecks.PutMsg(Msg);
+
+ return true;
+}
+*****
+
+Resync Failed.  Files are too different
+***** PosOut.cpp
+static char montbl[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+static BYTE _calcage(char* mmddyy)
+{
+ time_t now=time(NULL);
+ struct tm* t=localtime(&now);
+
+ BYTE mon=(BYTE)_atoi(&mmddyy[0],2);
+ BYTE day=(BYTE)_atoi(&mmddyy[2],2);
+ BYTE yr=(BYTE)_atoi(&mmddyy[4],2);
+ WORD DaysLastYear;
+ int i;
+
+ // calc the Julian date
+ montbl[2] = (yr%4) ? 28 : 29;
+
+ for (i=1; i<mon; ++i)
+  day += montbl[i];
+ if ( ++t->tm_yday >= day )
+  return (BYTE) t->tm_yday - day;
+
+ DaysLastYear = ((yr-1) % 4) ? 365 : 366;
+
+ return (BYTE) (t->tm_yday + (DaysLastYear - day+1));
+}
+
+
+void AuditToActivity(AUDIT* AuditRec,ACTIVITY* ActivityRec)
+{
+ char *decPt;
+ char sAmount[sizeof(AuditRec->Amount)+1];
+
+ memcpy(ActivityRec->MerchID,AuditRec->TID,sizeof(ActivityRec->MerchID));
+ memcpy(ActivityRec->Date,AuditRec->Date,sizeof(ActivityRec->Date));
+ memcpy(&ActivityRec->Time[0],&AuditRec->Time[0],2);
+ memcpy(&ActivityRec->Time[2],&AuditRec->Time[3],2);
+ memcpy(&ActivityRec->Time[4],&AuditRec->Time[6],2);
+ memcpy(ActivityRec->BankNumber,AuditRec->BankNumber,
+         sizeof(ActivityRec->BankNumber));
+ memcpy(ActivityRec->AccountNumber,AuditRec->BankAccount,
+         sizeof(ActivityRec->AccountNumber));
+ ActivityRec->CheckNumber = _atoi(AuditRec->CheckNumber,
+                                    sizeof(AuditRec->CheckNumber));
+ memcpy(ActivityRec->StateCode,AuditRec->StateCode,
+           sizeof(ActivityRec->StateCode));
+ memcpy(ActivityRec->DriversLicense,AuditRec->DriversLicense,
+           sizeof(ActivityRec->DriversLicense));
+ memcpy(ActivityRec->SSN,AuditRec->SSN,sizeof(ActivityRec->SSN));
+ memcpy(ActivityRec->DOB,AuditRec->DOB,sizeof(ActivityRec->DOB));
+ memcpy(ActivityRec->Sic,AuditRec->Sic,sizeof(ActivityRec->Sic));
+ ActivityRec->Rcode = (BYTE) _atoi(AuditRec->OutputCode,2);
+ if ( AuditRec->RetryOutputCode[0] == ' ' )
+  ActivityRec->PriorRcode=0;
+ else
+  ActivityRec->PriorRcode = (BYTE) _atoi(AuditRec->RetryOutputCode,2);
+ memcpy(ActivityRec->TotalOutput,AuditRec->TotalOutput,
+          sizeof(ActivityRec->TotalOutput));
+
+
+ // Convert amount to whole dollars rounded.
+ //         
+ // See if it has a decimal point. If it has no decimal point, assume
+ // that it's whole dollars. If it has a decimal point, round it up
+ // to the nearest dollar.
+ memset(sAmount,0,sizeof(sAmount));
+ memcpy(sAmount,AuditRec->Amount,sizeof(AuditRec->Amount));
+ if ( (decPt=strchr(sAmount,'.')) == NULL )
+   ActivityRec->Amount = atoi(sAmount);
+ else
+  {
+   ActivityRec->Amount=atoi(sAmount) * 100 + atoi(&decPt[1]);
+   // Round to nearest dollor
+   ActivityRec->Amount += 50;
+   ActivityRec->Amount /= 100;
+  }
+
+ ActivityRec->Age = _calcage(ActivityRec->Date);
+}
+
+//-------------------------
+// Format KW to SPS message
+//-------------------------
+#define PUT(f,n,t) Put(f,sizeof(f),n,t)
+
+static int KWtoSPS(void)
+{
+ int NumAuditRecs=0;
+ int NumCheckRecs=0;
+ int NumInqRecs=0;
+ int NumMerchRecs=0;
+ int i;
+ char *Ptr;
+
+ Msg.PutFld(FN_TRANTYPE,T_POSAUTH);
+ if ( (Ptr=strtok(IOBuf,"\n")) == NULL )
+   return false;
+
+ while (Ptr!=NULL)
+  {
+   switch(*Ptr)
+***** SPSOUT.CPP
+*****
+

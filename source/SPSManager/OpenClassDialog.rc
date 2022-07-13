@@ -1,0 +1,33 @@
+/****************************************************************************
+
+
+OpenClassDialog.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#include "OpenClassDialog.rh"
+
+IDD_OPENCLASS DIALOG 0, 0, 281, 190
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Open", IDC_OPENCLASSBUTTON, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 79, 165, 50, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 163, 165, 50, 14
+ CONTROL "Set", IDC_OPENTEMPLATEBUTTON, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 34, 116, 50, 14
+ CONTROL "", IDC_OPENCLASSNAME, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 41, 90, 70, 13
+ CONTROL "ListBox1", IDC_OPENCLASSLIST, "listbox", LBS_STANDARD | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 159, 15, 112, 147
+ CONTROL "", IDC_OPENCLASSTEMPLATE, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER, 41, 135, 70, 13
+ CONTROL "Frame1", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 27, 64, 100, 91
+ CONTROL "Class", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 35, 79, 22, 10
+ CONTROL "Template", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 90, 118, 33, 11
+ CONTROL "Select an Item from the List or type a New Name below.", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 11, 14, 137, 17
+ CONTROL "Frame2", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 28, 110, 98, 1
+ CONTROL "To select a template for a new item, select an item from the list and click Set.", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 11, 39, 136, 16
+ CONTROL " New", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 36, 60, 18, 9
+}
+

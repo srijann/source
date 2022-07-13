@@ -1,0 +1,22 @@
+The positive file has code to make 3 keys:
+   Licence
+   Micr
+   Phone
+Is that all of them?
+
+BankPhone and PreAuth have no Keys
+
+Logfile has keys on:
+   Phone
+   Bank Number
+   Licence
+   SSN
+   Approval Number
+
+ManageDb is not in the code anywhere
+
+
+
+
+Are any keys or parts missing that you know of?
+

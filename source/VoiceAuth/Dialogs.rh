@@ -1,0 +1,55 @@
+//----------------------------------------------------------------------------
+//  Project Dialtest
+//  Secure Payments
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:    Dialtest Application
+//  FILE:         checkauth.rh
+//  AUTHOR:       Jack H Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in dltstapp.rc.
+//
+//----------------------------------------------------------------------------
+//#if !defined(checkauth_rh)   // Sentry use file only if it's not already included.
+//#define checkauth_rh
+
+//
+// Application specific definitions:
+//
+
+#define IDC_SSNSCORE	102
+#define IDC_THESSN	104
+#define IDD_SSNSCORE	11
+#define IDD_YESNO	9
+#define IDC_YESNOTEXT	101
+#define IDD_DECLINED	6
+#define IDD_APPROVAL	5
+#define IDD_VERIFYREFERRAL	3
+#define IDD_FETCHREFERRAL	2
+
+#define IDC_APPNUM	101
+#define IDC_HCAPPNUM1	101
+#define IDC_HCAPPNUM4	104
+#define IDC_HCAPAMOUNT1	105
+#define IDC_HCAPAMOUNT2	106
+#define IDC_HCAPAMOUNT3	107
+#define IDC_HCAPAMOUNT4	108
+#define IDC_HCAPCHECKNUM1	109
+#define IDC_HCAPCHECKNUM2	110
+#define IDC_HCAPCHECKNUM3	111
+#define IDC_HCAPCHECKNUM4	112
+#define IDC_HCAPPNUM3	103
+#define IDC_HCAPPNUM2	102
+#define IDD_HOLDCHECKAPPROVAL	8
+#define IDC_REFERRALNUM	102
+
+#define IDC_VFYMERCHID	103
+#define IDC_VFYAMOUNT	104
+#define IDC_VFYMERCHNAME	105
+
+//#endif
+
+
+

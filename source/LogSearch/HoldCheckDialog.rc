@@ -1,0 +1,45 @@
+/****************************************************************************
+
+
+HoldCheckDialog.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#include "HoldCheckDialog.rh"
+
+IDD_HOLDCHECK DIALOG 0, 60, 422, 180
+STYLE DS_ABSALIGN | DS_3DLOOK | WS_POPUP | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Frame3", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 9, 10, 226, 160, 0
+ CONTROL " Hold Check", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 15, 7, 44, 10, 0
+ CONTROL "", IDC_HCVEHICLEVALUE, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 137, 21, 41, 14, WS_EX_RIGHT
+ CONTROL "", IDC_HCAMOUNT1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 73, 60, 41, 13, 0
+ CONTROL "", IDC_HCCHECKNUM1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 119, 60, 30, 13, 0
+ CONTROL "", IDC_HCAMOUNT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 73, 74, 41, 13, 0
+ CONTROL "", IDC_HCCHECKNUM2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 119, 74, 30, 13, 0
+ CONTROL "", IDC_HCAMOUNT3, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 73, 88, 41, 14, 0
+ CONTROL "", IDC_HCCHECKNUM3, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 119, 88, 30, 14, 0
+ CONTROL "", IDC_HCAMOUNT4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 73, 103, 41, 13, 0
+ CONTROL "", IDC_HCCHECKNUM4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 119, 103, 30, 13, 0
+ CONTROL "Vehicle Value", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 89, 21, 46, 10, 0
+ CONTROL "Check #1", -1, "static", SS_RIGHT | WS_CHILD | WS_VISIBLE, 37, 60, 33, 13, 0
+ CONTROL "Check #2", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 39, 74, 33, 13, 0
+ CONTROL "Check #3", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 39, 88, 33, 14, 0
+ CONTROL "Check #4", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 39, 103, 33, 13, 0
+ CONTROL "", IDC_HCSUM, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 73, 122, 41, 14
+ CONTROL "SUM", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 53, 122, 19, 9, 0
+ CONTROL "Frame1", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 73, 118, 41, 2, 0
+ CONTROL "Amount", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 77, 48, 28, 9, 0
+ CONTROL "Check Number", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 119, 41, 29, 17, 0
+ CONTROL "Approval Number", 101, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 157, 41, 34, 17, 0
+ CONTROL "", IDC_HCAPPNUM1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 159, 60, 21, 13, 0
+ CONTROL "", IDC_HCAPPNUM2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 159, 74, 21, 13, 0
+ CONTROL "", IDC_HCAPPNUM3, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 159, 88, 21, 13, 0
+ CONTROL "", IDC_HCAPPNUM4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER, 159, 103, 21, 13, 0
+}
+

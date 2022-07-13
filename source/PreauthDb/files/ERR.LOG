@@ -1,0 +1,237 @@
+@73 Start - Selection entered - . .0. .1.
+@80 
+1. TimeofPreauth - 723335552. .723335552. .0.
+@91 
+1. Read Data
+  -XXX02.
+  -XXX444333222
+  -723335552
+  -0
+  -5
+  -72
+ 0. .0.
+@177 1. m_fillnew() - . .0. .0.
+@73 Start - Selection entered - . .0. .2.
+@204 2. m_recreadAuthID() - . .0. .0.
+@73 Start - Selection entered - . .0. .2.
+@204 2. m_recreadAuthID() - . .0. .0.
+@73 Start - Selection entered - . .0. .3.
+@128 
+3Set TimeOfPostauthRead - . .723335557. .0.
+@244 3. m_UpdateTimeOfPostauth() - . .0. .0.
+@269 3 rec  - VVV3334440. .0. .0.
+@299 3 rec written - . .0. .1.
+@269 3 rec  - VVV3334441. .0. .1.
+@299 3 rec written - . .0. .2.
+@269 3 rec  - VVV3334442. .0. .2.
+@299 3 rec written - . .0. .3.
+@269 3 rec  - VVV3334443. .0. .3.
+@299 3 rec written - . .0. .4.
+@269 3 rec  - VVV3334444. .0. .4.
+@299 3 rec written - . .0. .5.
+@269 3 rec  - VVV3334445. .0. .5.
+@299 3 rec written - . .0. .6.
+@269 3 rec  - VVV3334446. .0. .6.
+@299 3 rec written - . .0. .7.
+@269 3 rec  - VVV3334447. .0. .7.
+@286 3 rec found - . .0. .8.
+@299 3 rec written - . .0. .8.
+@269 3 rec  - VVV3334448. .0. .8.
+@299 3 rec written - . .0. .9.
+@269 3 rec  - VVV3334449. .0. .9.
+@299 3 rec written - . .0. .10.
+@269 3 rec  - VVV3334450. .0. .10.
+@299 3 rec written - . .0. .11.
+@269 3 rec  - VVV3334451. .0. .11.
+@299 3 rec written - . .0. .12.
+@269 3 rec  - VVV3334452. .0. .12.
+@299 3 rec written - . .0. .13.
+@269 3 rec  - VVV3334453. .0. .13.
+@299 3 rec written - . .0. .14.
+@269 3 rec  - VVV3334454. .0. .14.
+@299 3 rec written - . .0. .15.
+@269 3 rec  - VVV3334455. .0. .15.
+@299 3 rec written - . .0. .16.
+@269 3 rec  - VVV3334456. .0. .16.
+@299 3 rec written - . .0. .17.
+@269 3 rec  - VVV3334457. .0. .17.
+@299 3 rec written - . .0. .18.
+@269 3 rec  - VVV3334458. .0. .18.
+@299 3 rec written - . .0. .19.
+@269 3 rec  - VVV3334459. .0. .19.
+@299 3 rec written - . .0. .20.
+@269 3 rec  - XXX3334440. .0. .20.
+@299 3 rec written - . .0. .21.
+@269 3 rec  - XXX444333222. .0. .21.
+@299 3 rec written - . .0. .22.
+@269 3 rec  - XXX444333222. .0. .22.
+@274 3 feof - . .0. .0.
+
+
+
+
+@73 Start - Selection entered - . .0. .3.
+@128 
+3Set TimeOfPostauthRead - . .722222222. .0.
+@244 3. m_UpdateTimeOfPostauth() - . .0. .0.
+@269 3 rec  - VVV3334440. .0. .0.
+@299 3 rec written - . .0. .1.
+@269 3 rec  - VVV3334441. .0. .1.
+@299 3 rec written - . .0. .2.
+@269 3 rec  - VVV3334442. .0. .2.
+@299 3 rec written - . .0. .3.
+@269 3 rec  - VVV3334443. .0. .3.
+@299 3 rec written - . .0. .4.
+@269 3 rec  - VVV3334444. .0. .4.
+@299 3 rec written - . .0. .5.
+@269 3 rec  - VVV3334445. .0. .5.
+@299 3 rec written - . .0. .6.
+@269 3 rec  - VVV3334446. .0. .6.
+@299 3 rec written - . .0. .7.
+@269 3 rec  - VVV3334447. .0. .7.
+@299 3 rec written - . .0. .8.
+@269 3 rec  - VVV3334448. .0. .8.
+@299 3 rec written - . .0. .9.
+@269 3 rec  - VVV3334449. .0. .9.
+@299 3 rec written - . .0. .10.
+@269 3 rec  - VVV3334450. .0. .10.
+@299 3 rec written - . .0. .11.
+@269 3 rec  - VVV3334451. .0. .11.
+@299 3 rec written - . .0. .12.
+@269 3 rec  - VVV3334452. .0. .12.
+@299 3 rec written - . .0. .13.
+@269 3 rec  - VVV3334453. .0. .13.
+@299 3 rec written - . .0. .14.
+@269 3 rec  - VVV3334454. .0. .14.
+@299 3 rec written - . .0. .15.
+@269 3 rec  - VVV3334455. .0. .15.
+@299 3 rec written - . .0. .16.
+@269 3 rec  - VVV3334456. .0. .16.
+@299 3 rec written - . .0. .17.
+@269 3 rec  - VVV3334457. .0. .17.
+@299 3 rec written - . .0. .18.
+@269 3 rec  - VVV3334458. .0. .18.
+@299 3 rec written - . .0. .19.
+@269 3 rec  - VVV3334459. .0. .19.
+@299 3 rec written - . .0. .20.
+@269 3 rec  - XXX3334440. .0. .20.
+@299 3 rec written - . .0. .21.
+@269 3 rec  - XXX444333222. .0. .21.
+@299 3 rec written - . .0. .22.
+@269 3 rec  - XXX444333222. .0. .22.
+@274 3 feof - . .0. .0.
+@73 Start - Selection entered - . .0. .4.
+
+
+@154 
+4. Delete Data
+  -VVV333234234.
+  -234234
+  -723334456
+  -0
+  -0
+  -96
+ 0. .0.
+@320 4. m_delete() - . .0. .0.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@348 4. m_delete() - end of file. .0. .3503.
+
+
+
+
+@73 Start - Selection entered - . .0. .4.
+@154 
+4. Delete Data
+  -CCC16.
+  -VVV3334456
+  -723334456
+  -0
+  -0
+  -96
+ 0. .0.
+@320 4. m_delete() - . .0. .0.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@337 4. m_delete() - . .0. .3503.
+@348 4. m_delete() - end of file. .0. .3503.
+
+
+@73 Start - Selection entered - . .0. .5.
+@73 Start - Selection entered - . .0. .4.
+@154 
+4. Delete Data
+  -CCC16.
+  -VVV3334456
+  -723334456
+  -0
+  -0
+  -96
+ 0. .0.
+@320 4. m_delete() - . .0. .0.
+@337 4. m_delete() - . .0. .0.
+@337 4. m_delete() - . .0. .1.
+@337 4. m_delete() - . .0. .2.
+@337 4. m_delete() - . .0. .3.
+@337 4. m_delete() - . .0. .4.
+@337 4. m_delete() - . .0. .5.
+@337 4. m_delete() - . .0. .6.
+@337 4. m_delete() - . .0. .7.
+@337 4. m_delete() - . .0. .8.
+@337 4. m_delete() - . .0. .9.
+@337 4. m_delete() - . .0. .10.
+@337 4. m_delete() - . .0. .11.
+@337 4. m_delete() - . .0. .12.
+@337 4. m_delete() - . .0. .13.
+@337 4. m_delete() - . .0. .14.
+@337 4. m_delete() - . .0. .15.
+@337 4. m_delete() - . .0. .16.
+@337 4. m_delete() - . .0. .17.
+@337 4. m_delete() - . .0. .18.
+@337 4. m_delete() - . .0. .19.
+@337 4. m_delete() - . .0. .20.
+@337 4. m_delete() - . .0. .21.
+@337 4. m_delete() - . .0. .22.
+@349 4. m_delete() - end of file. .0. .23.
+@73 Start - Selection entered - . .0. .7.

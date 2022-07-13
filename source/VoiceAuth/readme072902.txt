@@ -1,0 +1,162 @@
+07/29/02   VoiceAuth
+
+On VoiceAuth Decision Screen
+
+Past logging information - Grid on left
+
+Incorrectly displays OP DECLINED message. Instead shows original R# reason.
+1. It is SPSLog
+
+This has wortked this wasy for perhaps 2 years since Rick made a 
+change of some sort related to R# messages
+
+
+It is assumed that Rick needs to fix it, but locating it on the Win
+(Jack's) system is considered the start.
+
+logrec.Message probably holds the data
+
+
+Date     Merch      Amt         Chknum  BV  Response ID
+5 Lines
+
+Inquiry History
+
+search .rc for file Unverifiable
+VoiceAuth\DecisionDialog.rc
+
+ CONTROL "Date           Merch    Amt      Cknum     BV    Response", -1, "stati
+ CONTROL "", IDC_ACT1DATE, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE
+ CONTROL "", IDC_ACT1MERCH, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBL
+ CONTROL "", IDC_ACT1CKNUM, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBL
+ CONTROL "", IDC_ACT1AMT, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE
+ CONTROL "", IDC_ACT1BV, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE |
+ CONTROL "", IDC_ACT1RC, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE |
+ CONTROL "", IDC_CK1DATE, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE
+ CONTROL "", IDC_CK1MERCH, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE
+ CONTROL "", IDC_CK1AMT, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE |
+ CONTROL "", IDC_CK1CKNUM, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE
+
+
+
+Seems like IDC_ACT1RC is the data member
+#defined in DecisionDialog.rh
+
+
+
+
+In IPC message
+00-19 Ricks messages
+20 - 99 are Jack's
+
+
+Output Code - In 'A' audit record (326 characters), positions 135, 135 
+are 2 character code
+00 - apv - verification only
+01 - decline
+20-39 rule violations
+  21-31 call ctrs
+40-49 bad checks
+50-79 keying errors
+80-89 apvls 
+90-99 more data required
+
+if Audit file has msg 50-59,
+it's just not passed to Jack, nor TID NOT FOUND
+
+
+In DecisionDialog.cpp
+ActRows.RC - field, not file
+  @40  created @40
+  @424 Populated -  ActRows[Row].IDS->Transfer(Buf,tdSetData);
+    Transfer(*tEdit) in IPCTransfer.h
+  @452 - .Rcode string set from RcodeInfo
+
+#ifndef __RCODEINFO_H
+#define __RCODEINFO_H
+
+class RcodeInfo
+ {
+  public:
+  char* rcodeText(int rcode);
+  bool IsKenwoodRcode(int rc) { return (rc>=1 && rc<=20); };
+  bool IsApprovalRcode(int rc) { return (rc>=80 && rc<=89); };
+  bool IsDeclineRcode(int rc) { return (rc>=21 && rc<=28); };
+  bool IsErrorRcode(int rc) { return ! IsApprovalRcode(rc) &&
+                                     ! IsDeclineRcode(rc); };
+ };
+#endif
+
+classlib\RCodeInfo.cpp - strings are initialized
+
+At position 190 in Record is ?DeliveryMethod
+  O - Operator
+  N - Network
+..So is this data available???
+
+IPCMessage& replyMsg; is declared in DecisionDialog.h
+
+DecisionDialog.cpp 
+@484 displayActivity() calls
+@396 void DecisionDialog::formatActivityRow(int Row,int Index)
+.. So how did the data get into into Act to get to the ActRows[] Edits?? 
+Act is an ACTIVITY record @100 decisionDialog.h
+
+
+File Name - DTA..101  .. or whatever cluster number
+transports all the records from UNIX to NT (including Audit)
+
+ACTIVITY is defined in include\kwrec.h as a translation from an 
+AUDIT. An AUDIT has a DeliveryMethod in it, so need to add
+DeliveryMethod to ACTIVITY... or key it into the RCode
+Translation is done in ... 
+
+
+########   Final Resolution
+I changed two lines in rcodesinfo.cpp
+Line 2  - "KENWOOD NEG 01" became "DECL FORCED" 
+Line 29 - "UNDEFINED 29" became "DECL NEGATIVE" 
+
+Rick adjusted his code to trigger message 29
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

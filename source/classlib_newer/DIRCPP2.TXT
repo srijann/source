@@ -1,0 +1,238 @@
+ Directory of C:\sps\source\classlib
+
+ AuthRules.cpp         19,338
+~  This is a Derived class of DBManRecord to handle the Authorization
+~  Rules Record.
+
+ BitString.cpp          7,399
+~  This is a general purpose Bit String Handler. I don't think it
+~  was ever used in the SPS application.
+
+ CalcMenuPos.cpp        1,668
+~  Source file for implementation of CalcMenuPos
+~  Note: This is not an object. It's just a plain old function.
+~  Calculates where to pop up a menu in relation to a window.
+~  It's used by the TEditStateCode class to figure out where to
+~  pop up the state code list.
+
+ CheckActivity.cpp        288
+bool CheckActivity::Count()
+
+ checkauth.cpp         44,008
+~  Source file for implementation of Check Auth
+~  CheckAuth is a derived class of IPCMessage. It contains the
+~  Check Authorization logic.
+
+ ClassTest.cpp            226
+void Pr(DBManRecord* Rec) - does printf
+
+ ComboBoxEx.cpp         5,316
+~  Source file for implementation of TComboBoxEx (TComboBox).
+~  Provides the following enhancements to the TComboBox Class
+~    1. Causes the list to drop automatically whenever the Control gets
+~       the focus.
+~    2. SpaceBar toggles the LIST UP and DOWN.
+~    2. Treats first character of each String as a selection Hot Key
+~    3. Supports Clear function (Windows doesn't allow it for Drop
+~         Down List Boxes for some unknown reason).
+~    4. Supports selection by Associated Data Value.
+
+ DataReq.cpp            3,292
+~  Source file for implementation of DataRequirements (DBManRecord)
+~  This is a Derived class of DBManRecord to handle the Data
+~  Requirements Record.
+
+ DBManRec.cpp           4,071
+~  Source file for implementation of DBManRecord (Base Class)
+~  This is the bass class from which all of the other DBManager
+~  records are derived. It provides some default behavior but most
+~  of the member functions are intended to be overriden in the
+~  derived class.
+
+ DCManage.cpp          21,298
+~  Source file for implementation of DialogControlManager (IPCTransfer)
+~  This is a derived class of IPCTranser. It's a container/handler
+~  for Dialog Controls. It provides a way
+~  of linking fields directly to controls via IPCMessage Field numbers.
+~  It also provides the ability to associate Message Numbers with
+~  the fields.
+~  This object is used primarily by the Voice Authorization program
+~  to move data back and forth from the IPCMessage to a Window and
+~  it also updates the Message Window as control focus changes.
+
+ DecimalValidator.cpp   1,885
+~  Source file for implementation of DecimalValidator (TValidator)
+~  A validator for decimal entry. Requires all numerics and allows
+~  only one decimal point. Insures no more than max number of characters
+~  provided by caller to the right and left of the decimal points.
+
+ EditStateCodes.cpp     8,158
+~  Source file for implementation of EditStateCodes (TEdit).
+~  Provide an Edit Control with a popup list of state codes. The
+~  operator types the first character of the state and a list pops
+~  up to help with the second character (it's actually a menu but
+~  the user doesn't select from it).
+
+ EditUns.cpp            3,607
+~  Source file for implementation of TEditUns (PlainEdit).
+~  This is a derived class of Tedit (PlainEdit) to support Unsigned
+~  number conversions To/From Edit Controls (provides polymorphic
+~  member functions for ease of use). See the UnsNum module
+~  in the Lib directory for a description of Unsigned Numbers.
+~
+~  NOTE: See EditVar. It may be more useful than this. It does
+~  the transferring for you automatically.
+
+ EditVar.cpp           10,416
+~  Source file for implementation of TEditVar::TEditVar (PlainEdit).
+~  Makes a direct connection between a TEdit and a Variable, moving
+~  it automatically from the Control to the Variable when the Control
+~  value is changed.
+~  Displays the Variable value when the TEdit is created. After that
+~  you have to call the Display function to re-display the variable.
+~  Call the transfer function to cause the control value to be moved
+~  immediately to the variable.
+~  Supports all standard data types and includes these Options:
+~
+~   EVOPT_ZEROISNULL  - Treat Zero as the NULL Value. Display a
+~                       blank field instead of zero. If a field is
+~                       blank, set it's variable to zero.
+~   EVOPT_MAXISNULL   - Treat Max value for the unsigned type as NULL,
+~                       (UINT_MAX,USHRT_MAX,UCHAR_MAX).
+~   EVOPT_ZEROFILL    - Zero fill values to TextLimit when displayed.
+
+ FieldValidation.cpp   20,058
+~  Source file for implementation of FieldValidation.
+~  These are member functions of the CheckAuth object related to
+~  the validation of fields. It uses the Data Requirements record
+~  to check for missing fields and contains validation routines for
+~  fields that are required.
+
+ IPCTransfer.cpp        4,914
+~  Source file for implementation of IPCTransfer (Base Class)
+~  Provides a mechanism for transferring date to/from Window Controls
+~  and IPCMessage Fields.
+
+ LevelSelect.cpp        4,179
+~  Source file for implementation of TLevelSelect (TEdit).
+~  This is an Edit control that acts like a Button. When you click it,
+~  it changes values. It's used by SPSMANAGER to handle the Rule
+~  Enablers.
+
+ MerchantRec.cpp        6,586
+~  Source file for implementation of MerchantRec (DBManRecord)
+~  This is a Derived class of DBManRecord to handle the Merchant Record.
+
+ msgsize.cpp            6,957
+  some sort of field test app
+
+ MsgWin.cpp            10,941
+~  Source file for implementation of TMsgWin (TDialog).
+
+ PlainEdit.cpp          1,390
+~  Source file for implementation of PlainEdit::PlainEdit (TEdit).
+~  This is simply a TEdit that doesn't have a pop up menu (the right
+~  mouse click is ignored. There was probably a better way of doing this
+~  but I'll be damned if I could figure it out.
+
+ PositiveRules.cpp      2,527
+~  Source file for implementation of PositiveRules (DBManRecord)
+~  This is a Derived class of DBManRecord to handle the Positive File
+~  Rules Record.
+
+ PosResponse.cpp        1,841
+~  Source file for implementation of PosResponse   (DBManRecord)
+~  This is a Derived class of DBManRecord to handle the POS Response
+~  Record.
+
+ productclasslist.cpp   8,182
+~  Source file for implementation of ProductClassList (StringList)
+~  This is a Derived class of StringList to handle the Product Code
+~  List.
+
+ rcodeinfo.cpp          2,804
+~  Source file for implementation of RcodeInfo
+~  Encapsulates information about SPS response codes.
+~  Most of the info is inline (see the header).
+
+ RecSize.cpp            4,108
+  has main() - seems to be test code?
+
+ Scoring.cpp            7,070
+~  Source file for implementation of Check Auth
+~  This is the Transaction scoring member function of the CheckAuth object.
+
+ StringDB.cpp           7,411
+~  Source file for implementation of StringDB (TFile).
+~  Manages a String Database in a disk file. It's used by Voice
+~  Authorizations to handle the Messages for the Message Window.
+
+ stringlist.cpp        14,615
+~  Source file for implementation of StringList (Base Class)
+~  This is a general purpose List Handler class. It provides member
+~  functions for fetching the list from a variety of sources, including
+~  files and database servers. It also provides member functions for
+~  managing the list.
+~  List items are simply null-terminated Text Strings.
+
+ StringTreeList.cpp     5,131
+~  Source file for implementation of StringTreeList (StringList)
+~  This is a Derived class of StringList to provide a tree structured
+~  list. It is used by the SPS Manager database to handle the Auth
+~  Rules List.
+~  List items are preceded either by a P (Parent) or a C (Child)
+
+ TimeZoneInfo.cpp       3,490
+~  Source file for implementation of TineZoneInfo
+~  Encapsulates information about Time Zones
+
+ timezones.cpp            859
+  soem timezone stuff
+
+ UnvFundsRules.cpp      5,806
+~  Source file for implementation of UnvFundsRules (DBManRecord)
+~  This is a Derived class of DBManRecord to handle the Unverified Funds
+~  Rules Record. (This is better known as the Transaction Scoring
+~  Record).
+
+
+*************************************************************************
+ File Name              Size    Project      Classes Declared
+
+ AuthRules.h            1,561                AuthRules : DBManRecord
+ BitString.h            2,228                BitString
+ CheckActivity.h          263                CheckActivity
+ CheckAuth.h            3,890                CheckAuth : IPCMessage
+ Classlib.h               129                CalcMenuPos()
+ ComboBoxEx.h           1,395  ComboTest     TComboBoxEx : TComboBox
+ DataReq.h              1,759                DataRequirements : DBManRecord
+ DBManRec.h             1,276                DBManRecord
+ DCManage.h             4,469                DialogControlManager : IPCTransfer
+                                             typedef struct ctlitem
+ DecimalValidator.h       274                TDecimalValidator : TValidator
+ EditStateCodes.h       1,236  Classlib      EditStateCodes : TEdit
+ EditUns.h              1,433  SPSManager    TEditUns : PlainEdit
+ EditVar.h              2,325  SPSManager    EditVar : PlainEdit
+ IPCMsgTransfer.h         289                MsgIO
+ IPCTransfer.h            571                IPCTransfer
+ LevelSelect.h          1,364  SPSManager    TLevelSelect : TEditUns
+ MerchantRec.h          1,465                MerchantRec : DBManRecord
+ MsgWin.h               1,481  ClassLib      TMsgWin : TDialog
+ PlainEdit.h            1,050  SPSManager    PlainEdit : TEdit
+ PositiveRules.h          748                PositiveRules : DBManRecord
+ PosResponse.h            727                PosResponse : DBManRecord
+ ProductClassList.h     1,424                ProductClassList : StringList
+ ProductCodeList.h         80                ProductList - empty
+ RcodeInfo.h              248                RcodeInfo
+                                             is Kenwood code or Approval R code
+ StringDb.h               665                StringDb
+ StringList.h           2,796                StringList
+ StringTreeList.h       1,110                StringTreeList : StringList
+ TimeZoneInfo.h           544                TimeZoneInfo
+ TimeZones.h              366                TimeZones - /
+ UnvFundsRules.h          804                UnvFundsRules : DBManRecord
+ win4me.h               1,165                - excludes headers
+
+typedef struct { dbtimeStamp
+                 ListName
+               }  LISTHDR

@@ -1,0 +1,65 @@
+       Max     Min     Max    Min    lead Alpha
+AL      7       7       0      0       0
+AK      7       0       0      0       0               ?min
+AZ      9       7       2      0       0               ?min
+AR      9       9       0      0       0
+CA      8       5       1      1       1
+CO     11       2       5      0       0              ???
+CT      9       9       0      0       0              more
+DE      7       1       0      0       0
+DC      9       0       0      0       0               ?min - looks like 9
+FL     13      12       1      1       1               alpha at start
+GA      9       0       0      0       0               ?min
+HI      9       9       0      0       0
+ID      9       9       2      0       0               more
+IL     12      12       1      1       1               more
+IN     10      10       0      0       0
+IA      9       9       2      0       0               more
+KS      9       9       1      1       0               more 9# or 'K' and 8#
+KY     10       9       1      0       0               may have leading alpha
+LA      9       9       0      0       0               leading digits are "00"
+ME      8       7       1      0       0               more
+MD     13      13       1      1       1               leading alpha - more
+MA      9       9       1      0       0               leading 'S' sometimes
+MI     13      13       1      1       1               leading alpha from last name
+MN     13      13       1      1       1               leading alpha from last name
+MS      9       0       0      0       0               ?min
+MO     10       9       1      0       0               if len==10 leading alpha
+MT      9       9       9      0       0
+NE      9       1       1      1       1
+NV     12       9       1      1       0               more
+NH     10      10       3      3       0               more
+NJ     15      15       1      1       1               leading alpha
+NM      9       8       0      0       0
+NY     19       9       1      1       0               more
+NC     12       1       0      0       0
+ND      9       0       0      0       0               ?min
+OH      9       8       2      0       0               much more
+OK      9       9       0      0       0
+OR      7       1       0      0       0
+PA      8       8       0      0       0
+RI      7       7       0      0       0               more
+SC      9       9       0      0       0
+SD      9       8       0      0       0
+TN      8       8       0      0       0
+TX      8       8       0      0       0
+UT      9       4       0      0       0
+VT      8       8       1      0       1
+VI      9       9       1      0       0              more
+WA     12      12       7      0       1            ??????
+WV      7       7       1      0       0
+WI     14      14       1      1       1
+WY     10       9       0      0       0
+
+
+
+
+
+
+
+
+
+
+
+
+

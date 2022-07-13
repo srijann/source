@@ -1,0 +1,50 @@
+//----------------------------------------------------------------------------
+//  Project PosFileMan
+//  Secure Payment Systems
+//  Copyright © 1997. All Rights Reserved.
+//
+//  SUBSYSTEM:    PosFileMan Application
+//  FILE:         posfilemanapp.h
+//  AUTHOR:       Jack Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in posfilemanapp.rc.
+//
+//----------------------------------------------------------------------------
+//#if !defined(posfilemanapp_rh)   // Sentry use file only if it's not already included.
+//#define posfilemanapp_rh
+
+
+//
+// Application specific definitions:
+//
+#define IDD_POSFILE 10
+//
+// Client Dialog
+//
+#define IDC_PFBANKNUMBER	102
+#define IDC_PFBANKACCOUNT	104
+#define IDC_PFLICENSESTATE	105
+#define IDC_PFLICENSE	106
+#define IDC_PFCONSUMERNAME	111
+#define IDC_PFBUSINESSNAME	113
+#define IDC_PFOVRDSALLOWED	116
+#define IDC_PFOVERRIDESALLOWED	116
+#define IDC_PFOVERRIDEDAYS	117
+#define IDC_PFMAXOVERRIDEAMOUNT	121
+#define IDC_PFMAXOVERRIDEACCUM	123
+#define IDC_PFACCOUNT1	125
+#define IDC_PFACCOUNT2	126
+#define IDC_PFACCOUNT3	127
+#define IDC_PFSIC1	129
+#define IDC_PFSIC2	130
+#define IDC_PFSIC3	131
+#define IDC_PFDATEADDED	137
+#define IDC_PFDATELASTAPPROVAL	138
+#define IDC_PFAPPROVEDTRANSACTIONS	139
+#define IDC_PFAPPROVEDDOLLARS	140
+#define IDC_PFPHONE	103
+#define IDC_PFDOB	109
+
+

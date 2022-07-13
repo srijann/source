@@ -1,0 +1,60 @@
+Subj:	Re: c routine
+Date:	97-03-14 01:14:08 EST
+From:	gregg@worldnet.att.net (Thomas Gregg)
+To:	JackEly2@aol.com
+
+I talked to Aoki and he did send me the packed to ascii and the ascii to
+packed.
+
+I don't have a routine for the check digit but I can tell you how to do
+it:
+
+
+  5 4 1 0 3 5  7 8 0  9 1 3  8 3 1 c   card number c = check digit
+  2 1 2 1 2 1  2 1 2  1 2 1  2 1 2 1   multiplier - go right to left
+------------------------------------
+ 10 4 2 0 6 5 14 8 0 18 2 3 16 3 2 c
+
+  1 4 2 0 6 5  5 8 0  9 2 3  7 3 2 c   sum the digits over 10
+
+  1+4+2+0+6+5 +5+8+0+ 9+2+3+ 7+3+2 = 57    sum the products
+
+                           10 - 7 = 3 =  c, the check digit
+
+
+I almost remembered how to do this, but I had to call Jeff to get the
+part where you subtract the units digit of the sum from 10.
+
+
+I have another question about conversion routines.
+
+how to I convert from int (or double or long) to ascii.  I saw a
+reference to a function itoa in one book in the book store, but nobody
+else mentioned it.
+
+Is there an itoa function like the atoi function?
+
+Thanks,
+
+Tom
+
+
+
+----------------------- Headers --------------------------------
+From gregg@worldnet.att.net  Fri Mar 14 01:12:16 1997
+Return-Path: gregg@worldnet.att.net
+Received: from mtigwc02.worldnet.att.net (mailhost.worldnet.att.net [204.127.131.34]) by emin36.mail.aol.com (8.6.12/8.6.12) with ESMTP id BAA07359 for <JackEly2@aol.com>; Fri, 14 Mar 1997 01:12:15 -0500
+Received: from tom ([207.146.88.232]) by mtigwc02.worldnet.att.net
+          (post.office MTA v2.0 0613 ) with SMTP id AAA26220
+          for <JackEly2@aol.com>; Thu, 13 Mar 1997 21:02:19 +0000
+Message-ID: <33286B5C.267F@worldnet.att.net>
+Date: Thu, 13 Mar 1997 16:02:20 -0500
+From: Thomas Gregg <gregg@worldnet.att.net>
+X-Mailer: Mozilla 3.0 (Win95; I)
+MIME-Version: 1.0
+To: JackEly2@aol.com
+Subject: Re: c routine
+References: <970313115526_-2074785030@emout20.mail.aol.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+

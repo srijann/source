@@ -1,0 +1,413 @@
+//----------------------------------------------------------------------------
+//  Project SpsManager
+//  
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:  SpsManager Application
+//  FILE:     spsmanagerapp.rc
+//  AUTHOR:     
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "spsmanagerapp.rh"
+#include "MerchantDialog.rc"
+#include "DataReqDialog.rc"
+#include "AuthRulesDialog.rc"
+#include "UnvFundsDialog.rc"
+#include "PosFileDialog.rc"
+#include "OpenTreeDialog.rc"
+#include "OpenClassDialog.rc"
+#include "PosResponse.rc"
+#include "ProdClassDialog.rc"
+
+IDM_SDI MENU 
+{
+ POPUP "&File"
+ {
+  POPUP "&Open"
+  {
+   MENUITEM "&Merchant Record", CM_OPENMERCHANT
+   MENUITEM "&Authorization Rules", CM_OPENAUTHRULES
+   MENUITEM "&Transaction Scoring Rules", CM_OPENUNVFUNDSRULES
+   MENUITEM "&Data Requirements ", CM_OPENDATAREQ
+   MENUITEM "&Response Messages", CM_OPENRESPMSG
+   MENUITEM "&Positive File Rules ", CM_OPENPOSFILERULES
+   MENUITEM "Product &Groups", CM_OPENPRODUCTCLASSES
+   MENUITEM "&Work File", CM_RELOADCHANGES
+  }
+
+  MENUITEM SEPARATOR
+  MENUITEM "&Save", CM_FILESAVE
+  MENUITEM "Save &ALL", CM_SAVEALL, GRAYED
+  MENUITEM "Save to &Work file", CM_SAVETOWORK
+  MENUITEM SEPARATOR
+  MENUITEM "E&xit\tAlt+F4", CM_EXIT
+ }
+
+ MENUITEM SEPARATOR
+ POPUP "&Window"
+ {
+  MENUITEM "&Close All", CM_CLOSEALLWINDOWS
+  MENUITEM "&Minimize All", CM_MINIMIZEALL
+ }
+
+ MENUITEM SEPARATOR
+ POPUP "&Help", INACTIVE
+ {
+  MENUITEM "&About...", CM_HELPABOUT
+ }
+
+}
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+IDM_SDI ACCELERATORS 
+{
+ VK_DELETE, CM_EDITCUT, VIRTKEY, SHIFT
+ VK_INSERT, CM_EDITCOPY, VIRTKEY, CONTROL
+ VK_INSERT, CM_EDITPASTE, VIRTKEY, SHIFT
+ VK_DELETE, CM_EDITCLEAR, VIRTKEY, CONTROL
+ VK_BACK, CM_EDITUNDO, VIRTKEY, ALT
+ VK_F3, CM_EDITFINDNEXT, VIRTKEY
+ VK_F2, CM_FILESAVE, VIRTKEY
+}
+
+
+
+
+// Context sensitive help cursor.
+//
+IDC_HELPCURSOR CURSOR "help.cur"
+
+
+// Table of help hints displayed in the status bar.
+//
+STRINGTABLE 
+{
+ CM_FILEOPEN, "Opens a window"
+ CM_FILESAVE, "Saves changes in current window"
+ CM_EXIT, "Quits SPS Manager and prompts to save the changes"
+ CM_EDITCOPY -1, "Edit operations"
+ CM_EDITCOPY, "Copies the selection and puts it on the Clipboard"
+ CM_EDITPASTE, "Inserts the Clipboard contents at the insertion point"
+ CM_EDITCLEAR, "Clears the active document"
+ CM_EDITFIND -1, "Search/replace operations"
+ CM_EDITFIND, "Finds the specified text"
+ CM_EDITREPLACE, "Finds the specified text and changes it"
+ CM_EDITFINDNEXT, "Finds the next match"
+ CM_HELPCONTENTS -1, "Access online help"
+ CM_HELPCONTENTS, "Help table of contents"
+ CM_HELPUSING, "Help on using online Help"
+ CM_HELPABOUT, "About the SpsManager application"
+ 9073, "Create a new Rules class"
+ 9076, "Create a POS Decline Message Record"
+ 9077, "Define a new Product Class"
+ 9078, "Read a Record"
+ 9079, "Saves ALL changes"
+ 9080, "Save ALL changes to Temporary file"
+ 9084, "Saves All Changes"
+ CM_SAVEALL, "Saves ALL Changes"
+ CM_SAVEALLAS, "Saves ALL Changes to Temporary File"
+ CM_OPENRULESCLASS, "Open an Authorization Rules Class record"
+ CM_OPENPOSFILECLASS, "Open a Positive File Rules Class record"
+ CM_OPENUNVFUNDSRULES, "Open an Unverified Funds Rules Record"
+ CM_OPENDATAREQ, "Open a Data Requirements Record"
+ CM_OPENPRODUCTCLASSES, "Open the Product Group Definitions"
+ CM_OPENPOSFILERULES, "Open a Positive File Rules record"
+ CM_OPENPRODUCTCODES, "Open a POS Product Code set record"
+ CM_RESTORESAVE, "Restore Saved Changes"
+ CM_RELOADCHANGES, "Reload Changes from a WORK File"
+ CM_SAVETOWORK, "Save all changes to a WORK file"
+ CM_OPENAUTHRULES, "Open an Authorization Rules Record"
+ CM_CLOSEALLWINDOWS, "Close all open Windows"
+ CM_MINIMIZEALL, "Minimize All Open Windows"
+ CM_OPENMERCHANT, "Open a Merchant Account or Station Record"
+ CM_OPENRESPMSG, "Open a Response Message Record"
+ CM_BANKCARDRULES, "Open a Bank Card Rules Record"
+ CM_OPENBANKCARD, "Open a Bank Card Rules Record"
+ CM_OPENPRODCLASSES, "Open the Product Class List"
+}
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_CANNOTFIND,       "Cannot find ""%s""."
+  IDS_UNTITLED,         "Document"
+  IDS_UNABLEREAD,       "Unable to read file %s from disk."
+  IDS_UNABLEWRITE,      "Unable to write file %s to disk."
+  IDS_FILECHANGED,      "The text in the %s file has changed.\n\nDo you want to save the changes?"
+  IDS_FILEFILTER,       "Text files|*.txt|AllFiles|*.*|"
+END
+
+
+// Exception string resources (include/owl/except.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_OWLEXCEPTION,     "ObjectWindows Exception"
+  IDS_UNHANDLEDXMSG,    "Unhandled Exception"
+  IDS_OKTORESUME,       "OK to resume?"
+  IDS_UNKNOWNEXCEPTION, "Unknown exception"
+
+  IDS_UNKNOWNERROR,     "Unknown error"
+  IDS_NOAPP,            "No application object"
+  IDS_OUTOFMEMORY,      "Out of memory"
+  IDS_INVALIDMODULE,    "Invalid module specified for window"
+  IDS_INVALIDMAINWINDOW,"Invalid MainWindow"
+  IDS_VBXLIBRARYFAIL,   "VBX Library init failure"
+
+  IDS_INVALIDWINDOW,    "Invalid window %s"
+  IDS_INVALIDCHILDWINDOW,"Invalid child window %s"
+  IDS_INVALIDCLIENTWINDOW,"Invalid client window %s"
+
+  IDS_CLASSREGISTERFAIL,"Class registration fail for window %s"
+  IDS_CHILDREGISTERFAIL,"Child class registration fail for window %s"
+  IDS_WINDOWCREATEFAIL, "Create fail for window %s"
+  IDS_WINDOWEXECUTEFAIL,"Execute fail for window %s"
+  IDS_CHILDCREATEFAIL,  "Child create fail for window %s"
+
+  IDS_MENUFAILURE,      "Menu creation failure"
+  IDS_VALIDATORSYNTAX,  "Validator syntax error"
+  IDS_PRINTERERROR,     "Printer error"
+
+  IDS_LAYOUTINCOMPLETE, "Incomplete layout constraints specified in window %s"
+  IDS_LAYOUTBADRELWIN,  "Invalid relative window specified in layout constraint in window %s"
+
+  IDS_GDIFAILURE,       "GDI failure"
+  IDS_GDIALLOCFAIL,     "GDI allocate failure"
+  IDS_GDICREATEFAIL,    "GDI creation failure"
+  IDS_GDIRESLOADFAIL,   "GDI resource load failure"
+  IDS_GDIFILEREADFAIL,  "GDI file read failure"
+  IDS_GDIDELETEFAIL,    "GDI object %X delete failure"
+  IDS_GDIDESTROYFAIL,   "GDI object %X destroy failure"
+  IDS_INVALIDDIBHANDLE, "Invalid DIB handle %X"
+END
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+STRINGTABLE
+BEGIN
+  IDS_MODES             "EXT|CAPS|NUM|SCRL|OVR|REC"
+  IDS_MODESOFF          "   |  |   |  |   |   "
+  SC_SIZE,              "Changes the size of the window"
+  SC_MOVE,              "Moves the window to another position"
+  SC_MINIMIZE,          "Reduces the window to an icon"
+  SC_MAXIMIZE,          "Enlarges the window to it maximum size"
+  SC_RESTORE,           "Restores the window to its previous size"
+  SC_CLOSE,             "Closes the window"
+  SC_TASKLIST,          "Opens task list"
+  SC_NEXTWINDOW,        "Switches to next window"
+END
+
+
+// Validator messages (include/owl/validate.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_VALPXPCONFORM     "Input does not conform to picture:\n""%s"""
+  IDS_VALINVALIDCHAR    "Invalid character in input"
+  IDS_VALNOTINRANGE     "Value is not in the range %ld to %ld."
+  IDS_VALNOTINLIST      "Input is not in valid-list"
+END
+
+// TInputDialog class dialog box.
+//
+IDD_INPUTDIALOG DIALOG 126, 60, 180, 103
+STYLE WS_POPUP | WS_CAPTION | DS_SETFONT
+FONT 8, "Helv"
+{
+ CONTROL "", ID_PROMPT, "STATIC", SS_LEFT | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 10, 8, 160, 47
+ CONTROL "WWWWW", ID_INPUT, "EDIT", ES_LEFT | ES_AUTOHSCROLL | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 44, 61, 95, 12
+ CONTROL "&OK", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 47, 80, 40, 14
+ CONTROL "&Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 93, 80, 40, 14
+}
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+IDI_SDIAPPLICATION ICON "applsdi.ico"
+
+
+// Client Dialog
+//
+IDD_CLIENT DIALOG 6, 15, 207, 111
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Dialog Client"
+FONT 8, "MS Sans Serif"
+{
+}
+
+
+// About box.
+//
+IDD_ABOUT DIALOG 12, 17, 204, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SpsManager"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Version", IDC_VERSION, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 14, 200, 8
+ CONTROL "Secure Payment Systems", -1, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 4, 200, 8
+ CONTROL "", IDC_COPYRIGHT, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 27, 200, 17
+ CONTROL "", IDC_DEBUG, "STATIC", SS_RIGHT | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 136, 55, 66, 8
+ CONTROL IDI_SDIAPPLICATION, -1, "STATIC", SS_ICON | WS_CHILD | WS_VISIBLE, 2, 2, 21, 20
+ CONTROL "OK", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 48, 40, 14
+}
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+1 VERSIONINFO 
+FILEVERSION 1, 0, 2, 0
+PRODUCTVERSION 1, 0, 2, 0
+FILEFLAGSMASK 0
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS16
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "\000"
+   VALUE "FileDescription", "SpsManager for Windows\000"
+   VALUE "FileVersion", "1.02\000"
+   VALUE "InternalName", "SpsManager\000"
+   VALUE "LegalCopyright", "Copyright © 1996. All Rights Reserved.\000"
+   VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+   VALUE "OriginalFilename", "SpsManager.exe\000"
+   VALUE "ProductName", "SpsManager\000"
+   VALUE "ProductVersion", "1.2\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x0409, 0x04e4
+ }
+
+}
+
+
+
+
+
+IDD_EXITDIALOG DIALOG 0, 0, 240, 100
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "             YOU HAVE NOT SAVED YOUR CHANGES!"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "OK", IDOK, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 50, 78, 50, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 160, 78, 50, 14
+ CONTROL "Save all Changes NOW", IDC_SAVENOW, "button", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 11, 92, 9
+ CONTROL "Save all Changes to a WORK file", IDC_SAVEWORK, "button", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 24, 118, 9
+ CONTROL "Review Changes one at a time", IDC_REVIEW, "button", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 37, 115, 9
+ CONTROL "Discard all Changes", IDC_DISCARD, "button", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 20, 50, 119, 9
+ CONTROL "Frame1", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 9, 5, 137, 63
+ CONTROL "Choose an option from the list and click OK. ", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 159, 15, 66, 25
+ CONTROL "Click Cancel if you don't want to exit.", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 159, 47, 65, 17
+}
+
+
+IDD_MERCHNOF DIALOG 126, 60, 180, 103
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "OK", IDOK, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 47, 80, 40, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 105, 80, 40, 14
+ CONTROL "", IDC_LINE1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 15, 24, 148, 13, 0
+ CONTROL "DO YOU WANT TO CREATE IT?", IDC_LINE2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 32, 44, 116, 12, 0
+}
+
+IDD_OPENMERCH DIALOG 126, 60, 180, 103
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "", IDC_OPENMERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 37, 56, 112, 13, 0
+ CONTROL "OK", IDOK, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 47, 80, 40, 14
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 96, 80, 40, 14
+ CONTROL "Enter:", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 26, 8, 128, 10, 0
+ CONTROL "   A 3 character account number or", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 26, 19, 128, 10, 0
+ CONTROL "   A 5 character merchant number or", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 26, 30, 128, 10, 0
+ CONTROL "   A merchant name > 5 characters", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 26, 41, 128, 10, 0
+}
+
+
+
+
+
+
+
+
+
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "\000"
+      VALUE "FileDescription", "SpsManager for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "SpsManager\000"
+      VALUE "LegalCopyright", "Copyright © 1996. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "SpsManager.exe\000"
+      VALUE "ProductName", "SpsManager\000"
+      VALUE "ProductVersion", "1.0\000"
+      VALUE "SpecialBuild", "Debug Version\000"
+      VALUE "PrivateBuild", "Built by \000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif

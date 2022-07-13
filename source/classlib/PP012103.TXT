@@ -1,0 +1,35 @@
+01/21/02 - add Passport to dropdown box... Allow Passport (PP)
+for state code entry
+
+
+(Seems to be there ... for the DDBox?)
+File EditStateCodes.cpp:
+  "CA California",
+
+
+(Seems to be there ... for the Validation? It is ot in earlier version)
+File FieldValidation.cpp:
+   // Only Validating the CA license at this time
+   if ( memcmp(State,"CA",2) )
+  "CA" "CO" "CT" "CZ"
+CA    301         8       5       1      1     1     0     0        0
+
+
+(Initialization Data)
+File MerchantRec.cpp:
+   strcpy(Data.MerchantState,"CA");
+
+(Test Data)
+File msgsize.cpp:
+   Msg.PutFld(FN_LICENSESTATE,"CA");
+   Msg.PutFld(FN_LICENSESTATE,"CA");
+   Msg.PutFld(FN_CONSUMERSTATE,"CA");
+   Msg.PutFld(FN_CONSUMERSTATE,"CA");
+
+(Obsolete)
+File NewFieldValidation.cpp:
+   // Only Validating the CA license at this time
+   if ( memcmp(State,"CA",2) )
+  "CA" "CO" "CT" "CZ"
+CA    301         8       5       1      1     1     0     0        0
+

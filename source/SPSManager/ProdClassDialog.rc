@@ -1,0 +1,23 @@
+/****************************************************************************
+
+
+ProdClassDialog.rc
+
+produced by Borland Resource Workshop
+
+
+*****************************************************************************/
+
+#include "ProdClassDialog.rh"
+
+IDD_PRODCLASS DIALOG 0, 1, 422, 242
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX
+CAPTION "Product Groups"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "TreeView1", IDC_TREEVIEW1, "SysTreeView32", TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_EDITLABELS | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_CHILD | WS_VISIBLE | WS_BORDER, 190, 15, 136, 211, WS_EX_STATICEDGE
+ CONTROL "To change an item's text select it with the mouse and then click or press Enter to put the item into EDIT mode.", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 32, 34, 111, 33
+ CONTROL "Press Enter or Escape to exit EDIT mode", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 32, 78, 104, 17
+ CONTROL "Frame2", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 22, 22, 132, 91
+}
+

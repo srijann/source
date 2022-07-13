@@ -1,0 +1,312 @@
+//----------------------------------------------------------------------------
+//  Project Kwtest
+//  
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:    Kwtest Application
+//  FILE:         kwtstapp.h
+//  AUTHOR:       
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in kwtstapp.rc.
+//
+//----------------------------------------------------------------------------
+//#if !defined(kwtstapp_rh)   // Sentry use file only if it's not already included.
+//#define kwtstapp_rh
+
+
+//
+// Application specific definitions:
+//
+#define IDI_SDIAPPLICATION      1001            // Application icon
+
+#define IDM_SDI                 100             // Menu resource ID and Accelerator IDs
+
+//
+// CM_FILEnnnn commands (include/owl/editfile.rh except for CM_FILEPRINTPREVIEW)
+//
+#define CM_FILENEW              24331           // SDI New
+#define CM_FILEOPEN             24332           // SDI Open
+#define CM_FILECLOSE            24339
+#define CM_FILESAVE             24333
+#define CM_FILESAVEAS           24334
+
+
+//
+// Window commands (include/owl/window.rh)
+//
+#define CM_EXIT                 24310
+
+
+//
+// CM_EDITnnnn commands (include/owl/window.rh)
+//
+#define CM_EDITUNDO             24321
+#define CM_EDITCUT              24322
+#define CM_EDITCOPY             24323
+#define CM_EDITPASTE            24324
+#define CM_EDITDELETE           24325
+#define CM_EDITCLEAR            24326
+#define CM_EDITADD              24327
+#define CM_EDITEDIT             24328
+
+
+//
+// Search menu commands (include/owl/editsear.rh)
+//
+#define CM_EDITFIND             24351
+#define CM_EDITREPLACE          24352
+#define CM_EDITFINDNEXT         24353
+
+
+//
+// Help menu commands.
+//
+#define CM_HELPABOUT            2009
+
+
+//
+// Client Dialog
+//
+#define IDD_CLIENT               2000
+#define IDC_AMOUNT	105
+#define IDC_STATE	106
+#define IDC_CHECKNUM	109
+#define IDC_PHONE	110
+#define IDC_BANKNUM	111
+#define IDC_MERCHNUM	118
+#define IDC_RESPONSE	119
+#define IDC_CHECKBOX1	101
+#define IDC_EDIT1	102
+#define IDC_RCODE	102
+#define IDC_EDIT2	103
+#define IDC_EDIT3	112
+#define IDC_AGE	112
+#define IDC_EDIT4	113
+#define IDC_ACHECKNUM	113
+#define IDC_ACT1CHECKNUM	113
+#define IDC_EDIT5	114
+#define IDC_ACT1AMOUNT	114
+#define IDC_EDIT6	115
+#define IDC_ACT1SIC	115
+#define IDC_EDIT7	116
+#define IDC_ACT1RCODE	116
+#define IDC_EDIT8	117
+#define IDC_EDIT9	120
+#define IDC_EDIT10	121
+#define IDC_EDIT11	122
+#define IDC_EDIT12	123
+#define IDC_EDIT13	124
+#define IDC_EDIT14	125
+#define IDC_EDIT15	126
+#define IDC_EDIT17	128
+#define IDC_EDIT18	129
+#define IDC_EDIT19	130
+#define IDC_EDIT20	131
+#define IDC_EDIT21	132
+#define IDC_EDIT22	133
+#define IDC_EDIT23	134
+#define IDC_EDIT24	135
+#define IDC_EDIT26	137
+#define IDC_EDIT27	138
+#define IDC_EDIT28	139
+#define IDC_EDIT29	140
+#define IDC_EDIT30	141
+#define IDC_EDIT31	142
+#define IDC_EDIT32	143
+#define IDC_EDIT33	144
+#define IDC_EDIT35	146
+#define IDC_EDIT36	147
+#define IDC_EDIT37	148
+#define IDC_EDIT38	149
+#define IDC_EDIT39	150
+#define IDC_EDIT40	151
+#define IDC_EDIT41	152
+#define IDC_EDIT42	153
+#define IDC_EDIT44	155
+#define IDC_EDIT45	156
+#define IDC_EDIT46	157
+#define IDC_EDIT47	158
+#define IDC_EDIT48	159
+#define IDC_EDIT49	160
+#define IDC_EDIT50	161
+#define IDC_EDIT51	162
+#define IDC_EDIT53	164
+#define IDC_EDIT54	165
+#define IDC_EDIT55	166
+#define IDC_EDIT56	167
+#define IDC_EDIT57	168
+#define IDC_EDIT58	169
+#define IDC_EDIT59	170
+#define IDC_EDIT60	171
+#define IDC_ACT9RCODE	171
+#define IDC_EDIT34	145
+#define IDC_ACCOUNT	145
+#define IDC_BIG	154
+#define IDC_ABA	111
+#define IDC_EDIT16	104
+#define IDC_SSN	104
+#define IDC_EDIT25	136
+#define IDC_ZIPCODE	136
+#define IDC_BUTTON2	127
+#define IDC_ACTCLEAR	127
+#define IDC_CHECKSBOX	101
+#define IDC_ACT9SIC	162
+#define IDC_ACT9CHECKNUM	153
+#define IDC_ACT9AMOUNT	144
+#define IDC_ACT9AGE	135
+#define IDC_ACT9MERCHID	126
+#define IDC_ACT8RCODE	170
+#define IDC_ACT8SIC	161
+#define IDC_ACT8CHECKNUM	152
+#define IDC_ACT8AMOUNT	143
+#define IDC_ACT8AGE	134
+#define IDC_ACT8MERCHID	125
+#define IDC_ACT7RCODE	169
+#define IDC_ACT7SIC	160
+#define IDC_ACT7CHECKNUM	151
+#define IDC_ACT7AMOUNT	142
+#define IDC_ACT7AGE	133
+#define IDC_ACT7MERCHID	124
+#define IDC_ACT6RCODE	168
+#define IDC_ACT6SIC	159
+#define IDC_ACT6CHECKNUM	150
+#define IDC_ACT6AMOUNT	141
+#define IDC_ACT6AGE	132
+#define IDC_ACT6MERCHID	123
+#define IDC_ACT5RCODE	167
+#define IDC_ACT5SIC	158
+#define IDC_ACT5CHECKNUM	149
+#define IDC_ACT5AMOUNT	140
+#define IDC_ACT5AGE	131
+#define IDC_ACT5MERCHID	122
+#define IDC_ACT4RCODE	166
+#define IDC_ACT4SIC	157
+#define IDC_ACT4CHECKNUM	148
+#define IDC_ACT4AMOUNT	139
+#define IDC_ACT4AGE	130
+#define IDC_ACT4MERCHID	121
+#define IDC_ACT3RCODE	165
+#define IDC_ACT3SIC	156
+#define IDC_ACT3CHECKNUM	147
+#define IDC_ACT3AMOUNT	138
+#define IDC_ACT3AGE	129
+#define IDC_ACT3MERCHID	120
+#define IDC_ACT2RCODE	164
+#define IDC_ACT2SIC	155
+#define IDC_ACT2CHECKNUM	146
+#define IDC_ACT2AMOUNT	137
+#define IDC_ACT2AGE	128
+#define IDC_ACT2MERCHID	117
+#define IDC_ACT1AGE	112
+#define IDC_ACT1MERCHID	103
+#define IDC_ACTMERCHID1	103
+#define IDC_AMERCHID	103
+#define IDC_MERCHID	103
+#define IDC_BUTTON1	104
+#define IDC_SENDBUTTON	201
+#define IDC_DL	107
+#define IDC_DOB	108
+
+
+//
+// OWL defined strings
+//
+
+//
+// Statusbar
+//
+#define IDS_MODES               32530
+#define IDS_MODESOFF            32531
+
+//
+// EditFile
+//
+#define IDS_UNTITLED            32550
+#define IDS_UNABLEREAD          32551
+#define IDS_UNABLEWRITE         32552
+#define IDS_FILECHANGED         32553
+#define IDS_FILEFILTER          32554
+
+//
+// EditSearch
+//
+#define IDS_CANNOTFIND          32540
+
+
+//
+// General & application exception messages (include/owl/except.rh)
+//
+#define IDS_UNKNOWNEXCEPTION    32767
+#define IDS_OWLEXCEPTION        32766
+#define IDS_OKTORESUME          32765
+#define IDS_UNHANDLEDXMSG       32764
+#define IDS_UNKNOWNERROR        32763
+#define IDS_NOAPP               32762
+#define IDS_OUTOFMEMORY         32761
+#define IDS_INVALIDMODULE       32760
+#define IDS_INVALIDMAINWINDOW   32759
+#define IDS_VBXLIBRARYFAIL      32758
+
+//
+// Owl 1 compatibility messages
+//
+#define IDS_INVALIDWINDOW       32709
+#define IDS_INVALIDCHILDWINDOW  32708
+#define IDS_INVALIDCLIENTWINDOW 32707
+
+//
+// TXWindow messages
+//
+#define IDS_CLASSREGISTERFAIL   32749
+#define IDS_CHILDREGISTERFAIL   32748
+#define IDS_WINDOWCREATEFAIL    32747
+#define IDS_WINDOWEXECUTEFAIL   32746
+#define IDS_CHILDCREATEFAIL     32745
+
+#define IDS_MENUFAILURE         32744
+#define IDS_VALIDATORSYNTAX     32743
+#define IDS_PRINTERERROR        32742
+
+#define IDS_LAYOUTINCOMPLETE    32741
+#define IDS_LAYOUTBADRELWIN     32740
+
+//
+// TXGdi messages
+//
+#define IDS_GDIFAILURE          32739
+#define IDS_GDIALLOCFAIL        32738
+#define IDS_GDICREATEFAIL       32737
+#define IDS_GDIRESLOADFAIL      32736
+#define IDS_GDIFILEREADFAIL     32735
+#define IDS_GDIDELETEFAIL       32734
+#define IDS_GDIDESTROYFAIL      32733
+#define IDS_INVALIDDIBHANDLE    32732
+
+
+//
+// TInputDialog DIALOG resource (include/owl/inputdia.rh)
+//
+#define IDD_INPUTDIALOG         32514
+#define ID_PROMPT               4091
+#define ID_INPUT                4090
+
+
+//
+// TSlider bitmaps (horizontal and vertical) (include/owl/slider.rh)
+//
+#define IDB_HSLIDERTHUMB        32000
+#define IDB_VSLIDERTHUMB        32001
+
+
+//
+// Validation messages (include/owl/validate.rh)
+//
+#define IDS_VALPXPCONFORM       32520
+#define IDS_VALINVALIDCHAR      32521
+#define IDS_VALNOTINRANGE       32522
+#define IDS_VALNOTINLIST        32523
+
+
+//#endif  // kwtstapp_rh

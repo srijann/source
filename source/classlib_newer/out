@@ -1,0 +1,31 @@
+File productclasslist.cpp:
+  StringList(List,Length)
+  StringList(TranType,Dest,AltDest)
+ StringList(File,ListLen)
+ StringList(Msg)
+File stringlist.cpp:
+#include "StringList.h"
+StringList::StringList(char* TranType,char* Dest,char* AltDest,
+StringList::StringList(char* List,int Length,int SlackBytes,bool Delete) :
+StringList::StringList(int InitialSize,int SlackBytes) :
+StringList::StringList(TFile* File,int Length,int SlackBytes) :
+StringList::StringList(IPCMessage* Msg,int SlackBytes) :
+StringList::~StringList()
+void StringList::Add(char* Item,bool Sorted)
+char* StringList::MakeFit(int Len,char *InsertPoint)
+void StringList::Clear()
+void StringList::ForEach(void(*func)(char*,int,void*),void* Args)
+DBTIMESTAMP StringList::GetTimeStamp()
+void StringList::SetTimeStamp(DBTIMESTAMP Ts)
+bool StringList::DbFetch(char* TranType,char *Dest,IPCMessage* Msg)
+bool StringList::DbAnswer(IPCMessage* Msg)
+bool StringList::Save(TFile* File)
+char* StringList::Find(int Num)
+int StringList::Find(char* Str)
+char* StringList::Next(bool Reset)
+File StringTreeList.cpp:
+  StringList(TranType,Dest,AltDest,SlackBytes)
+ StringList(TheList,ListLen,SlackBytes,Delete)
+  StringList(InitialSize,SlackBytes)
+  StringList(File,Len,SlackBytes)
+  StringList(Msg,SlackBytes)

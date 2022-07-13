@@ -1,0 +1,75 @@
+ Directory of C:\sps\source\classlib
+
+ AuthRules.cpp         19,338
+ BitString.cpp          7,399
+ CalcMenuPos.cpp        1,668
+ CheckActivity.cpp        288
+ checkauth.cpp         44,008
+ ClassTest.cpp            226
+ ComboBoxEx.cpp         5,316
+ DataReq.cpp            3,292
+ DBManRec.cpp           4,071
+ DCManage.cpp          21,298
+ DecimalValidator.cpp   1,885
+ EditStateCodes.cpp     8,158
+ EditUns.cpp            3,607
+ EditVar.cpp           10,416
+ FieldValidation.cpp   20,058
+ IPCTransfer.cpp        4,914
+ LevelSelect.cpp        4,179
+ MerchantRec.cpp        6,586
+ msgsize.cpp            6,957
+ MsgWin.cpp            10,941
+ PlainEdit.cpp          1,390
+ PositiveRules.cpp      2,527
+ PosResponse.cpp        1,841
+ productclasslist.cpp   8,182
+ rcodeinfo.cpp          2,804
+ RecSize.cpp            4,108
+ Scoring.cpp            7,070
+ StringDB.cpp           7,411
+ stringlist.cpp        14,615
+ StringTreeList.cpp     5,131
+ TimeZoneInfo.cpp       3,490
+ timezones.cpp            859
+ UnvFundsRules.cpp      5,806
+
+ File Name              Size    Project      Classes Declared
+
+ AuthRules.h            1,561                AuthRules : DBManRecord
+ BitString.h            2,228                BitString
+ CheckActivity.h          263                CheckActivity
+ CheckAuth.h            3,890                CheckAuth : IPCMessage
+ Classlib.h               129                CalcMenuPos()
+ ComboBoxEx.h           1,395  ComboTest     TComboBoxEx : TComboBox
+ DataReq.h              1,759                DataRequirements : DBManRecord
+ DBManRec.h             1,276                DBManRecord
+ DCManage.h             4,469                DialogControlManager : IPCTransfer
+                                             typedef struct ctlitem
+ DecimalValidator.h       274                TDecimalValidator : TValidator
+ EditStateCodes.h       1,236  Classlib      EditStateCodes : TEdit
+ EditUns.h              1,433  SPSManager    TEditUns : PlainEdit
+ EditVar.h              2,325  SPSManager    EditVar : PlainEdit
+ IPCMsgTransfer.h         289                MsgIO
+ IPCTransfer.h            571                IPCTransfer
+ LevelSelect.h          1,364  SPSManager    TLevelSelect : TEditUns
+ MerchantRec.h          1,465                MerchantRec : DBManRecord
+ MsgWin.h               1,481  ClassLib      TMsgWin : TDialog
+ PlainEdit.h            1,050  SPSManager    PlainEdit : TEdit
+ PositiveRules.h          748                PositiveRules : DBManRecord
+ PosResponse.h            727                PosResponse : DBManRecord
+ ProductClassList.h     1,424                ProductClassList : StringList
+ ProductCodeList.h         80                ProductList - empty
+ RcodeInfo.h              248                RcodeInfo
+                                             is Kenwood code or Approval R code
+ StringDb.h               665                StringDb
+ StringList.h           2,796                StringList
+ StringTreeList.h       1,110                StringTreeList : StringList
+ TimeZoneInfo.h           544                TimeZoneInfo
+ TimeZones.h              366                TimeZones - /
+ UnvFundsRules.h          804                UnvFundsRules : DBManRecord
+ win4me.h               1,165                - excludes headers
+
+typedef struct { dbtimeStamp
+                 ListName
+               }  LISTHDR

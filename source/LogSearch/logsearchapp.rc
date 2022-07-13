@@ -1,0 +1,355 @@
+//----------------------------------------------------------------------------
+//  Project LogSearch
+//  Secure Payment Systems
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:  LogSearch Application
+//  FILE:     logsearchapp.rc
+//  AUTHOR:     Jack Ely
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "logsearchapp.rh"
+#include "SearchKeyDialog.rc"
+#include "MainDisplayDialog.rc"
+#include "CheckAuth.rc"
+#include "DecisionDialog.rc"
+#include "HoldCheckDialog.rc"
+#include "EmployerDialog.rc"
+#include "AuthRulesDialog.rc"
+#include "MerchantDialog.rc"
+#include "PosfileDialog.rc"
+#include "PosrulesDialog.rc"
+
+IDM_SDI MENU 
+{
+ POPUP "&Search"
+ {
+  MENUITEM "New &Search", CM_EDITFIND, GRAYED
+  MENUITEM "&Prev", CM_EDITFINDPREV
+  MENUITEM "&Next", CM_EDITFINDNEXT, GRAYED
+  MENUITEM "Pick &List", CM_PICKLIST
+ }
+
+ POPUP "&Print"
+ {
+  MENUITEM "Print &All", CM_PRINTALL
+  MENUITEM "Print &Current", CM_PRINTCURRENT
+  MENUITEM SEPARATOR
+  MENUITEM "Options", CM_PRINTOPTIONS
+ }
+
+ MENUITEM SEPARATOR
+ MENUITEM SEPARATOR
+ POPUP "&Help"
+ {
+  MENUITEM "&About...", CM_HELPABOUT
+ }
+
+}
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+IDM_SDI ACCELERATORS 
+{
+ VK_F3, CM_EDITFINDNEXT, VIRTKEY
+ VK_F2, CM_SEARCHITEM1, VIRTKEY
+ VK_F4, CM_PICKLIST, VIRTKEY
+}
+
+
+
+
+
+// Table of help hints displayed in the status bar.
+//
+STRINGTABLE 
+{
+ -1, "File/document operations"
+ CM_EXIT, "Quits LogSearch and prompts to save the documents"
+ CM_EDITFIND -1, "Search/replace operations"
+ CM_EDITFIND, "Find the specified Log Record"
+ CM_EDITFINDNEXT, "Find the Next Matching Log Record"
+ CM_HELPABOUT -1, "Access About"
+ CM_HELPABOUT, "About the LogSearch application"
+ CM_EDITFINDPREV, "Find the Previous Matching Log Record"
+ CM_FILEPRINT, "Print the Current Log Record"
+ CM_PRINTALL, "Print All Matching Records"
+ CM_PRINTCURRENT, "Print Current Record "
+ CM_PRINTOPTIONS, "Select Print Options"
+ CM_PICKLIST, "Pick an item from the List"
+}
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_CANNOTFIND,       "Cannot find ""%s""."
+  IDS_UNTITLED,         "Document"
+  IDS_UNABLEREAD,       "Unable to read file %s from disk."
+  IDS_UNABLEWRITE,      "Unable to write file %s to disk."
+  IDS_FILECHANGED,      "The text in the %s file has changed.\n\nDo you want to save the changes?"
+  IDS_FILEFILTER,       "Text files|*.txt|AllFiles|*.*|"
+END
+
+
+// Exception string resources (include/owl/except.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_OWLEXCEPTION,     "ObjectWindows Exception"
+  IDS_UNHANDLEDXMSG,    "Unhandled Exception"
+  IDS_OKTORESUME,       "OK to resume?"
+  IDS_UNKNOWNEXCEPTION, "Unknown exception"
+
+  IDS_UNKNOWNERROR,     "Unknown error"
+  IDS_NOAPP,            "No application object"
+  IDS_OUTOFMEMORY,      "Out of memory"
+  IDS_INVALIDMODULE,    "Invalid module specified for window"
+  IDS_INVALIDMAINWINDOW,"Invalid MainWindow"
+  IDS_VBXLIBRARYFAIL,   "VBX Library init failure"
+
+  IDS_INVALIDWINDOW,    "Invalid window %s"
+  IDS_INVALIDCHILDWINDOW,"Invalid child window %s"
+  IDS_INVALIDCLIENTWINDOW,"Invalid client window %s"
+
+  IDS_CLASSREGISTERFAIL,"Class registration fail for window %s"
+  IDS_CHILDREGISTERFAIL,"Child class registration fail for window %s"
+  IDS_WINDOWCREATEFAIL, "Create fail for window %s"
+  IDS_WINDOWEXECUTEFAIL,"Execute fail for window %s"
+  IDS_CHILDCREATEFAIL,  "Child create fail for window %s"
+
+  IDS_MENUFAILURE,      "Menu creation failure"
+  IDS_VALIDATORSYNTAX,  "Validator syntax error"
+  IDS_PRINTERERROR,     "Printer error"
+
+  IDS_LAYOUTINCOMPLETE, "Incomplete layout constraints specified in window %s"
+  IDS_LAYOUTBADRELWIN,  "Invalid relative window specified in layout constraint in window %s"
+
+  IDS_GDIFAILURE,       "GDI failure"
+  IDS_GDIALLOCFAIL,     "GDI allocate failure"
+  IDS_GDICREATEFAIL,    "GDI creation failure"
+  IDS_GDIRESLOADFAIL,   "GDI resource load failure"
+  IDS_GDIFILEREADFAIL,  "GDI file read failure"
+  IDS_GDIDELETEFAIL,    "GDI object %X delete failure"
+  IDS_GDIDESTROYFAIL,   "GDI object %X destroy failure"
+  IDS_INVALIDDIBHANDLE, "Invalid DIB handle %X"
+END
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+STRINGTABLE
+BEGIN
+  IDS_MODES             "EXT|CAPS|NUM|SCRL|OVR|REC"
+  IDS_MODESOFF          "   |  |   |  |   |   "
+  SC_SIZE,              "Changes the size of the window"
+  SC_MOVE,              "Moves the window to another position"
+  SC_MINIMIZE,          "Reduces the window to an icon"
+  SC_MAXIMIZE,          "Enlarges the window to it maximum size"
+  SC_RESTORE,           "Restores the window to its previous size"
+  SC_CLOSE,             "Closes the window"
+  SC_TASKLIST,          "Opens task list"
+  SC_NEXTWINDOW,        "Switches to next window"
+END
+
+
+// Validator messages (include/owl/validate.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_VALPXPCONFORM     "Input does not conform to picture:\n""%s"""
+  IDS_VALINVALIDCHAR    "Invalid character in input"
+  IDS_VALNOTINRANGE     "Value is not in the range %ld to %ld."
+  IDS_VALNOTINLIST      "Input is not in valid-list"
+END
+
+
+//
+// Bitmaps used by the speedbar.  Each bitmap is associated with a
+// particular menu command.
+//
+
+
+CM_EDITFIND BITMAP "find.bmp"
+CM_EDITFINDNEXT BITMAP "findnext.bmp"
+CM_EDITFINDPREV BITMAP "findprev.bmp"
+CM_FILEPRINT BITMAP "print.bmp"
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+IDI_SDIAPPLICATION ICON "applsdi.ico"
+
+
+// Client Dialog
+//
+IDD_LOGSEARCHMAIN DIALOG 6, 15, 397, 175
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Dialog Client"
+FONT 8, "MS Sans Serif"
+{
+}
+
+
+// About box.
+//
+IDD_ABOUT DIALOG 12, 17, 204, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About LogSearch"
+FONT 8, "MS Sans Serif"
+BEGIN
+  CTEXT "Version", IDC_VERSION, 2, 14, 200, 8, SS_NOPREFIX
+  CTEXT "SPS Log Search Program", -1, 2, 4, 200, 8, SS_NOPREFIX
+  CTEXT "", IDC_COPYRIGHT, 2, 27, 200, 17, SS_NOPREFIX
+  RTEXT "", IDC_DEBUG, 136, 55, 66, 8, SS_NOPREFIX
+  ICON IDI_SDIAPPLICATION, -1, 2, 2, 34, 34
+  DEFPUSHBUTTON "OK", IDOK, 82, 48, 40, 14
+END
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+1 VERSIONINFO 
+FILEVERSION 1, 0, 1, 0
+PRODUCTVERSION 1, 0, 1, 0
+FILEFLAGSMASK 0
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS16
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "Secure Payment Systems\000"
+   VALUE "FileDescription", "LogSearch for Windows\000"
+   VALUE "FileVersion", "1.1\000"
+   VALUE "InternalName", "LogSearch\000"
+   VALUE "LegalCopyright", "Copyright © 1997. All Rights Reserved.\000"
+   VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+   VALUE "OriginalFilename", "LogSearch.exe\000"
+   VALUE "ProductName", "LogSearch\000"
+   VALUE "ProductVersion", "1.1\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x0409, 0x04e4
+ }
+
+}
+
+CM_PICKLIST BITMAP 
+{
+ '42 4D 66 01 00 00 00 00 00 00 76 00 00 00 28 00'
+ '00 00 14 00 00 00 14 00 00 00 01 00 04 00 00 00'
+ '00 00 F0 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80'
+ '00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80'
+ '00 00 80 80 80 00 C0 C0 C0 00 00 00 FF 00 00 FF'
+ '00 00 00 FF FF 00 FF 00 00 00 FF 00 FF 00 FF FF'
+ '00 00 FF FF FF 00 88 88 88 88 88 88 88 88 88 88'
+ '00 00 80 00 00 00 00 00 00 00 00 08 00 00 80 00'
+ '00 00 00 00 00 00 00 08 00 00 88 88 88 88 88 88'
+ '88 88 88 88 00 00 88 88 88 88 88 88 88 88 88 88'
+ '00 00 80 00 00 00 00 00 00 00 00 08 00 00 80 00'
+ '00 00 00 00 00 00 00 08 00 00 88 88 88 88 88 88'
+ '88 88 88 88 00 00 88 88 88 88 88 88 88 88 88 88'
+ '00 00 80 00 00 00 00 00 00 00 00 08 00 00 80 00'
+ '00 00 00 00 00 00 00 08 00 00 88 88 88 88 88 88'
+ '88 88 88 88 00 00 88 88 88 88 88 88 88 88 88 88'
+ '00 00 80 00 00 00 00 00 00 00 00 08 00 00 80 00'
+ '00 00 00 00 00 00 00 08 00 00 88 88 88 88 88 88'
+ '88 88 88 88 00 00 88 88 88 88 88 88 88 88 88 88'
+ '00 00 80 00 00 00 00 00 00 00 00 08 00 00 80 00'
+ '00 00 00 00 00 00 00 08 00 00 88 88 88 88 88 88'
+ '88 88 88 88 00 00'
+}
+
+IDD_PICKLIST DIALOG 0, 10, 318, 234
+STYLE DS_ABSALIGN | DS_3DLOOK | DS_FIXEDSYS | WS_POPUP | WS_BORDER
+CAPTION ""
+FONT 8, "Fixedsys"
+{
+ CONTROL "Select", IDC_SELECTBTN, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 4, 4, 50, 14
+ CONTROL "Cancel", IDC_CANCELBTN, "BUTTON", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 60, 4, 50, 14
+ CONTROL "ListBox1", IDC_LISTBOX, "listbox", LBS_NOTIFY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 2, 37, 313, 193, 0
+ CONTROL "Quit", IDC_QUITBTN, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 248, 4, 50, 14, 0
+ CONTROL "Date", 103, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 3, 24, 19, 7, 0
+ CONTROL "Time", 104, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 30, 24, 18, 7, 0
+ CONTROL "Resp", 105, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 51, 24, 17, 7, 0
+ CONTROL "Merch", 106, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 69, 24, 31, 7, 0
+ CONTROL "Micr", 107, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 133, 24, 20, 7, 0
+ CONTROL "License", 108, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 245, 24, 33, 9, 0
+ CONTROL "Amount", 109, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 102, 24, 26, 7, 0
+}
+
+
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 1, 0, 0
+PRODUCTVERSION 1, 1, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "Secure Payment Systems\000"
+      VALUE "FileDescription", "LogSearch for Windows\000"
+      VALUE "FileVersion", "1.1\000"
+      VALUE "InternalName", "LogSearch\000"
+      VALUE "LegalCopyright", "Copyright © 1996. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "LogSearch.exe\000"
+      VALUE "ProductName", "LogSearch\000"
+      VALUE "ProductVersion", "1.1\000"
+      VALUE "SpecialBuild", "Debug Version\000"
+      VALUE "PrivateBuild", "Built by Jack Ely\000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif

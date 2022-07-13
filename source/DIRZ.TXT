@@ -1,0 +1,917 @@
+ Directory of C:\sps\source
+
+07/22/97  09:32a        <DIR>          .
+07/22/97  09:32a        <DIR>          ..
+07/09/97  02:00p        <DIR>          BankPhoneDB
+07/09/97  02:05p        <DIR>          classlib
+07/09/97  02:06p        <DIR>          ddl
+07/09/97  02:06p        <DIR>          doc
+07/09/97  01:59p                   308 fullback.bat
+07/09/97  02:08p        <DIR>          include
+07/09/97  02:09p        <DIR>          IPCShell
+07/09/97  02:11p        <DIR>          KDSPrograms
+07/09/97  02:13p        <DIR>          lib
+07/09/97  02:17p        <DIR>          LogSearch
+07/09/97  02:18p        <DIR>          ManagerDb
+03/14/97  09:18a                 2,049 MOD10.TXT
+07/09/97  02:19p        <DIR>          NetRoute
+07/09/97  12:45p                   307 partback.bat
+07/09/97  02:20p        <DIR>          PosAuth
+07/09/97  02:21p        <DIR>          PosfileDB
+07/09/97  02:22p        <DIR>          PreauthDb
+07/09/97  02:23p        <DIR>          ReferQue
+07/09/97  02:23p        <DIR>          Setup
+07/09/97  02:24p        <DIR>          SPSFile
+07/09/97  02:25p        <DIR>          SPSLog
+07/09/97  02:33p        <DIR>          SPSManager
+07/09/97  02:42p        <DIR>          Utilities
+07/09/97  02:47p        <DIR>          VoiceAuth
+              28 File(s)          2,936 bytes
+
+ Directory of C:\sps\source\BankPhoneDB
+
+07/09/97  02:00p        <DIR>          .
+07/09/97  02:00p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+06/22/97  12:37p                 1,660 DbError.cpp
+06/24/97  07:48a                 8,705 ServerApp.cpp
+07/09/97  11:22a                 4,922 ServerApp.DSW
+06/18/97  01:12p                   960 ServerApp.h
+07/09/97  11:22a                89,600 ServerApp.ide
+07/04/97  08:20a                    23 ServerApp.rc
+07/04/97  08:26a                   876 ServerApp.res
+06/23/97  08:39a                 1,781 ServerMain.cpp
+02/26/97  10:24a                 1,223 win4me.h
+              12 File(s)        110,516 bytes
+
+ Directory of C:\sps\source\classlib
+
+07/09/97  02:05p        <DIR>          .
+07/09/97  02:05p        <DIR>          ..
+07/09/97  10:34a                18,696 AuthRules.cpp
+07/09/97  10:27a                 1,559 AuthRules.h
+02/13/97  06:04p                 6,893 BitString.cpp
+02/13/97  06:04p                 2,228 BitString.h
+02/13/97  06:04p                 1,049 CalcMenuPos.cpp
+02/18/97  03:26p                   288 CheckActivity.cpp
+02/18/97  03:25p                   263 CheckActivity.h
+07/09/97  12:15p                42,147 checkauth.cpp
+07/09/97  12:14p                 3,810 CheckAuth.h
+07/09/97  12:15p                 8,450 ClassLib.DSW
+02/13/97  06:04p                   129 Classlib.h
+07/09/97  12:15p               114,104 ClassLib.ide
+07/09/97  12:15p                64,303 ClassLib.OBR
+02/13/97  06:04p                   226 ClassTest.cpp
+06/03/97  08:40a                 3,532 classtest.DSW
+06/03/97  08:40a                39,660 classtest.ide
+07/08/97  09:02a                 5,316 ComboBoxEx.cpp
+07/08/97  09:03a                 1,395 ComboBoxEx.h
+07/01/97  09:19a                 2,463 DataReq.cpp
+07/01/97  07:27a                 1,759 DataReq.h
+02/13/97  06:04p                 1,694 DBManRec.cpp
+02/13/97  06:04p                 1,276 DBManRec.h
+04/24/97  06:35a                19,658 DCManage.cpp
+04/24/97  06:34a                 4,469 DCManage.h
+02/13/97  06:04p                   879 DecimalValidator.cpp
+02/13/97  06:04p                   274 DecimalValidator.h
+07/03/97  12:00p                 2,781 EditEx.cpp
+02/13/97  06:04p                 1,109 EditEx.h
+02/13/97  06:04p                 1,931 EditPick.cpp
+02/13/97  06:04p                 1,263 EditPick.h
+02/13/97  06:04p                 4,197 EditPopupList.cpp
+02/13/97  06:04p                 1,560 EditPopupList.h
+07/03/97  12:04p                 7,900 EditStateCodes.cpp
+02/13/97  06:04p                 1,236 EditStateCodes.h
+02/13/97  06:04p                 2,612 EditUns.cpp
+02/13/97  06:04p                 1,429 EditUns.h
+07/08/97  01:47p                18,273 FieldValidation.cpp
+02/13/97  06:04p                 1,933 IniList.cpp
+02/13/97  06:04p                   665 IniList.h
+02/13/97  06:04p                   289 IPCMsgTransfer.h
+07/03/97  11:59a                 4,227 IPCTransfer.cpp
+05/22/97  04:38p                   571 IPCTransfer.h
+02/13/97  06:04p                 2,870 LevelSelect.cpp
+02/13/97  06:04p                 1,364 LevelSelect.h
+07/08/97  05:14a                 5,187 MerchantRec.cpp
+07/08/97  05:08a                 1,455 MerchantRec.h
+06/03/97  08:38a                 6,788 msgsize.cpp
+04/11/97  05:47p                 4,740 MsgSize.DSW
+04/11/97  05:47p                   357 MsgSize.OBR
+02/13/97  06:04p                10,941 MsgWin.cpp
+02/13/97  06:04p                 1,481 MsgWin.h
+06/27/97  11:11a                 1,289 out
+06/03/97  02:06p                 1,569 PositiveRules.cpp
+05/26/97  01:57p                   748 PositiveRules.h
+07/04/97  08:27a                 1,282 PosResponse.cpp
+02/27/97  08:55a                   727 PosResponse.h
+07/08/97  10:24a                 7,296 productclasslist.cpp
+07/08/97  09:13a                 1,424 ProductClassList.h
+02/13/97  06:04p                    80 ProductCodeList.h
+06/05/97  09:08a                 2,129 rcodeinfo.cpp
+05/21/97  12:28p                   248 RcodeInfo.h
+03/31/97  10:19a                 4,108 RecSize.cpp
+02/13/97  06:04p                 1,677 SecRules.cpp
+02/13/97  06:04p                 1,147 SecRules.h
+07/03/97  12:01p                 7,322 StringDB.cpp
+02/13/97  06:04p                   665 StringDb.h
+07/09/97  12:03p                13,802 stringlist.cpp
+07/07/97  10:13a                 2,796 StringList.h
+07/05/97  08:12p                12,534 STRINGLIST.SAV
+07/07/97  12:17p                 4,497 StringTreeList.cpp
+07/07/97  07:21a                 1,110 StringTreeList.h
+02/13/97  03:13p                 2,407 TimeZoneInfo.cpp
+02/13/97  06:07p                   544 TimeZoneInfo.h
+02/13/97  06:04p                   859 timezones.cpp
+02/13/97  06:04p                   366 TimeZones.h
+06/11/97  04:14p                 1,165 win4me.h
+              78 File(s)        505,470 bytes
+
+ Directory of C:\sps\source\ddl
+
+07/09/97  02:06p        <DIR>          .
+07/09/97  02:06p        <DIR>          ..
+06/24/97  06:56a                   303 BankPhone.ddl
+05/30/97  12:06p                 1,321 PosFile.ddl
+03/03/97  10:15a                   346 preauthdb.ddl
+05/20/97  01:29p                 2,209 SPSLogdb.ddl
+06/03/97  02:00p                 7,573 SPSManDB.dbd
+03/05/97  04:54p                 7,367 Spsmandb.ddl
+03/05/97  04:54p                12,071 SPSManDB.h
+06/11/97  02:38p                 9,443 spsmandb.new
+06/10/97  12:25p                 8,185 spsmandb.old
+06/11/97  10:52a                 5,692 spsmandb.tmp
+06/11/97  03:19p                 8,710 SPSManV20.dbd
+06/24/97  03:25p                10,126 spsmanV20.ddl
+07/02/97  10:14a                10,196 spsmanv21.ddl
+07/08/97  05:11a                10,513 spsmanv22.ddl
+              16 File(s)         94,055 bytes
+
+ Directory of C:\sps\source\doc
+
+07/09/97  02:06p        <DIR>          .
+07/09/97  02:06p        <DIR>          ..
+06/12/97  08:37a                13,312 TaskList.doc
+               3 File(s)         13,312 bytes
+
+ Directory of C:\sps\source\include
+
+07/09/97  02:08p        <DIR>          .
+07/09/97  02:08p        <DIR>          ..
+02/10/97  12:10p                   264 Appnotify.h
+06/24/97  06:58a                   631 BankPhoneDB.h
+03/24/97  11:53a                   261 BankVerify.h
+07/09/97  07:30a                 4,445 CheckAuthFn.h
+02/12/97  02:32p                   253 CheckService.h
+05/20/97  09:49a                   118 DateStuff.h
+07/05/97  05:13p                   746 DbDefs.h
+02/19/97  08:10a                   508 defs.h
+07/07/97  09:30a                 1,361 DestName.h
+02/10/97  12:10p                 3,572 ipc.h
+04/10/97  10:50a                 4,065 ipcmsg.h
+02/10/97  12:10p                 1,228 ipcserver.h
+06/30/97  06:33p                 5,688 kwrec.h
+07/05/97  06:51p                   360 ListDefs.h
+03/03/97  11:33a                 6,002 messages.h
+02/10/97  12:10p                 1,068 nodefs.h
+06/25/97  05:34p                13,824 oldspsmandb.h
+02/10/97  12:10p                   434 OpenInfo.h
+05/30/97  12:06p                 1,896 PosFile.h
+03/03/97  03:02p                   736 PreauthDB.h
+07/08/97  03:42p                   256 ProductAdjust.h
+05/30/97  09:15a                 1,978 Rcodes.h
+03/17/97  06:10a                   371 splib.h
+05/20/97  01:29p                 2,108 SPSLogDB.h
+07/08/97  02:35p                17,732 SPSManDB.h
+06/11/97  02:41p                15,670 SPSManV20.h
+07/01/97  01:05p                16,915 SPSManV21.h
+07/02/97  11:18a                17,528 spsmanV22.h
+07/05/97  05:21p                 1,382 TranType.h
+02/25/97  09:33a                   937 UnsNum.h
+02/13/97  12:44p                   233 WeekDays.h
+              33 File(s)        122,570 bytes
+
+ Directory of C:\sps\source\IPCShell
+
+07/09/97  02:09p        <DIR>          .
+07/09/97  02:09p        <DIR>          ..
+03/24/97  04:36p                 4,277 ServerApp.cpp
+07/09/97  11:22a                 3,877 ServerApp.DSW
+12/10/96  07:30p                   435 ServerApp.h
+07/09/97  11:22a                65,862 ServerApp.ide
+07/04/97  09:15a                    24 ServerApp.rc
+07/04/97  09:16a                   876 ServerApp.res
+02/25/97  11:41a                 1,822 ServerMain.cpp
+07/04/97  08:57a                   766 SRV.ico
+02/25/97  11:41a                 1,161 win4me.h
+              11 File(s)         79,100 bytes
+
+ Directory of C:\sps\source\KDSPrograms
+
+07/09/97  02:11p        <DIR>          .
+07/09/97  02:11p        <DIR>          ..
+04/01/97  08:07a                 2,601 authfn.h
+01/14/97  08:01p                 4,399 datagram.cpp
+04/02/97  08:18a                   168 go
+01/14/97  10:41p                    66 Hello.cpp
+03/31/97  08:25a                 4,850 INETMan.cpp
+04/01/97  08:08a                 1,090 inetman.h
+04/01/97  08:08a                   229 ipckeys.h
+04/04/97  06:54a                38,702 ipcmsg.cpp
+04/01/97  08:09a                 4,041 ipcmsg.h
+01/17/97  01:15a                 3,085 IPCProcs.cpp
+01/21/97  02:16p                 2,428 KWPosIn.cpp
+01/21/97  07:38p                 6,689 KWPosOut.Cpp
+03/07/97  09:33a                 4,725 kwsimp.cpp
+01/22/97  03:53p                 3,610 kwsimv.cpp
+03/31/97  09:59a                 4,727 kwtosps.cpp
+04/02/97  01:37p                 6,925 out
+01/22/97  06:11p                 3,672 pipes.cpp
+04/01/97  08:08a                   328 pipes.h
+03/07/97  12:30p                 2,702 PosIn.cpp
+04/02/97  07:54a                     0 POSOut.mak
+07/01/97  03:33p                 4,742 programs.DSW
+07/01/97  03:33p                33,700 programs.ide
+07/01/97  03:33p                 5,403 programs.OBR
+04/04/97  07:12a                 8,814 recfiltr.cpp
+04/03/97  01:31p                   629 recfiltr.h
+01/17/97  01:16a                   121 sethostname.cpp
+01/14/97  08:02p                 1,085 soctest.cpp
+01/21/97  12:56p                 2,346 SPSAdmin.cpp
+01/21/97  12:44p                 3,263 SPSIn.cpp
+01/17/97  01:15a                 2,056 SPSLog.cpp
+04/01/97  08:07a                   445 spslog.h
+07/01/97  12:26p                 7,187 SPSOut.cpp
+04/02/97  07:56a                   560 SPSOut.mak
+04/02/97  01:36p                 7,224 SPSOut.sav
+06/30/97  03:21p                 6,960 SPSPos.cpp
+03/05/97  07:59p                 3,985 SPSRoute.cpp
+04/04/97  06:42a                10,918 SPSVoice.cpp
+04/02/97  07:16a                   575 SPSVoice.mak
+01/14/97  10:41p                   106 test.cpp
+01/14/97  08:02p                 4,192 unixgram.cpp
+              42 File(s)        199,348 bytes
+
+ Directory of C:\sps\source\lib
+
+07/09/97  02:13p        <DIR>          .
+07/09/97  02:13p        <DIR>          ..
+03/03/97  04:23p                   159 _atoi.cpp
+12/26/96  08:35p                   909 AppNotify.cpp
+03/04/97  10:52a                 3,785 audittoact.cpp
+01/11/97  04:31p                   945 bcwdef.OBR
+05/20/97  09:48a                   455 datestuff.cpp
+11/29/96  11:53a                   258 errmsg.cpp
+07/03/97  11:31a                34,093 ipclib.cpp
+07/04/97  08:28a                 5,481 ipclib.DSW
+07/04/97  08:28a                41,442 ipclib.ide
+07/03/97  11:30a                42,249 ipcmsg.cpp
+01/11/97  03:44p                38,502 ipcmsg.sav
+11/29/96  11:53a                 2,627 ipcprocs.cpp
+11/29/96  11:53a                11,210 IPCServer.cpp
+11/29/96  11:53a                   314 msgboxf.cpp
+11/29/96  11:53a                 1,678 regadd.cpp
+11/29/96  11:53a                   343 remitem.cpp
+12/26/96  03:51p                   230 setcursors.cpp
+11/29/96  11:53a                   671 sharemem.cpp
+11/29/96  11:53a                 2,003 socstrerror.c
+07/03/97  11:25a                 2,213 socstrerror.cpp
+07/04/97  08:32a                 3,542 splib.DSW
+07/04/97  08:32a                68,764 splib.ide
+07/04/97  08:32a                17,253 splib.OBR
+02/05/97  07:49p                 7,272 UnsNum.cpp
+12/23/96  01:03p                    43 velocisstrerror.cpp
+              27 File(s)        286,441 bytes
+
+ Directory of C:\sps\source\LogSearch
+
+07/09/97  02:17p        <DIR>          .
+07/09/97  02:17p        <DIR>          ..
+08/08/96  03:01a                   766 applsdi.ico
+06/13/97  07:16a                19,003 AuthRulesDialog.rc
+06/13/97  07:12a                 4,116 AuthRulesDialog.rh
+07/08/97  10:56a                 5,759 CheckAuth.rc
+05/23/97  09:38a                   807 CheckAuth.rh
+05/22/97  02:38p                 5,257 CheckAuth.sav.cpp
+07/09/97  11:09a                 4,233 ChkauthDialog.cpp
+07/08/97  10:58a                 1,840 ChkauthDialog.h
+06/05/97  09:07a                13,915 DecisionDialog.cpp
+06/05/97  09:06a                 2,864 DecisionDialog.h
+05/22/97  03:31p                12,485 DecisionDialog.rc
+05/22/97  12:46p                 2,310 DecisionDialog.rh
+07/08/97  11:42a                 2,043 EmployerDialog.cpp
+07/08/97  11:43a                 1,540 EmployerDialog.h
+07/08/97  11:42a                 4,384 EmployerDialog.rc
+07/08/97  11:42a                 1,018 EmployerDialog.rh
+04/15/97  03:06p                   358 find.bmp
+04/15/97  05:49p                   358 findnext.bmp
+04/15/97  05:50p                   358 findprev.bmp
+05/23/97  12:39p                 2,843 HoldCheckDialog.cpp
+05/23/97  12:36p                 1,366 HoldCheckDialog.h
+05/23/97  12:09p                 2,928 HoldCheckDialog.rc
+05/23/97  12:10p                   414 HoldCheckDialog.rh
+07/03/97  01:20p                 2,723 LogSearch.apx
+07/09/97  12:39p                 8,223 LogSearch.DSW
+07/09/97  12:39p               112,240 LogSearch.ide
+04/15/97  03:38p                 5,779 LogSearchAboutDlg.cpp
+04/15/97  03:37p                 1,926 LogSearchAboutDlg.h
+05/23/97  12:46p                 7,630 LogSearchApp.cpp
+04/15/97  03:07p                 1,003 LogSearchApp.def
+05/23/97  12:46p                 2,423 LogSearchApp.h
+06/05/97  08:27a                   647 logsearchapp.OBR
+06/11/97  05:23p                11,275 logsearchapp.rc
+07/09/97  11:13a                34,888 logsearchapp.res
+07/03/97  12:43p                 4,417 logsearchapp.rh
+05/22/97  12:26p                 1,076 LogSearchDlgClient.cpp
+05/22/97  11:55a                 1,111 LogSearchDlgClient.h
+07/08/97  11:15a                 3,585 MainDisplayDialog.cpp
+07/08/97  11:15a                 2,085 MainDisplayDialog.h
+05/22/97  11:52a                   478 MainDisplayDialog.rc
+05/22/97  12:05p                    52 MainDisplayDialog.rh
+07/09/97  11:08a                 6,518 MerchantDialog.cpp
+07/08/97  11:11a                 2,337 MerchantDialog.h
+07/08/97  11:03a                 7,573 MerchantDialog.rc
+07/08/97  11:03a                 1,437 MerchantDialog.rh
+05/22/97  05:19p                12,179 PickListDialog.cpp
+05/22/97  05:18p                 2,166 PickListDialog.h
+06/05/97  09:55a                 4,387 PosfileDialog.cpp
+06/05/97  09:51a                 1,647 PosfileDialog.h
+06/11/97  05:42p                 5,328 PosfileDialog.rc
+06/05/97  09:13a                 1,397 PosfileDialog.rh
+06/05/97  10:51a                 3,541 PosRulesDialog.cpp
+06/05/97  10:44a                 1,395 PosRulesDialog.h
+06/05/97  10:28a                10,096 PosrulesDialog.rc
+06/05/97  10:14a                 2,244 PosrulesDialog.rh
+04/15/97  03:06p                   358 print.bmp
+06/13/97  07:27a                 3,095 Rules2Dialog.cpp
+06/11/97  05:06p                 1,327 Rules2Dialog.h
+06/13/97  07:26a                11,587 RulesDialog.cpp
+06/13/97  07:23a                 4,036 RulesDialog.h
+05/22/97  08:49a                   359 SearchInfo.h
+01/02/97  11:12a                16,216 SearchKeyDialog.cpp
+05/22/97  09:14a                 2,661 SearchKeyDialog.h
+05/20/97  09:25a                 4,952 SearchKeyDialog.rc
+05/20/97  09:09a                   772 SearchKeyDialog.rh
+06/11/97  04:18p                 1,193 win4me.h
+              68 File(s)        401,327 bytes
+
+ Directory of C:\sps\source\ManagerDb
+
+07/09/97  02:18p        <DIR>          .
+07/09/97  02:18p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+07/09/97  08:23a                 9,095 dbauthrules.cpp
+07/05/97  07:18p                 2,456 DbError.cpp
+04/03/97  09:27a                 2,955 out
+07/09/97  12:21p                37,972 ServerApp.cpp
+07/09/97  12:24p                 8,631 ServerApp.DSW
+07/05/97  05:31p                 2,051 ServerApp.h
+07/09/97  12:24p                95,474 ServerApp.ide
+07/04/97  08:21a                    23 ServerApp.rc
+07/09/97  12:23p                   876 ServerApp.res
+12/24/96  11:53a                 1,787 ServerMain.cpp
+02/26/97  10:24a                 1,223 win4me.h
+              14 File(s)        163,309 bytes
+
+ Directory of C:\sps\source\NetRoute
+
+07/09/97  02:19p        <DIR>          .
+07/09/97  02:19p        <DIR>          ..
+01/13/97  04:29p                 4,305 datagram.c
+01/13/97  01:30p                   914 datagram.DSW
+01/13/97  02:31p                    86 DATAGRAM.TR2
+10/19/96  03:18p                17,593 INETUDP.C
+07/04/97  08:55a                   766 NET.ico
+07/09/97  11:23a                 3,184 NetRoute.DSW
+07/09/97  11:23a                62,986 NetRoute.ide
+06/05/97  07:54a                11,634 ServerApp.cpp
+10/16/96  10:54a                 9,521 ServerApp.DSW
+12/23/96  12:34p                 1,145 ServerApp.h
+07/04/97  09:01a                    26 ServerApp.rc
+07/04/97  09:02a                   876 ServerApp.res
+12/23/96  12:19p                 1,907 ServerMain.cpp
+01/13/97  04:30p                    67 td32.TR2
+01/13/97  04:30p                   818 tdconfig.td2
+              17 File(s)        115,828 bytes
+
+ Directory of C:\sps\source\PosAuth
+
+07/09/97  02:20p        <DIR>          .
+07/09/97  02:20p        <DIR>          ..
+06/18/97  08:16p                 5,577 ServerApp.cpp
+07/09/97  11:23a                 7,422 ServerApp.DSW
+06/11/97  04:12p                   506 ServerApp.h
+07/09/97  11:23a                77,096 ServerApp.ide
+07/04/97  09:03a                    24 ServerApp.rc
+07/04/97  09:03a                   876 ServerApp.res
+02/25/97  12:54p                 1,823 ServerMain.cpp
+07/04/97  08:57a                   766 SRV.ico
+02/25/97  09:25a                 1,143 win4me.h
+              11 File(s)         95,233 bytes
+
+ Directory of C:\sps\source\PosfileDB
+
+07/09/97  02:21p        <DIR>          .
+07/09/97  02:21p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+05/30/97  12:19p                 1,654 DbError.cpp
+07/03/97  02:04p                17,373 ServerApp.cpp
+07/09/97  11:23a                 6,691 ServerApp.DSW
+05/30/97  12:06p                   984 ServerApp.h
+07/09/97  11:23a                89,628 ServerApp.ide
+07/04/97  08:25a                    23 ServerApp.rc
+07/04/97  08:38a                   876 ServerApp.res
+12/24/96  11:53a                 1,787 ServerMain.cpp
+02/26/97  10:24a                 1,223 win4me.h
+              12 File(s)        121,005 bytes
+
+ Directory of C:\sps\source\PreauthDb
+
+07/09/97  02:22p        <DIR>          .
+07/09/97  02:22p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+04/15/97  11:48a                 1,571 DbError.cpp
+07/03/97  02:06p                13,441 ServerApp.cpp
+07/09/97  11:24a                 5,712 ServerApp.DSW
+03/03/97  11:31a                 1,032 ServerApp.h
+07/09/97  11:24a                89,726 ServerApp.ide
+07/04/97  08:25a                    23 ServerApp.rc
+07/04/97  08:38a                   876 ServerApp.res
+12/24/96  11:53a                 1,787 ServerMain.cpp
+02/26/97  10:24a                 1,223 win4me.h
+              12 File(s)        116,157 bytes
+
+ Directory of C:\sps\source\ReferQue
+
+07/09/97  02:23p        <DIR>          .
+07/09/97  02:23p        <DIR>          ..
+06/13/97  10:35a                10,136 ServerApp.cpp
+07/09/97  11:24a                 4,554 ServerApp.DSW
+04/23/97  11:47a                   600 ServerApp.h
+07/09/97  11:24a                66,176 ServerApp.ide
+07/04/97  09:04a                    24 ServerApp.rc
+07/04/97  09:04a                   876 ServerApp.res
+02/25/97  11:41a                 1,822 ServerMain.cpp
+07/04/97  08:57a                   766 SRV.ico
+02/25/97  11:41a                 1,161 win4me.h
+              11 File(s)         86,115 bytes
+
+ Directory of C:\sps\source\Setup
+
+07/09/97  02:23p        <DIR>          .
+07/09/97  02:23p        <DIR>          ..
+07/04/97  10:14a                 2,737 SPSServer.iwz
+               3 File(s)          2,737 bytes
+
+ Directory of C:\sps\source\SPSFile
+
+07/09/97  02:24p        <DIR>          .
+07/09/97  02:24p        <DIR>          ..
+05/27/97  04:21p                   766 applsdi.ico
+06/24/97  08:03a                 8,601 BankPhoneDialog.cpp
+06/24/97  07:34a                 2,047 BankPhoneDialog.h
+06/23/97  08:06p                 3,580 FileEditDialog.cpp
+06/24/97  07:13a                 1,680 FileEditDialog.h
+06/24/97  06:03a                 1,131 MainDialog.cpp
+06/24/97  06:02a                 1,070 MainDialog.h
+05/29/97  09:01a                11,245 posfileman.apx
+05/30/97  12:47p                 6,160 PosFileMan.DSW
+06/23/97  10:46a                 5,585 PosFileManAboutDlg.cpp
+05/28/97  10:58a                 1,848 PosFileManAboutDlg.h
+06/24/97  05:55a                 7,380 PosFileManApp.cpp
+05/27/97  10:48a                 1,008 PosFileManApp.def
+06/23/97  08:11p                 2,387 PosFileManApp.h
+06/24/97  06:36a                23,405 posfilemanapp.rc
+07/09/97  12:26p                12,716 posfilemanapp.res
+06/24/97  06:36a                 5,144 posfilemanapp.rh
+07/03/97  01:36p                17,722 PosFileManDlgClient.cpp
+06/24/97  06:37a                 2,744 PosFileManDlgClient.h
+06/23/97  10:59a                 1,075 SPSFileEdit.apx
+07/09/97  12:34p                 7,952 SPSFileMan.DSW
+07/09/97  12:34p                64,450 SPSFileMan.ide
+12/05/96  10:54a                   766 VoiceAuth.ico
+02/10/97  12:10p                 1,173 win4me.h
+              26 File(s)        191,635 bytes
+
+ Directory of C:\sps\source\SPSLog
+
+07/09/97  02:25p        <DIR>          .
+07/09/97  02:25p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+04/15/97  01:03p                 1,945 DbError.cpp
+07/04/97  08:47a                18,907 ServerApp.cpp
+07/09/97  11:59a                 5,660 ServerApp.DSW
+05/21/97  03:17p                 1,083 ServerApp.h
+07/09/97  11:59a                89,710 ServerApp.ide
+07/04/97  08:26a                    23 ServerApp.rc
+07/04/97  08:39a                   876 ServerApp.res
+12/24/96  11:53a                 1,787 ServerMain.cpp
+02/26/97  10:24a                 1,223 win4me.h
+              12 File(s)        121,980 bytes
+
+ Directory of C:\sps\source\SPSManager
+
+07/09/97  02:33p        <DIR>          .
+07/09/97  02:33p        <DIR>          ..
+02/10/97  12:10p                   870 AccountDialog.cpp
+02/10/97  12:10p                 1,776 AccountDialog.h
+02/10/97  12:10p                 4,982 AccountDialog.rcs
+12/12/96  12:35p                   766 applsdi.ico
+06/11/97  03:37p                 6,292 AuthRulesDialog.cpp
+06/10/97  11:29a                 2,025 AuthRulesDialog.h
+07/08/97  07:58a                40,788 AuthRulesDialog.rc
+07/07/97  11:27a                 7,076 AuthRulesDialog.rh
+02/10/97  12:10p                 1,225 AuthRulesDialogs.cpp
+02/10/97  12:10p                 1,064 AuthRulesDialogs.h
+02/10/97  12:10p                   842 AuthRulesDilalog.cpp
+02/10/97  12:10p                   955 AuthRulesDilalog.h
+02/10/97  10:15p                   225 BccW32.cfg
+07/08/97  12:35p                13,617 DataReqDialog.cpp
+07/08/97  12:35p                 3,446 DataReqDialog.h
+07/08/97  05:18a                 9,766 DataReqDialog.rc
+07/07/97  03:07p                 2,029 DataReqDialog.rh
+02/10/97  12:10p                   362 DateTime.txt
+07/03/97  01:13p                19,108 DateTimeDialog.cpp
+02/10/97  12:10p                 4,411 DateTimeDialog.h
+02/10/97  12:10p                   885 DbField.cpp
+02/10/97  12:10p                   935 DbField.h
+02/10/97  12:10p                   124 DBIO.cpp
+07/07/97  12:01p                 3,444 dbmanmsg.cpp
+02/10/97  08:07p                   442 DBManMsg.h
+02/10/97  12:10p                   985 EditPopup.cpp
+02/10/97  12:10p                   861 EditPopup.h
+02/10/97  12:10p                     0 EditUns.cpp
+02/10/97  12:10p                 1,821 ExitDialog.cpp
+02/10/97  12:10p                 1,471 ExitDialog.h
+02/10/97  12:10p                 3,222 FormDialog.cpp
+02/10/97  12:10p                 1,821 FormDialog.h
+02/10/97  12:10p                   358 help.bmp
+02/10/97  12:10p                   326 help.cur
+02/10/97  12:10p                   178 helpicon.bmp
+02/10/97  12:10p                18,048 keys.rtf
+02/10/97  12:10p                21,111 mainhelp.rtf
+07/08/97  07:36a                34,978 MerchantDialog.cpp
+07/08/97  06:43a                 4,177 MerchantDialog.h
+07/08/97  06:00a                10,714 MerchantDialog.rc
+07/08/97  06:02a                 2,007 MerchantDialog.rh
+02/12/97  09:58p                 1,150 MerchNofDialog.cpp
+02/12/97  09:53p                 1,136 MerchNofDialog.h
+02/10/97  12:10p                     2 NONAME00.cpp
+02/10/97  12:10p                   894 Notifier.cpp
+07/05/97  06:00p                 3,389 OpenClassDialog.cpp
+07/05/97  06:00p                 1,748 OpenClassDialog.h
+02/10/97  12:10p                 1,932 OpenClassDialog.rc
+02/10/97  12:10p                   194 OpenClassDialog.rh
+06/27/97  02:55p                 1,570 openmerchdialog.cpp
+02/13/97  08:23a                 1,127 OpenMerchDialog.h
+02/12/97  08:34p                     0 OpenResourceDialog.rc
+02/10/97  12:10p                 6,116 OpenSave.cpp
+07/05/97  06:02p                 8,413 OpenTreeDialog.cpp
+07/05/97  06:01p                 1,893 OpenTreeDialog.h
+02/10/97  12:10p                 2,381 OpenTreeDialog.rc
+02/10/97  12:10p                   251 OpenTreeDialog.rh
+02/10/97  12:10p                13,624 out
+06/04/97  08:11a                11,147 PosFileDialog.rc
+06/03/97  01:55p                 2,243 PosfileDialog.rh
+06/03/97  02:20p                 7,934 PosFileRulesDialog.cpp
+06/03/97  01:55p                 2,110 PosFileRulesDialog.h
+06/03/97  12:35p                10,066 PosResponse.rc
+05/30/97  09:19a                   952 PosResponse.rh
+02/10/97  12:10p                   122 ProdAdj.txt
+07/07/97  02:36p                 1,121 ProdClassDialog.rc
+07/07/97  10:31a                    53 ProdClassDialog.rh
+07/07/97  02:28p                 4,802 ProductAdjustDialog.cpp
+07/07/97  02:20p                 1,885 ProductAdjustDialog.h
+07/07/97  03:05p                 3,885 ProductClassDialog.cpp
+07/07/97  02:40p                 1,796 ProductClassDialog.h
+06/25/97  07:16p                   597 Project1.cpp
+06/25/97  07:16p                 1,803 Project1.mak
+06/25/97  07:07p                   876 Project1.res
+02/27/97  09:49a                   261 RecType.h
+07/05/97  05:47p                 3,664 ResponseMsgDialog.cpp
+02/28/97  04:08p                 1,427 ResponseMsgDialog.h
+02/10/97  12:10p                   871 RuleEdit.cpp
+02/10/97  12:10p                 1,008 RuleEdit.h
+06/11/97  12:30p                 9,638 ruleparams2dialog.cpp
+06/10/97  11:33a                 2,202 ruleparams2dialog.h
+06/12/97  03:56p                21,061 RuleParamsDialog.cpp
+06/12/97  02:49p                 5,372 RuleParamsDialog.h
+02/10/97  12:10p                 1,384 RULES.TXT
+02/10/97  12:10p                   801 RulesDialog.cpp
+02/10/97  12:10p                   901 RulesDialog.h
+02/10/97  12:10p                   411 RulesDialogManager.h
+02/10/97  12:10p                   387 RulesDialogManger.cpp
+02/10/97  12:10p                   866 RulesSubClassDialog.cpp
+02/10/97  12:10p                   985 RulesSubClassDialog.h
+07/07/97  10:25a                   609 SaveFile.h
+02/10/97  04:55p                11,680 SecRulesDialog.cpp
+02/10/97  04:15p                 3,099 SecRulesDialog.h
+02/10/97  04:46p                 8,318 SecRulesDialog.rc
+02/10/97  12:10p                 1,623 SecRulesDialog.rh
+02/10/97  10:03p                20,098 spsman.HLP
+02/10/97  12:10p                   251 SpsMan.hpj
+02/10/97  12:10p                 1,673 spsman.PH
+07/05/97  08:45p                 2,868 SpsManager.apx
+02/10/97  12:10p                   185 spsmanager.cgi
+07/09/97  12:36p                 6,716 SpsManager.DSW
+07/09/97  12:36p               201,522 SpsManager.ide
+02/10/97  10:14p                 8,816 SpsManager.mak
+02/10/97  12:10p                 5,350 SpsManagerAboutDlg.cpp
+02/10/97  12:10p                 1,678 SpsManagerAboutDlg.h
+07/07/97  10:40a                30,244 SpsManagerApp.cpp
+02/10/97  12:10p                   978 SpsManagerApp.def
+02/27/97  09:34a                 3,203 SpsManagerApp.h
+07/07/97  02:35p                14,476 spsmanagerapp.rc
+07/09/97  12:36p                45,692 spsmanagerapp.res
+07/05/97  08:44p                 5,843 spsmanagerapp.rh
+02/10/97  12:10p                 1,863 SpsManagerDlgClient.cpp
+02/10/97  12:10p                 1,307 SpsManagerDlgClient.h
+02/10/97  12:10p                 4,959 SPSManDB.ddl.cpp
+06/03/97  12:30p                   134 temp.wrk
+06/03/97  12:33p                 4,068 temp2.wrk
+07/07/97  10:33a                 3,282 temp3.wrk
+07/07/97  10:36a                 3,281 temp4.wrk
+02/10/97  10:15p                   657 tlink32.ini
+03/17/97  08:33a                     2 Waiting.cpp
+02/10/97  12:10p                 1,173 win4me.h
+             123 File(s)        773,632 bytes
+
+ Directory of C:\sps\source\Utilities
+
+07/09/97  02:42p        <DIR>          .
+07/09/97  02:42p        <DIR>          ..
+07/09/97  02:34p        <DIR>          DbConvert
+07/09/97  02:35p        <DIR>          ipcsample
+07/09/97  02:36p        <DIR>          IPCTell
+07/09/97  02:38p        <DIR>          kdstest
+07/09/97  02:39p        <DIR>          Messages
+07/09/97  02:39p        <DIR>          MsgBox
+07/09/97  02:40p        <DIR>          PosTest
+07/09/97  02:41p        <DIR>          RegSetup
+07/09/97  02:41p        <DIR>          SendCmd
+07/09/97  02:42p        <DIR>          ServerShell
+07/09/97  02:42p        <DIR>          Startup
+              13 File(s)              0 bytes
+
+ Directory of C:\sps\source\Utilities\DbConvert
+
+07/09/97  02:34p        <DIR>          .
+07/09/97  02:34p        <DIR>          ..
+07/08/97  12:15p                 6,616 dbconvert.cpp
+07/08/97  12:16p                 7,931 Dbconvert.DSW
+07/08/97  12:16p                41,756 Dbconvert.ide
+07/01/97  10:06a                 1,882 dbfix.cpp
+07/01/97  10:08a                 3,762 dbfix.DSW
+07/01/97  10:08a                41,700 dbfix.ide
+06/24/97  07:39a                 1,312 newdbfile.cpp
+06/24/97  07:39a                 4,642 newdbfile.DSW
+06/24/97  07:39a                38,664 newdbfile.ide
+06/24/97  03:03p                16,931 oldspsmandb.h
+07/02/97  11:20a                16,933 SPSManV21.h
+              13 File(s)        182,129 bytes
+
+ Directory of C:\sps\source\Utilities\ipcsample
+
+07/09/97  02:35p        <DIR>          .
+07/09/97  02:35p        <DIR>          ..
+10/06/96  11:13a                 9,558 IPCSample.apx
+09/19/96  10:29a                   982 IPCSample.def
+05/26/97  09:23a                 2,800 IPCSample.DSW
+09/17/96  11:13a                 1,398 IPCSample.ico
+05/26/97  09:23a                71,874 IPCSample.ide
+12/23/96  11:55a                11,592 ipcsample.rc
+05/26/97  09:23a                 9,304 IPCSample.res
+12/23/96  11:55a                 4,753 IPCSample.rh
+12/21/96  05:46p                 3,148 IPCSampleApp.cpp
+09/24/96  12:12p                 1,639 IPCSampleApp.h
+03/03/97  11:38a                 9,874 IPCSampleDialog.cpp
+12/23/96  11:56a                 1,603 IPCSampleDialog.h
+10/06/96  11:08a                   206 wtlldlgc.cpp
+10/06/96  11:08a                     0 WtllDlgC.h
+              16 File(s)        128,731 bytes
+
+ Directory of C:\sps\source\Utilities\IPCTell
+
+07/09/97  02:36p        <DIR>          .
+07/09/97  02:36p        <DIR>          ..
+09/19/96  10:29a                   982 IPCSample.def
+06/04/97  11:43a                 3,963 IPCSample.DSW
+09/17/96  11:13a                 1,398 IPCSample.ico
+06/04/97  11:43a                71,696 IPCSample.ide
+03/24/97  04:23p                10,817 ipcsample.rc
+03/24/97  04:32p                 8,984 IPCSample.res
+03/24/97  04:23p                 4,654 IPCSample.rh
+06/04/97  11:03a                 3,235 IPCSampleApp.cpp
+09/24/96  12:12p                 1,639 IPCSampleApp.h
+06/04/97  11:36a                 5,508 IPCSampleDialog.cpp
+06/04/97  10:59a                 1,507 IPCSampleDialog.h
+10/06/96  11:08a                   206 wtlldlgc.cpp
+10/06/96  11:08a                     0 WtllDlgC.h
+              15 File(s)        114,589 bytes
+
+ Directory of C:\sps\source\Utilities\kdstest
+
+07/09/97  02:38p        <DIR>          .
+07/09/97  02:38p        <DIR>          ..
+04/24/97  03:50a                 1,398 applsdi.ico
+04/24/97  05:00a                 5,032 kdstest.apx
+07/08/97  10:23a                 7,896 KDSTest.DSW
+07/08/97  10:23a                63,220 KDSTest.ide
+04/24/97  03:51a                 5,294 KDSTestAboutDlg.cpp
+04/24/97  03:50a                 1,633 KDSTestAboutDlg.h
+04/24/97  07:17a                 4,565 KDSTestApp.cpp
+04/24/97  03:51a                   963 KDSTestApp.def
+04/24/97  05:19a                 2,034 KDSTestApp.h
+07/04/97  10:29a                 7,682 kdstestapp.rc
+07/04/97  10:29a                17,100 kdstestapp.res
+04/24/97  04:14a                 3,865 kdstestapp.rh
+04/24/97  03:51a                   988 KDSTestDlgClient.cpp
+04/24/97  03:50a                   924 KDSTestDlgClient.h
+04/24/97  05:42a                 5,053 ResponseDialog.cpp
+04/24/97  04:41a                 1,657 ResponseDialog.h
+04/24/97  06:17a                15,713 ResponseDialog.rc
+04/24/97  04:14a                 3,025 ResponseDialog.rh
+04/24/97  07:16a                31,848 Tranlog.rc
+04/24/97  04:08a                   352 TranLog.rh
+04/24/97  06:53a                 2,927 TranLogDialog.cpp
+04/24/97  06:18a                 1,438 TranLogDialog.h
+07/04/97  10:24a                   766 TST.ico
+02/10/97  12:10p                 1,173 win4me.h
+              26 File(s)        186,546 bytes
+
+ Directory of C:\sps\source\Utilities\Messages
+
+07/09/97  02:39p        <DIR>          .
+07/09/97  02:39p        <DIR>          ..
+09/11/96  08:48a                    75 BccW32.cfg
+10/16/96  10:46a                    90 MAKEIT.BAT
+03/12/97  10:24a                 1,886 messages.DSW
+03/12/97  10:24a                29,802 messages.ide
+10/20/96  09:33a                 2,421 messages.mak
+03/03/97  11:33a                     0 messages.map
+03/03/97  11:33a                 4,331 messages.mc
+03/12/97  10:24a                   325 messages.OBR
+03/03/97  11:33a                    37 messages.rc
+03/03/97  11:33a                 2,784 messages.res
+03/03/97  11:33a                 2,720 MSG00001.bin
+03/12/97  11:01a                 6,050 regsetup.cpp
+09/18/96  01:46p                   895 regtest.cpp
+              15 File(s)         51,416 bytes
+
+ Directory of C:\sps\source\Utilities\MsgBox
+
+07/09/97  02:39p        <DIR>          .
+07/09/97  02:39p        <DIR>          ..
+06/05/97  04:03p                   580 msgbox.cpp
+07/05/97  04:27p                 3,535 msgbox.DSW
+07/05/97  04:27p                37,758 msgbox.ide
+               5 File(s)         41,873 bytes
+
+ Directory of C:\sps\source\Utilities\PosTest
+
+07/09/97  02:40p        <DIR>          .
+07/09/97  02:40p        <DIR>          ..
+01/16/97  09:50a                 1,398 applsdi.ico
+01/16/97  03:24p                15,706 Kwtest.apx
+07/02/97  10:28a                 5,231 Kwtest.DSW
+07/02/97  10:28a                53,874 Kwtest.ide
+07/02/97  10:28a                   341 Kwtest.OBR
+02/26/97  10:47a                 2,695 KwtstApp.cpp
+01/16/97  09:51a                   957 KwtstApp.def
+01/16/97  09:50a                 1,446 KwtstApp.h
+04/15/97  11:26a                20,279 kwtstapp.rc
+04/15/97  11:30a                11,776 kwtstapp.res
+04/15/97  11:26a                 7,772 kwtstapp.rh
+04/15/97  11:30a                 5,527 KwtstDlC.cpp
+04/15/97  11:27a                 2,265 KwtstDlC.h
+04/15/97  11:32a                18,795 Postest.apx
+12/30/96  05:08p                 1,152 win4me.h
+              17 File(s)        149,214 bytes
+
+ Directory of C:\sps\source\Utilities\RegSetup
+
+07/09/97  02:41p        <DIR>          .
+07/09/97  02:41p        <DIR>          ..
+06/27/97  02:07p                 9,629 regsetup.cpp
+07/03/97  05:21p                 5,146 RegSetup.DSW
+07/03/97  05:21p                36,558 RegSetup.ide
+09/18/96  01:46p                   895 regtest.cpp
+               6 File(s)         52,228 bytes
+
+ Directory of C:\sps\source\Utilities\SendCmd
+
+07/09/97  02:41p        <DIR>          .
+07/09/97  02:41p        <DIR>          ..
+06/05/97  03:51p                 2,039 sendcmd.cpp
+07/05/97  04:57p                 4,675 sendcmd.DSW
+07/05/97  04:57p                48,504 sendcmd.ide
+06/05/97  03:13p                 1,386 SERVERBACKUP.BAT
+06/05/97  03:01p                   777 STARTEM.BAT
+06/05/97  02:16p                     0 test.bat
+06/04/97  10:13a                 1,173 win4me.h
+               9 File(s)         58,554 bytes
+
+ Directory of C:\sps\source\Utilities\ServerShell
+
+07/09/97  02:42p        <DIR>          .
+07/09/97  02:42p        <DIR>          ..
+07/03/97  05:29p                   766 DB.ico
+07/04/97  08:55a                   766 NET.ico
+04/14/97  08:07a                 3,780 ServerApp.cpp
+07/04/97  10:23a                 4,220 ServerApp.DSW
+12/10/96  07:30p                   435 ServerApp.h
+07/04/97  10:24a                   766 serverapp.ico
+07/04/97  10:23a                71,646 ServerApp.ide
+07/04/97  10:24a                    32 ServerApp.rc
+02/25/97  11:42a                 1,568 ServerApp.res
+02/25/97  11:41a                 1,822 ServerMain.cpp
+07/04/97  10:24a                   766 TST.ico
+02/25/97  11:41a                 1,161 win4me.h
+              14 File(s)         87,728 bytes
+
+ Directory of C:\sps\source\Utilities\Startup
+
+07/09/97  02:42p        <DIR>          .
+07/09/97  02:42p        <DIR>          ..
+06/28/97  03:34p                 9,468 addprogramitem.cpp
+07/02/97  01:37p                 5,135 AddProgramItem.DSW
+07/05/97  10:53a                 3,767 AddStartup.cpp
+07/05/97  11:59a                 3,918 AddStartup.DSW
+07/05/97  11:59a                36,086 AddStartup.ide
+               7 File(s)         58,374 bytes
+
+ Directory of C:\sps\source\VoiceAuth
+
+07/09/97  02:47p        <DIR>          .
+07/09/97  02:47p        <DIR>          ..
+03/24/97  12:18p                 1,812 ApprovalDialog.cpp
+04/04/97  11:13a                 1,301 ApprovalDialog.h
+03/19/97  07:41a                   112 checkauth.cgi
+07/09/97  12:38p                 6,343 CheckAuth.DSW
+10/29/96  08:47a                19,727 checkauth.HLP
+10/29/96  08:39a                   220 CheckAuth.hpj
+07/09/97  12:38p               164,964 CheckAuth.ide
+11/08/96  11:54a                    43 CheckAuth.Msg
+10/29/96  08:41a                 1,672 checkauth.PH
+04/23/97  01:41p                 5,732 CheckAuth.rc
+04/04/97  11:17a                 1,260 CheckAuth.rh
+11/22/96  07:11p                   125 CHECKAUTH.TR2
+03/17/97  09:35a                 2,814 CheckAuthApp.cpp
+10/29/96  09:38a                   973 CheckAuthApp.def
+11/19/96  08:42a                 1,527 CheckAuthApp.h
+04/21/97  08:26a                10,463 CheckAuthApp.rc
+07/09/97  12:38p                19,148 CheckAuthApp.res
+04/04/97  11:09a                 4,230 checkauthapp.rh
+11/29/96  03:20p                    73 CheckAuthFields.h
+12/04/96  09:31a                    25 checkauthmsg.cpp
+04/07/97  08:49a                   906 Chkauth.h
+03/17/97  06:48a                   213 chkauth.ini
+07/09/97  12:01p                 4,248 ChkauthControls.cpp
+12/01/96  06:27a                   789 ChkauthCtlMan.h
+07/09/97  12:09p                39,000 ChkauthDialog.cpp
+07/08/97  08:02a                 3,359 ChkauthDialog.h
+11/18/96  08:54p                 9,437 ChkauthDlg.cpp
+04/04/97  11:17a                 3,029 ChkauthDlg.h
+11/22/96  04:42p                   324 ChkauthIni.cpp
+11/22/96  04:41p                   224 ChkauthIni.h
+11/29/96  10:20a                   924 ChkauthNotify.cpp
+07/09/97  12:01p                23,482 DecisionDialog.cpp
+06/22/97  02:26p                 3,404 DecisionDialog.h
+06/22/97  02:32p                13,579 DecisionDialog.rc
+06/22/97  02:16p                 2,503 DecisionDialog.rh
+03/24/97  12:16p                 1,423 DeclineDialog.cpp
+06/22/97  01:09p                 1,151 DeclineDialog.h
+04/23/97  02:08p                 5,762 Dialogs.rc
+04/23/97  02:08p                 1,313 Dialogs.rh
+07/08/97  11:38a                 7,767 EmployerDialog.cpp
+06/25/97  03:23p                 1,577 EmployerDialog.h
+07/08/97  11:22a                 6,095 EmployerDialog.rc
+07/08/97  11:21a                 1,399 EmployerDialog.rh
+07/03/97  02:20p                 2,121 FetchReferral.cpp
+04/04/97  11:15a                 1,299 FetchReferral.h
+04/08/97  08:42a                   795 HCMSGID.PRT.cpp
+10/29/96  08:39a                   326 help.cur
+04/23/97  03:34p                 3,784 HoldCheckApprovalDialog.cpp
+04/23/97  02:11p                 1,390 HoldCheckApprovalDialog.h
+07/03/97  02:19p                16,536 HoldCheckDialog.cpp
+04/23/97  11:29a                 2,227 HoldCheckDialog.h
+04/23/97  11:36a                 3,725 HoldCheckDialog.rc
+04/23/97  12:54p                   565 HoldCheckDialog.rh
+10/29/96  08:39a                18,059 keys.rtf
+10/29/96  08:39a                20,848 mainhelp.rtf
+07/08/97  11:24a                 3,817 MsgId.h
+11/29/96  02:35p                 1,415 msgwin.rc
+04/04/97  11:08a                   891 MsgWin.rh
+04/07/97  02:00p                   772 pt.h
+03/30/97  07:52a                 2,920 test.cpp
+04/23/97  11:34a                 2,099 VerifyReferralDialog.cpp
+04/04/97  11:14a                 1,381 VerifyReferralDialog.h
+06/22/97  02:25p                 1,356 VoiceAuth.apx
+12/05/96  10:54a                   766 VoiceAuth.ico
+03/27/97  05:31p                 3,075 VoiceMsg.dat
+04/08/97  12:45p                 1,500 YesNoDialog.cpp
+04/08/97  11:31a                 1,240 YesNoDialog.h
+              69 File(s)        467,379 bytes
+
+     Total Files Listed:
+             784 File(s)      5,181,467 bytes
+                            686,123,520 bytes free

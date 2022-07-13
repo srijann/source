@@ -1,0 +1,116 @@
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:46:02 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@312. NtRte Send  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:46:02 2001
+. 264-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@104. NtRte Recv  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:46:02 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@312. NtRte Send  -src=POSAUTH-SPSWRK6, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:46:02 2001
+. 62-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@104. NtRte Recv  -src=POSAUTH-SPSWRK6, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:46:02 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@312. NtRte Send  -src=ANY-KWSERV1, dest=ANY-KWSERV1-at Tue Feb 13 08:46:02 2001
+. 1709-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:46:02 2001
+. 0-0.
+@104. NtRte Recv  -src=ANY-KWSERV1, dest=CHKAUTH-SPSWRK6-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:47:46 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@312. NtRte Send  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:46 2001
+. 523-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@104. NtRte Recv  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:47:46 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@312. NtRte Send  -src=POSAUTH-SPSWRK6, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:46 2001
+. 62-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@104. NtRte Recv  -src=POSAUTH-SPSWRK6, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:47:46 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@312. NtRte Send  -src=ANY-KWSERV1, dest=ANY-KWSERV1-at Tue Feb 13 08:47:46 2001
+. 1965-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:47:46 2001
+. 0-0.
+@104. NtRte Recv  -src=ANY-KWSERV1, dest=CHKAUTH-SPSWRK6-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:47:47 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@135. NtRte end loop -RcvTask-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@93. NtRte start loop -RcvTask processing message-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@286. NtRte  -DoApplicationMsg-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@312. NtRte Send  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:47 2001
+. 404-0.
+@322. NtRte  -SendTo End-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@104. NtRte Recv  -src=ANY-KWSERV1, dest=ManageDB-SPSWRK6-at Tue Feb 13 08:47:47 2001
+. 0-0.
+@120. NtRte RecvTask MsgText and ii --at Tue Feb 13 08:47:47 2001
+. 0-0.
+@132. NtRte RecvTask -SendMsg() to Destination-at Tue Feb 13 08:47:47 2001
+. 0-0.

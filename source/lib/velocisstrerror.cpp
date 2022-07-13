@@ -1,0 +1,5 @@
+
+
+char* VelocisStrError(int Errnum)
+{
+}

@@ -1,0 +1,15 @@
+#define IDC_BVSTATUS	1500
+#define IDC_BVDATE	1400
+#define IDC_BAL	1300
+#define IDC_APP	1200
+#define IDC_RC	1100
+#define IDC_PHONE	1000
+#define IDC_SSN	900
+#define IDC_ACCT	800
+#define IDC_ABA	700
+#define IDC_LICENSE	600
+#define IDC_STATE	500
+#define IDC_CHECKNUM	400
+#define IDC_AMOUNT	300
+#define IDC_MERCH	100
+#define IDD_TRANLOG	2002

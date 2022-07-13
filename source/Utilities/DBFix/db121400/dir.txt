@@ -1,0 +1,54 @@
+The positive file has code to make 3 keys:
+   Licence
+   Micr
+   Phone
+Is that all of them?
+
+BankPhone and PreAuth have no Keys
+
+Logfile has keys on:
+   Phone
+   Bank Number
+   Licence
+   SSN
+   Approval Number
+
+ManageDb is not in the code anywhere
+
+Are any keys or parts missing that you know of?
+
+Directory of C:\sps\source\Utilities\DBFix
+
+01/12/98  03:09p                 8,230 dbfix.cpp
+
+06/30/98  06:42p                 7,263 dbload.cpp
+
+01/12/98  03:11p                 5,769 dbunload.cpp
+ PosFile.h
+ BankPhoneDb.h
+ PreAuthDb.h
+
+UnLoadLogFile() is in old_unload.cpp - uses CopyTemp() in DbFix.cpp
+
+01/12/98  03:07p                 1,055 FixLog.cpp - SPSLog - not much
+
+01/05/98  10:11p                 1,936 loadlog.cpp - SPSLog
+
+01/05/98  11:52p                 6,064 OldFixLog.cpp - SPSLog
+
+01/05/98  10:14p                 5,000 old_unloadlog.cpp - SPSLog, has some keys
+
+01/12/98  03:17p                   318 unloadlog.cpp - Unload 1 rec from SPSLog
+
+01/05/98  10:01p                    19 DBDrive.h
+
+01/05/98  10:12p                   572 dbfix.h
+
+01/05/98  10:09p                   544 dbload.h
+
+01/08/98  09:22p                    34 DBPath.h
+
+01/05/98  10:07p                   575 dbunload.h
+
+07/05/97  12:39a                 2,108 OLD_SPSLogDB.h
+  

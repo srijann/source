@@ -1,0 +1,1 @@
+#define DBPATH "\\SPS\\DATABASE\\"

@@ -1,0 +1,8 @@
+/sps/sethostname KWSERV1
+/sps/SPSRoute 4&
+/sps/SPSAdmin&
+/sps/SPSOut 1 SPSSERV1 CHKAUTH&
+/sps/SPSIn 1&
+/sps/SPSVoice 100&
+/sps/SPSVoice 101&
+/sps/SPSVoice 102&

@@ -1,0 +1,403 @@
+//----------------------------------------------------------------------------
+//  Project Kwtest
+//  
+//  Copyright © 1996. All Rights Reserved.
+//
+//  SUBSYSTEM:  Kwtest Application
+//  FILE:     kwtstapp.rc
+//  AUTHOR:     
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "kwtstapp.rh"
+
+
+IDM_SDI MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&New", CM_FILENEW
+    MENUITEM "&Open...", CM_FILEOPEN
+    MENUITEM SEPARATOR
+    MENUITEM "&Save", CM_FILESAVE, GRAYED
+    MENUITEM "Save &As...", CM_FILESAVEAS, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit\tAlt+F4", CM_EXIT
+  END
+
+  MENUITEM SEPARATOR
+
+  POPUP "&Edit"
+  BEGIN
+    MENUITEM "&Undo\tAlt+BkSp", CM_EDITUNDO, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "Cu&t\tShift+Del", CM_EDITCUT, GRAYED
+    MENUITEM "&Copy\tCtrl+Ins", CM_EDITCOPY, GRAYED
+    MENUITEM "&Paste\tShift+Ins", CM_EDITPASTE, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "Clear &All\tCtrl+Del", CM_EDITCLEAR, GRAYED
+    MENUITEM "&Delete\tDel", CM_EDITDELETE, GRAYED
+  END
+
+  POPUP "&Search"
+  BEGIN
+    MENUITEM "&Find...", CM_EDITFIND, GRAYED
+    MENUITEM "&Replace...", CM_EDITREPLACE, GRAYED
+    MENUITEM "&Next\aF3", CM_EDITFINDNEXT, GRAYED
+  END
+
+  MENUITEM SEPARATOR
+
+  MENUITEM SEPARATOR
+
+  MENUITEM SEPARATOR
+
+
+  MENUITEM SEPARATOR
+
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&About...", CM_HELPABOUT
+  END
+
+END
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+IDM_SDI ACCELERATORS
+BEGIN
+  VK_DELETE, CM_EDITCUT, VIRTKEY, SHIFT
+  VK_INSERT, CM_EDITCOPY, VIRTKEY, CONTROL
+  VK_INSERT, CM_EDITPASTE, VIRTKEY, SHIFT
+  VK_DELETE, CM_EDITCLEAR, VIRTKEY, CONTROL
+  VK_BACK,   CM_EDITUNDO, VIRTKEY, ALT
+  VK_F3,     CM_EDITFINDNEXT, VIRTKEY
+END
+
+
+
+
+
+// Table of help hints displayed in the status bar.
+//
+STRINGTABLE
+BEGIN
+  -1,                   "File/document operations"
+  CM_FILENEW,           "Creates a new window"
+  CM_FILEOPEN,          "Opens a window"
+  CM_FILECLOSE,         "Closes the active document"
+  CM_FILESAVE,          "Saves the active document"
+  CM_FILESAVEAS,        "Saves the active document with a new name"
+  CM_EXIT,              "Quits Kwtest and prompts to save the documents"
+  CM_EDITUNDO-1,        "Edit operations"
+  CM_EDITUNDO,          "Reverses the last operation"
+  CM_EDITCUT,           "Cuts the selection and puts it on the Clipboard"
+  CM_EDITCOPY,          "Copies the selection and puts it on the Clipboard"
+  CM_EDITPASTE,         "Inserts the Clipboard contents at the insertion point"
+  CM_EDITDELETE,        "Deletes the selection"
+  CM_EDITCLEAR,         "Clears the active document"
+  CM_EDITADD,           "Inserts a new line"
+  CM_EDITEDIT,          "Edits the current line"
+  CM_EDITFIND-1,        "Search/replace operations"
+  CM_EDITFIND,          "Finds the specified text"
+  CM_EDITREPLACE,       "Finds the specified text and changes it"
+  CM_EDITFINDNEXT,      "Finds the next match"
+  CM_HELPABOUT-1,       "Access About"
+  CM_HELPABOUT,         "About the Kwtest application"
+END
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_CANNOTFIND,       "Cannot find ""%s""."
+  IDS_UNTITLED,         "Document"
+  IDS_UNABLEREAD,       "Unable to read file %s from disk."
+  IDS_UNABLEWRITE,      "Unable to write file %s to disk."
+  IDS_FILECHANGED,      "The text in the %s file has changed.\n\nDo you want to save the changes?"
+  IDS_FILEFILTER,       "Text files|*.txt|AllFiles|*.*|"
+END
+
+
+// Exception string resources (include/owl/except.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_OWLEXCEPTION,     "ObjectWindows Exception"
+  IDS_UNHANDLEDXMSG,    "Unhandled Exception"
+  IDS_OKTORESUME,       "OK to resume?"
+  IDS_UNKNOWNEXCEPTION, "Unknown exception"
+
+  IDS_UNKNOWNERROR,     "Unknown error"
+  IDS_NOAPP,            "No application object"
+  IDS_OUTOFMEMORY,      "Out of memory"
+  IDS_INVALIDMODULE,    "Invalid module specified for window"
+  IDS_INVALIDMAINWINDOW,"Invalid MainWindow"
+  IDS_VBXLIBRARYFAIL,   "VBX Library init failure"
+
+  IDS_INVALIDWINDOW,    "Invalid window %s"
+  IDS_INVALIDCHILDWINDOW,"Invalid child window %s"
+  IDS_INVALIDCLIENTWINDOW,"Invalid client window %s"
+
+  IDS_CLASSREGISTERFAIL,"Class registration fail for window %s"
+  IDS_CHILDREGISTERFAIL,"Child class registration fail for window %s"
+  IDS_WINDOWCREATEFAIL, "Create fail for window %s"
+  IDS_WINDOWEXECUTEFAIL,"Execute fail for window %s"
+  IDS_CHILDCREATEFAIL,  "Child create fail for window %s"
+
+  IDS_MENUFAILURE,      "Menu creation failure"
+  IDS_VALIDATORSYNTAX,  "Validator syntax error"
+  IDS_PRINTERERROR,     "Printer error"
+
+  IDS_LAYOUTINCOMPLETE, "Incomplete layout constraints specified in window %s"
+  IDS_LAYOUTBADRELWIN,  "Invalid relative window specified in layout constraint in window %s"
+
+  IDS_GDIFAILURE,       "GDI failure"
+  IDS_GDIALLOCFAIL,     "GDI allocate failure"
+  IDS_GDICREATEFAIL,    "GDI creation failure"
+  IDS_GDIRESLOADFAIL,   "GDI resource load failure"
+  IDS_GDIFILEREADFAIL,  "GDI file read failure"
+  IDS_GDIDELETEFAIL,    "GDI object %X delete failure"
+  IDS_GDIDESTROYFAIL,   "GDI object %X destroy failure"
+  IDS_INVALIDDIBHANDLE, "Invalid DIB handle %X"
+END
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+STRINGTABLE
+BEGIN
+  IDS_MODES             "EXT|CAPS|NUM|SCRL|OVR|REC"
+  IDS_MODESOFF          "   |  |   |  |   |   "
+  SC_SIZE,              "Changes the size of the window"
+  SC_MOVE,              "Moves the window to another position"
+  SC_MINIMIZE,          "Reduces the window to an icon"
+  SC_MAXIMIZE,          "Enlarges the window to it maximum size"
+  SC_RESTORE,           "Restores the window to its previous size"
+  SC_CLOSE,             "Closes the window"
+  SC_TASKLIST,          "Opens task list"
+  SC_NEXTWINDOW,        "Switches to next window"
+END
+
+
+// Validator messages (include/owl/validate.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_VALPXPCONFORM     "Input does not conform to picture:\n""%s"""
+  IDS_VALINVALIDCHAR    "Invalid character in input"
+  IDS_VALNOTINRANGE     "Value is not in the range %ld to %ld."
+  IDS_VALNOTINLIST      "Input is not in valid-list"
+END
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+IDI_SDIAPPLICATION ICON "applsdi.ico"
+
+
+// Client Dialog
+//
+IDD_CLIENT DIALOG 0, 0, 420, 270
+EXSTYLE WS_EX_DLGMODALFRAME
+STYLE DS_ABSALIGN | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "KWTEST"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "a0001", IDC_MERCHNUM, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 45, 17, 30, 13, 0
+ CONTROL "100.00", IDC_AMOUNT, "edit", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 111, 18, 47, 13, 0
+ CONTROL "Checks?", IDC_CHECKSBOX, "button", BS_AUTOCHECKBOX | BS_LEFTTEXT | BS_LEFT | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 179, 17, 45, 13, WS_EX_RTLREADING
+ CONTROL "fl", IDC_STATE, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 30, 36, 16, 13, 0
+ CONTROL "E40042849209abc", IDC_DL, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 71, 36, 122, 13, 0
+ CONTROL "060949", IDC_DOB, "edit", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 221, 36, 30, 13, 0
+ CONTROL "123456", IDC_CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 36, 54, 29, 13, 0
+ CONTROL "123456789", IDC_ABA, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 92, 54, 43, 13, 0
+ CONTROL "8138857291", IDC_PHONE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 233, 54, 54, 13, 0
+ CONTROL "268460550", IDC_SSN, "edit", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 28, 73, 41, 13, 0
+ CONTROL "33615", IDC_ZIPCODE, "edit", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 98, 72, 30, 13, 0
+ CONTROL "Clear", IDC_ACTCLEAR, "button", BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 44, 107, 28, 13, 0
+ CONTROL "MerchId", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 4, 123, 32, 9, 0
+ CONTROL "Age", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 43, 123, 16, 9, 0
+ CONTROL "Amount", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 68, 123, 28, 11, 0
+ CONTROL "Checknum", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 104, 123, 36, 9, 0
+ CONTROL "Sic", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 149, 123, 15, 12, 0
+ CONTROL "Rcode", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 172, 123, 22, 9, 0
+ CONTROL "a0001", IDC_ACT1MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 136, 33, 13, 0
+ CONTROL "01", IDC_ACT1AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 136, 17, 13, 0
+ CONTROL "200", IDC_ACT1AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 136, 26, 13, 0
+ CONTROL "123455", IDC_ACT1CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 136, 31, 13, 0
+ CONTROL "5651", IDC_ACT1SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 136, 21, 13, 0
+ CONTROL "80", IDC_ACT1RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 136, 14, 13, 0
+ CONTROL "a0002", IDC_ACT2MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 150, 33, 13, 0
+ CONTROL "02", IDC_ACT2AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 150, 17, 13, 0
+ CONTROL "600", IDC_ACT2AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 150, 26, 13, 0
+ CONTROL "123454", IDC_ACT2CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 150, 31, 13, 0
+ CONTROL "5651", IDC_ACT2SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 150, 21, 13, 0
+ CONTROL "80", IDC_ACT2RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 150, 14, 13, 0
+ CONTROL "a0003", IDC_ACT3MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 164, 33, 13, 0
+ CONTROL "03", IDC_ACT3AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 164, 17, 13, 0
+ CONTROL "100", IDC_ACT3AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 164, 26, 13, 0
+ CONTROL "2343432", IDC_ACT3CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 164, 31, 13, 0
+ CONTROL "5651", IDC_ACT3SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 164, 21, 13, 0
+ CONTROL "80", IDC_ACT3RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 164, 14, 13, 0
+ CONTROL "a0004", IDC_ACT4MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 178, 33, 13, 0
+ CONTROL "03", IDC_ACT4AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 178, 17, 13, 0
+ CONTROL "100", IDC_ACT4AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 178, 26, 13, 0
+ CONTROL "2343432432", IDC_ACT4CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 178, 31, 13, 0
+ CONTROL "5651", IDC_ACT4SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 178, 21, 13, 0
+ CONTROL "80", IDC_ACT4RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 178, 14, 13, 0
+ CONTROL "A0005", IDC_ACT5MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 192, 33, 13, 0
+ CONTROL "03", IDC_ACT5AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 192, 17, 13, 0
+ CONTROL "100", IDC_ACT5AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 192, 26, 13, 0
+ CONTROL "2343434", IDC_ACT5CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 192, 31, 13, 0
+ CONTROL "5651", IDC_ACT5SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 192, 21, 13, 0
+ CONTROL "80", IDC_ACT5RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 192, 14, 13, 0
+ CONTROL "A0006", IDC_ACT6MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 206, 33, 13, 0
+ CONTROL "03", IDC_ACT6AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 206, 17, 13, 0
+ CONTROL "100", IDC_ACT6AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 206, 26, 13, 0
+ CONTROL "2343432432", IDC_ACT6CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 206, 31, 13, 0
+ CONTROL "5651", IDC_ACT6SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 206, 21, 13, 0
+ CONTROL "80", IDC_ACT6RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 206, 14, 13, 0
+ CONTROL "a0007", IDC_ACT7MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 220, 33, 13, 0
+ CONTROL "03", IDC_ACT7AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 220, 17, 13, 0
+ CONTROL "100", IDC_ACT7AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 220, 26, 13, 0
+ CONTROL "234324324", IDC_ACT7CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 220, 31, 13, 0
+ CONTROL "5651", IDC_ACT7SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 220, 21, 13, 0
+ CONTROL "80", IDC_ACT7RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 220, 14, 13, 0
+ CONTROL "Send", IDC_SENDBUTTON, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 330, 44, 40, 14
+ CONTROL "", IDC_RESPONSE, "edit", ES_LEFT | ES_UPPERCASE | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER, 326, 25, 81, 13, 0
+ CONTROL "Amount", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 81, 18, 27, 10, 0
+ CONTROL "State", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 9, 36, 20, 10, 0
+ CONTROL "DL", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 57, 36, 14, 10, 0
+ CONTROL "DOB", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 201, 36, 19, 10, 0
+ CONTROL "CKNUM", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 5, 54, 28, 11, 0
+ CONTROL "Phone", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 208, 54, 25, 10, 0
+ CONTROL "MICR", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 69, 54, 22, 11, 0
+ CONTROL "Merchant", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 6, 18, 34, 11, 0
+ CONTROL "Response:", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 307, 14, 36, 10, 0
+ CONTROL "z", -1, "static", SS_ETCHEDFRAME | WS_CHILD | WS_VISIBLE, 298, 11, 114, 57, 0
+ CONTROL "", IDC_RCODE, "edit", ES_LEFT | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER, 305, 25, 17, 13, 0
+ CONTROL "a0008", IDC_ACT8MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 234, 33, 13, 0
+ CONTROL "a0009", IDC_ACT9MERCHID, "edit", ES_LEFT | ES_UPPERCASE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 4, 248, 33, 13, 0
+ CONTROL "03", IDC_ACT8AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 234, 17, 13, 0
+ CONTROL "03", IDC_ACT9AGE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 42, 248, 17, 13, 0
+ CONTROL "100", IDC_ACT8AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 234, 26, 13, 0
+ CONTROL "100", IDC_ACT9AMOUNT, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 68, 248, 26, 13, 0
+ CONTROL "2434324", IDC_ACT8CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 234, 31, 13, 0
+ CONTROL "2342424", IDC_ACT9CHECKNUM, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 104, 248, 31, 13, 0
+ CONTROL "5651", IDC_ACT8SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 234, 21, 13, 0
+ CONTROL "5651", IDC_ACT9SIC, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 146, 248, 21, 13, 0
+ CONTROL "80", IDC_ACT8RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 234, 14, 13, 0
+ CONTROL "80", IDC_ACT9RCODE, "edit", ES_LEFT | ES_NUMBER | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 174, 248, 14, 13, 0
+ CONTROL "ACTIVITY:", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 5, 109, 38, 11, 0
+ CONTROL "SSN", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 73, 19, 13, 0
+ CONTROL "ZIP", -1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 78, 72, 17, 13, 0
+ CONTROL "1234567890123456", IDC_ACCOUNT, "edit", ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 136, 54, 70, 13, 0
+ CONTROL "Big?", IDC_BIG, "button", BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 244, 17, 31, 13, 0
+}
+
+
+// About box.
+//
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK 0
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "\000"
+      VALUE "FileDescription", "Kwtest for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "Kwtest\000"
+      VALUE "LegalCopyright", "Copyright © 1996. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "Kwtest.exe\000"
+      VALUE "ProductName", "Kwtest\000"
+      VALUE "ProductVersion", "1.0\000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "\000"
+      VALUE "FileDescription", "Kwtest for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "Kwtest\000"
+      VALUE "LegalCopyright", "Copyright © 1996. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "Kwtest.exe\000"
+      VALUE "ProductName", "Kwtest\000"
+      VALUE "ProductVersion", "1.0\000"
+      VALUE "SpecialBuild", "Debug Version\000"
+      VALUE "PrivateBuild", "Built by \000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif

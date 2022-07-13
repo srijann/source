@@ -1,0 +1,53 @@
+#define IDD_SECRULES 6
+
+#define IDC_MAXBANKVERIFY	101
+#define IDC_HIRISKPRODUCT2	102
+#define IDC_HIRISKPRODUCT1	103
+#define IDC_HIRISKCHECKNUMBER	104
+#define IDC_HIRISKAMOUNT	105
+#define IDC_HIRISKDEMOGRAPHIC	106
+#define IDC_NOAPARTMENT	107
+#define IDC_MAXRCODES	108
+#define IDC_HIRISKCALICENSE	109
+#define IDC_SSNFRAUD	110
+#define IDC_LOWCREDITSCORE	111
+#define IDC_ADDRESSUNVERIFIABLE	112
+#define IDC_SSNINVALID	113
+#define IDC_PHONEUNVERIFIABLE	114
+#define IDC_CHECKMUSTBESIGNED	115
+#define IDC_NOCARRYOUT	116
+#define IDC_HIRISKAGE 117
+
+
+#define IDC_HiRiskProduct1ToTime	118
+#define IDC_HiRiskProduct1FromTime 119
+#define IDC_HiRiskProduct2ToTime	122
+#define IDC_HiRiskProduct2FromTime	123
+#define IDC_HiRiskProduct2DayOfWeek	124
+#define IDC_HiRiskProduct2Amount	125
+#define IDC_HiRiskProduct2Value	126
+#define IDC_HiRiskProdcut2FromTime	127
+#define IDC_HiRiskProduct1DayOfWeek	128
+#define IDC_HiRiskProduct1Amount	129
+#define IDC_HiRiskProduct1Value	130
+#define IDC_HiRiskCheckNumberValue	131
+#define IDC_HiRiskAmountValue	132
+#define IDC_MaxRcodesNum	133
+#define IDC_HiRiskCALicense10	134
+#define IDC_HiRiskCALicense9	135
+#define IDC_HiRiskCALicense8	136
+#define IDC_HiRiskCALicense7	137
+#define IDC_HiRiskCALicense6	138
+#define IDC_HiRiskCALicense5	139
+#define IDC_HiRiskCALicense4	140
+#define IDC_HiRiskCALicense3	141
+#define IDC_HiRiskCALicense2	142
+#define IDC_HiRiskCALicense1	143
+#define IDC_MaxBankVerifyDays	144
+#define IDC_MaxBankVerifyNumber	145
+#define IDC_LowCreditScoreValue	146
+#define IDC_HiRiskDemographicClass 147
+#define IDC_HiRiskAgeValue 148
+
+
+

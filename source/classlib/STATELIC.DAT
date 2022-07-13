@@ -1,0 +1,90 @@
+CA    301         8       5       1      1     1     0     0        0
+AL    112         7       7       0      0     0     0     0        0
+AK    111         7       1       0      0     0     0     0        0
+AZ    126         9       7       2      0     0     1     1        0
+AR    118         9       5       0      0     0     1     0        0
+CO    315        11       2       5      0     0     1     1        0
+CT    320         9       9       0      0     0     0     1        0
+DE    405         7       1       0      0     0     0     0        0
+DC    403         9       1       0      0     0     1     0        0
+FL    612        13      12       1      1     1     0     0        0
+GA    701         9       1       0      0     0     1     0        0
+HI    809         9       9       0      0     0     2     0        0
+ID    904         9       9       3      0     0     1     1        0
+IL    912        12      12       1      1     1     0     0        0
+IN    914        10      10       0      0     0     0     0        0
+IA    901         9       7       2      0     0     1     1        0
+KS   1119         9       9       1      0     0     1     1        0
+KY   1125        10       9       1      0     0     1     1        0
+LA   1201         9       9       0      0     0     0     1        0
+ME   1305         8       7       1      0     0     0     1        0
+MD   1304        13      13       1      1     1     0     0        0
+MA   1301         9       9       1      0     0     1     1        0
+MI   1309        13      13       1      1     1     0     0        0
+MN   1314        13      13       1      1     1     0     0        0
+MS   1319         9       1       0      0     0     1     0        0
+MO   1315        10       2       1      0     0     1     1        0
+MT   1320         9       9       9      0     0     1     0        0
+NE   1405         9       1       1      1     1     0     1        0
+NV   1422        12       9       1      0     0     0     1        0
+NH   1408        10      10       3      3     0     0     1        0
+NJ   1410        15      15       1      1     1     0     0        0
+NM   1413         9       8       0      0     0     1     0        0
+NY   1425        22       9       1      1     0     1     1        0
+NC   1403        12       1       0      0     0     0     0        0
+ND   1404         9       1       0      0     0     1     0        0
+OH   1508         9       8       2      0     0     1     1        0
+OK   1511         9       9       0      0     0     2     0        0
+OR   1518         7       1       0      0     0     0     0        0
+PA   1601         8       8       0      0     0     0     0        0
+RI   1809         7       7       0      0     0     0     0        0
+SC   1903         9       9       0      0     0     2     0        0
+SD   1904         9       8       0      0     0     1     0        0
+TN   2014         8       8       0      0     0     0     0        0
+TX   2024         8       8       0      0     0     0     0        0
+UT   2120         9       4       0      0     0     0     0        0
+VT   2220         8       8       1      0     0     0     0        0
+VA   2201         9       9       1      0     0     1     1        0
+WA   2301        12      12       9      0     1     0     0        0
+WV   2322         7       7       1      0     0     0     0        0
+WI   2309        14      14       1      1     1     0     0        0
+WY   2325        10       9       0      0     0     0     0        0
+AB    102         9       1       0      0     0     1     0        0
+BC    203         7       7       0      0     0     0     0        0
+MB   1302        12      12       9      7     0     0     0        0
+NB   1402         7       1       7      0     0     0     0        0
+NF   1406        10      10       1      1     1     0     0        0
+NS   1419        14      12       5      5     0     0     0        0
+ON   1514        15      15       1      1     1     0     0        0
+PE   1605        12       1       0      0     0     0     0        0
+PQ   1617        13      13       1      1     1     0     0        0
+SK   1911         8       8       0      0     0     0     0        0
+GU    721         9       1       0      0     0     1     0        0
+CZ    326         9       1       0      0     0     1     0        0
+PR   1618        11       0       0      0     0     0     0        0
+
+     int         MaxC    MinC    MaxA   MinA  Lead  SSN   More   Disable
+
+NT - North West Territories
+YT - Yukon Territory
+
+    int  - literally, the 2 chars converted ascii wise to an int. A=01 B=02 Z=26
+    MaxC - Maximum characters in Licence Number
+    MinC - Minimum characters in Licence Number
+    MaxA - Maximum Alpha characters in Licence Number
+    MinA - Minimum Alpha characters in Licence Number
+    Lead - Is there a leading Alpha character in Licence Number
+    SSN  - 1 == it might be a SSN, 2 == it must be a SSN
+    More - There is another test function after the table test
+    Disable - All validation for the state is disabled.
+
+    Setting SSN to 2 and More to 1 are mutually exclusive
+
+
+
+
+
+
+
+
+

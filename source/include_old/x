@@ -1,0 +1,23 @@
+File IPCMSG.H:
+#define IPCMessageTimedOut         2
+#define IPCMessageReceived         1
+class FUNCTYPE IPCMessage {
+  IPCMessage();
+  IPCMessage::IPCMessage(void*,WORD,bool&);
+  IPCMessage* IPCMsgPtr() { return this; };
+  ~IPCMessage();
+  void  CopyMsgIn(IPCMessage*);
+  bool  CopyFld(FLDNUM,IPCMessage*);
+  bool  CopyFld(FLDNUM,FLDNUM,IPCMessage* Msg=0);
+File IPCSER~1.H:
+    IPCMessage* Msg;
+    IPCServer(HINSTANCE,char*,char*,IPCMessage*,
+File IPC.H:
+bool FUNCTYPE IPCSend(IPCMessage*,char*);
+bool FUNCTYPE IPCSend(IPCMessage*,char*,HWND,WORD TimeOut=0);
+bool FUNCTYPE IPCSend(IPCMessage*,char*,WORD TimeOut,bool RetryUI=false,
+bool FUNCTYPE IPCRecv(IPCMessage*,LPARAM);
+bool FUNCTYPE IPCRecvReply(IPCMessage*,LPARAM);
+bool FUNCTYPE IPCReply(IPCMessage*);
+bool FUNCTYPE IPCGetSyncId(IPCMessage*,WORD&);
+void FUNCTYPE IPCResetSyncId(IPCMessage*);
